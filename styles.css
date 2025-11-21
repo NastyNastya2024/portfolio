@@ -1,3 +1,45 @@
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +47,8 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: #ffffff;
+    font-family: 'JetBrains Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #FAFAFD;
     color: #1a1a1a;
     line-height: 1.6;
 }
@@ -20,7 +62,6 @@ body {
 /* Header */
 .header {
     padding: 24px 0;
-    border-bottom: 1px solid #e5e5e5;
 }
 
 .header-content {
@@ -33,13 +74,25 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #49496D;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .logo-icon {
     font-size: 20px;
+}
+
+.logo-arrow {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    opacity: 0.8;
+}
+
+.logo-arrow-left {
+    transform: rotate(180deg);
 }
 
 .nav {
@@ -49,10 +102,11 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: #1a1a1a;
+    color: #49496D;
     font-size: 14px;
     font-weight: 500;
     transition: opacity 0.3s;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .nav-link:hover {
@@ -63,37 +117,72 @@ body {
 .hero {
     padding: 80px 0 120px;
     text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/blur.png') center center / 52% no-repeat;
+    filter: blur(20px);
+    opacity: 0.5;
+    transform: rotate(180deg);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .hero-icon {
-    font-size: 24px;
     margin-bottom: 16px;
     opacity: 0.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
 .hero-label {
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #666;
+    color: #49496D;
     margin-bottom: 24px;
 }
 
 .hero-title {
     font-size: 48px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.2;
     margin-bottom: 16px;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Inter', sans-serif;
+    text-shadow: 0 8px 32px rgba(205, 205, 221, 0.8);
+}
+
+.hero-line {
+    display: block;
+    margin: 16px auto;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
 }
 
 .hero-subtitle {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 48px;
+    font-size: 14px;
+    color: #49496D;
+    margin: 16px auto;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .hero-cta {
@@ -102,30 +191,46 @@ body {
     justify-content: center;
     gap: 32px;
     flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+}
+
+.hero-cta::before {
+    content: '';
+    flex: 1 1 auto;
+    order: 1;
+}
+
+
+.hero-cta::after {
+    content: '';
+    flex: 1 1 auto;
+    order: 4;
 }
 
 .cta-button {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 16px 32px;
-    background: #2a2a2a;
+    gap: 10px;
+    padding: 8px 17px;
+    background: #1a1a1a;
     color: white;
-    border: none;
-    border-radius: 12px;
+    border: 4px solid #E0E0EB;
+    border-radius: 40px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
-    font-size: 16px;
+    font-size: 13px;
+    order: 2;
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(224, 224, 255, 0.15);
 }
 
 .cta-avatar {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -140,7 +245,7 @@ body {
 }
 
 .cta-line2 {
-    font-size: 14px;
+    font-size: 11px;
     opacity: 0.8;
     line-height: 1.4;
 }
@@ -150,6 +255,8 @@ body {
     text-decoration: none;
     font-size: 16px;
     transition: opacity 0.3s;
+    font-family: 'Inter', sans-serif;
+    order: 3;
 }
 
 .works-link:hover {
@@ -213,7 +320,7 @@ body {
 .feature-step {
     font-size: 12px;
     letter-spacing: 1px;
-    color: #666;
+    color: #49496D;
     font-weight: 600;
 }
 
@@ -275,7 +382,7 @@ body {
 .filter-btn {
     background: none;
     border: none;
-    color: #1a1a1a;
+    color: #49496D;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -413,7 +520,7 @@ body {
 
 .case-tag {
     font-size: 12px;
-    color: #666;
+    color: #49496D;
     padding: 4px 8px;
     background: #f5f5f5;
     border-radius: 4px;
@@ -496,7 +603,7 @@ body {
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #666;
+    color: #49496D;
     margin-bottom: 32px;
 }
 
@@ -575,7 +682,7 @@ body {
 .step-number {
     font-size: 12px;
     letter-spacing: 1px;
-    color: #666;
+    color: #49496D;
     font-weight: 600;
     margin-bottom: 16px;
 }
@@ -639,7 +746,7 @@ body {
 
 .metric-label {
     font-size: 14px;
-    color: #666;
+    color: #49496D;
     line-height: 1.4;
 }
 
@@ -714,11 +821,11 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 16px 32px;
+    padding: 13px 26px;
     background: #1a1a1a;
     color: white;
-    border: none;
-    border-radius: 12px;
+    border: 4px solid #E0E0EB;
+    border-radius: 40px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
     font-size: 16px;
@@ -726,7 +833,7 @@ body {
 
 .final-cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(224, 224, 255, 0.15);
 }
 
 .final-cta-avatar {
