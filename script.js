@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (filter === 'all' || tags.includes(filter)) {
                     card.classList.remove('hidden');
+                    card.style.display = 'block';
                     // Add fade-in animation
                     card.style.opacity = '0';
                     setTimeout(() => {
@@ -46,56 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, 10);
                 } else {
                     card.classList.add('hidden');
+                    card.style.display = 'none';
                 }
             });
         });
     });
 
-    // Pagination dots
-    const dots = document.querySelectorAll('.dot');
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
-            dots.forEach(d => d.classList.remove('active'));
-            this.classList.add('active');
-            // Add pagination logic here if needed
-        });
+    // Show all cases on page load (no pagination)
+    caseCards.forEach(card => {
+        card.style.display = 'block';
     });
-
-    // Pagination arrows
-    const prevBtn = document.querySelector('.arrow-btn.prev');
-    const nextBtn = document.querySelector('.arrow-btn.next');
-    let currentPage = 0;
-    const totalPages = dots.length;
-
-    nextBtn?.addEventListener('click', function() {
-        if (currentPage < totalPages - 1) {
-            currentPage++;
-            updatePagination();
-        }
-    });
-
-    prevBtn?.addEventListener('click', function() {
-        if (currentPage > 0) {
-            currentPage--;
-            updatePagination();
-        }
-    });
-
-    function updatePagination() {
-        dots.forEach((dot, index) => {
-            if (index === currentPage) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-
-        if (prevBtn) {
-            prevBtn.disabled = currentPage === 0;
-        }
-        if (nextBtn) {
-            nextBtn.disabled = currentPage === totalPages - 1;
-        }
-    }
 });
 
