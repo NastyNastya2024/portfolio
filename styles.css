@@ -119,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero Section */
 .hero {
-    padding: 80px 0 64px;
+    padding: 80px 0 40px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -199,6 +199,26 @@ h1, h2, h3, h4, h5, h6 {
     margin: 16px auto;
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+
+.hero-subtitle-section {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.hero-subtitle-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.hero-subtitle-section .hero-line {
+    margin: 5px auto;
+}
+
+.hero-subtitle-section .hero-subtitle {
+    margin: 5px auto;
 }
 
 .hero-cta {
@@ -435,7 +455,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Cases Section */
 .cases {
-    padding: 80px 0;
+    padding: 40px 0;
     background: #FBFBFD;
 }
 
@@ -754,7 +774,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     inset: 0;
     border-radius: 16px;
-    padding: 2px;
+    padding: 6px;
     background: linear-gradient(135deg, #9333ea, #EBFEF6);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -864,7 +884,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     inset: 0;
     border-radius: 16px;
-    padding: 2px;
+    padding: 6px;
     background: linear-gradient(135deg, #9333ea, #EBFEF6);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
