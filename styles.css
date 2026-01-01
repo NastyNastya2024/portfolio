@@ -119,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero Section */
 .hero {
-    padding: 80px 0 40px;
+    padding: 27px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -302,7 +302,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Features Section */
 .features {
-    padding: 46px 0;
+    padding: 27px 0;
     background: #FBFBFD;
     position: relative;
 }
@@ -461,23 +461,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .cases-filters {
     display: flex;
-    gap: 32px;
-    margin-bottom: 48px;
-    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 24px;
+    flex-wrap: nowrap;
     justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
 }
 
 .filter-btn {
     background: none;
     border: none;
     color: #49496D;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     padding: 8px 0;
     position: relative;
     transition: opacity 0.3s;
     font-family: inherit;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .filter-btn:hover {
@@ -1078,6 +1083,285 @@ h1, h2, h3, h4, h5, h6 {
 
     .cta-arrows {
         display: none;
+    }
+}
+
+/* Quote Section */
+.quote-section {
+    padding: 27px 0;
+    background: #FBFBFD;
+    text-align: center;
+}
+
+.quote-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-logo {
+    margin-bottom: 5px;
+}
+
+.quote-tagline {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #49496D;
+}
+
+.quote-line1,
+.quote-line2 {
+    line-height: 1.4;
+}
+
+.quote-headline {
+    position: relative;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.quote-title {
+    font-size: 48px;
+    font-weight: 400;
+    color: #1A1A1A;
+    margin: 0;
+    padding: 7px 13px;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+.quote-title::before {
+    content: '┌';
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    color: #CDCDDD;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.quote-title::after {
+    content: '┘';
+    position: absolute;
+    bottom: -10px;
+    right: -20px;
+    color: #CDCDDD;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .quote-title {
+        font-size: 32px;
+        padding: 16px 24px;
+    }
+    
+    .quote-tagline {
+        font-size: 12px;
+    }
+    
+}
+
+/* Large Card Section */
+.large-card-section {
+    padding: 27px 0;
+    background: #FBFBFD;
+}
+
+.large-card-wrapper {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.large-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(224, 224, 255, 0.3);
+    border: 0.2px solid #CDCDDD;
+    width: calc((3 * 300px + 2 * 24px) * 1.5);
+    max-width: 100%;
+    transform: scale(0.95);
+    transform-origin: center;
+}
+
+.large-card::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 0.2px solid #CDCDDD;
+    border-radius: 20px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.large-card:hover {
+    box-shadow: 0 8px 24px rgba(224, 224, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+    .large-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Additional Cards Section */
+.additional-cards-section {
+    padding: 27px 0;
+    background: #FBFBFD;
+}
+
+.additional-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    margin-bottom: 24px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.small-cards-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.small-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(224, 224, 255, 0.3);
+    border: 0.2px solid #CDCDDD;
+    transform: scale(0.95);
+    transform-origin: center;
+}
+
+.small-card::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 0.2px solid #CDCDDD;
+    border-radius: 20px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.small-card-number {
+    font-size: 48px;
+    font-weight: 400;
+    color: #1A1A1A;
+    margin-bottom: 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+.small-card-text {
+    font-size: 14px;
+    color: #49496D;
+    line-height: 1.4;
+}
+
+.large-step-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(224, 224, 255, 0.3);
+    border: 0.2px solid #CDCDDD;
+    transform: scale(0.95);
+    transform-origin: center;
+}
+
+.large-step-card::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 0.2px solid #CDCDDD;
+    border-radius: 20px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.step-description {
+    color: #49496D;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.step-description:last-child {
+    margin-bottom: 0;
+}
+
+.philosophy-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(224, 224, 255, 0.3);
+    border: 0.2px solid #CDCDDD;
+    max-width: 1200px;
+    margin: 0 auto;
+    transform: scale(0.95);
+    transform-origin: center;
+}
+
+.philosophy-card::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 0.2px solid #CDCDDD;
+    border-radius: 20px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.philosophy-text {
+    color: #49496D;
+    line-height: 1.6;
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .additional-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .small-card-number {
+        font-size: 36px;
     }
 }
 
