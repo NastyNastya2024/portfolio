@@ -73,9 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) {
                     otherItem.classList.remove('active');
-                }
-            });
-            
+        }
+    });
+
             // Toggle current item
             if (isActive) {
                 item.classList.remove('active');
