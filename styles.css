@@ -1407,7 +1407,52 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
     display: block;
     border-radius: 16px;
-    transform: rotate(0.5deg);
+    transform: rotate(-0.5deg);
+}
+
+/* Image Slider Styles */
+.image-slider {
+    position: relative;
+    width: 100%;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-slide {
+    display: none;
+    width: 100%;
+}
+
+.slider-slide.active {
+    display: block;
+}
+
+.slider-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.pagination-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #D1D1D6;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.pagination-dot.active {
+    background: #49496D;
+}
+
+.pagination-dot:hover {
+    background: #7A7A9E;
 }
 
 .philosophy-section {
