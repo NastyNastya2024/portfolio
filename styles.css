@@ -47,14 +47,17 @@
 }
 
 body {
-    font-family: 'JetBrains Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", 'JetBrains Mono', 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background: #FBFBFD;
     color: #1a1a1a;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", 'Inter', sans-serif;
+    letter-spacing: -0.02em;
 }
 
 .container {
@@ -72,6 +75,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -81,7 +85,59 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
     font-weight: 600;
     color: #49496D;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: inherit;
+}
+
+.burger {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(205, 205, 221, 0.6);
+    border-radius: 12px;
+    background: #ffffff;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #49496D;
+    border-radius: 2px;
+}
+
+.nav.nav-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #ffffff;
+    border: 1px solid rgba(205, 205, 221, 0.6);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(224, 224, 255, 0.18);
+    z-index: 50;
+    min-width: 180px;
+}
+
+.nav.nav-dropdown.is-open {
+    display: flex;
+}
+
+.nav.nav-dropdown .nav-link {
+    padding: 6px 2px;
+}
+
+/* Hide desktop inline nav when using burger */
+.header-content > .nav:not(.nav-dropdown) {
+    display: none;
 }
 
 .logo-icon {
@@ -111,6 +167,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     transition: opacity 0.3s;
     font-family: 'JetBrains Mono', monospace;
+}
+
+.logo .nav-link {
+    font-family: inherit;
 }
 
 .nav-link:hover {
@@ -156,15 +216,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title {
-    font-size: 60px;
+    font-size: 64px;
     font-weight: 400;
     line-height: 1.2;
-    margin-bottom: 18px;
+    margin-bottom: 28px;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     font-family: 'Inter', sans-serif;
-    text-shadow: 0 12px 18px rgba(205, 205, 221, 0.65);
+    text-shadow: 0 8px 16px rgba(158, 158, 194, 0.7);
     position: relative;
     z-index: 1;
 }
@@ -251,7 +311,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 10px;
     padding: 8px 17px;
-    background: #1a1a1a;
+    background: #000000;
     color: white;
     border: 4px solid #E0E0EB;
     border-radius: 40px;
@@ -259,11 +319,12 @@ h1, h2, h3, h4, h5, h6 {
     transition: transform 0.2s, box-shadow 0.2s;
     font-size: 13px;
     order: 2;
+    box-shadow: none;
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(224, 224, 255, 0.15);
+    box-shadow: none;
 }
 
 .cta-avatar {
@@ -310,34 +371,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .features::before {
-    content: '';
-    position: absolute;
-    bottom: 20%;
-    left: 10%;
-    width: 300px;
-    height: 300px;
-    background: #E0E0FF;
-    filter: blur(80px);
-    z-index: 0;
-    pointer-events: none;
-    border-radius: 50%;
-    opacity: 0.4;
+    display: none;
 }
 
 .features::after {
-    content: '';
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 300px;
-    background: #EBFFF5;
-    filter: blur(80px);
-    z-index: 0;
-    pointer-events: none;
-    border-radius: 50%;
-    opacity: 0.4;
+    display: none;
 }
 
 .features-grid {
@@ -357,11 +395,15 @@ h1, h2, h3, h4, h5, h6 {
 .service-card {
     display: block;
     background: #ffffff;
-    border: 1px solid rgba(205, 205, 221, 0.6);
-    border-radius: 12px;
-    padding: 22px 24px;
+    border: 1px solid #CDCDDD;
+    border-radius: 16px;
+    padding: 20px 22px;
     text-decoration: none;
     color: inherit;
+    transition: transform 0.18s ease, border-color 0.18s ease, outline-color 0.18s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: 1px solid #CDCDDD;
+    outline-offset: 5px;
 }
 
 .service-card-muted {
@@ -369,25 +411,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-number {
-    width: 24px;
-    height: 24px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    background: #1a1a1a;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: 600;
+    display: none;
+}
+
+.service-title-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
     margin-bottom: 12px;
-    font-family: 'JetBrains Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.service-check {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex: 0 0 auto;
 }
 
 .service-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", 'Inter', sans-serif;
+    font-size: 18px;
     font-weight: 600;
-    margin: 0 0 8px 0;
+    margin: 0;
     color: #1a1a1a;
 }
 
@@ -396,6 +442,14 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 12px;
     line-height: 1.45;
     color: rgba(73, 73, 109, 0.85);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .service-card:hover {
+        transform: translateY(-2px);
+        border-color: #BFC1D6;
+        outline-color: #BFC1D6;
+    }
 }
 
 .service-link {
@@ -409,7 +463,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
     .services-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -1677,20 +1731,4 @@ h1, h2, h3, h4, h5, h6 {
     .small-card-number {
         font-size: 36px;
     }
-}
-
-.clouds-section {
-    width: 100%;
-    padding: 40px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    background: #FBFBFD;
-}
-
-.cloud-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
 }

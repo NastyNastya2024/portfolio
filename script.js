@@ -18,6 +18,28 @@ document.querySelector('.cta-button')?.addEventListener('click', function() {
     console.log('Book a call clicked');
 });
 
+// Burger menu
+document.addEventListener('DOMContentLoaded', function() {
+    const burger = document.querySelector('.burger');
+    const menu = document.querySelector('.nav.nav-dropdown');
+
+    if (!burger || !menu) return;
+
+    const closeMenu = () => {
+        menu.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+    };
+
+    burger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = menu.classList.toggle('is-open');
+        burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', closeMenu);
+    window.addEventListener('resize', closeMenu);
+});
+
 // Cases Filter Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
