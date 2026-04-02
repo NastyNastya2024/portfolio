@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Cases Filter Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const caseCards = document.querySelectorAll('.case-card');
+    const caseCards = document.querySelectorAll('.cases-grid .case-card');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -78,6 +78,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show all cases on page load (no pagination)
     caseCards.forEach(card => {
         card.style.display = 'block';
+    });
+
+    document.querySelectorAll('.case-image--has-video video').forEach((video) => {
+        video.addEventListener('error', () => {
+            video.classList.add('case-video--unavailable');
+        });
     });
 });
 

@@ -22,8 +22,8 @@
                     <span></span>
                 </button>
                 <nav class="nav nav-dropdown" id="mobile-menu">
-                    <a href="about.html" class="nav-link">КОНТАКТЫ</a>
-                    <a href="about.html" class="nav-link">О НАС</a>
+                    <a href="about.html" class="nav-link">Контакты</a>
+                    <a href="about.html" class="nav-link">О нас</a>
                 </nav>
             </div>
         </div>
@@ -46,6 +46,13 @@
                        </button>
                 </div>
             </div>
+            <div class="hero-blobs" aria-hidden="true">
+                <span class="hero-blob hero-blob--violet hero-blob--1"></span>
+                <span class="hero-blob hero-blob--mint hero-blob--2"></span>
+                <span class="hero-blob hero-blob--violet hero-blob--3"></span>
+                <span class="hero-blob hero-blob--mint hero-blob--4"></span>
+                <span class="hero-blob hero-blob--violet-soft hero-blob--5"></span>
+            </div>
         </div>
     </section>
 
@@ -64,7 +71,7 @@
                 <a class="service-card" href="about.html">
                     <div class="service-title-row">
                         <img src="img/ok.png" alt="Check" class="service-check">
-                        <h3 class="service-title">Приложения и сайты с ИИ</h3>
+                        <h3 class="service-title">Приложения и сайты</h3>
                     </div>
                     <p class="service-description">Создание мобильных приложений и сайтов с помощью искусственного интеллекта.</p>
                 </a>
@@ -99,7 +106,7 @@
                 <button class="filter-btn" data-filter="layout">ВЕРСТКА</button>
                 <button class="filter-btn" data-filter="sites">САЙТЫ</button>
                 <button class="filter-btn" data-filter="apps">ПРИЛОЖЕНИЯ</button>
-                <button class="filter-btn" data-filter="bots">БОТЫ</button>
+                <button class="filter-btn" data-filter="agents">АГЕНТЫ</button>
                 <button class="filter-btn" data-filter="software">ПРИКЛАДНОЕ ПО</button>
                 <button class="filter-btn" data-filter="ai">AI/ML</button>
                 <button class="filter-btn" data-filter="rag">RAG/CAD</button>
@@ -122,30 +129,18 @@
                     </div>
 
                     <!-- Case 2 -->
-                    <div class="case-card" data-tags="analytics bots ai" onclick="window.open('VoiceBot1.html', '_self')">
+                    <div class="case-card" data-tags="analytics agents ai" onclick="window.open('VoiceBot3.html', '_self')">
                         <div class="case-image">
-                            <img src="img/VoiceBot1.png" alt="VoiceBot2" style="position: absolute; top: -40px; left: 0; width: 100%; height: calc(100% + 40px); object-fit: cover; object-position: top center; z-index: 1;">
+                            <img src="img/VoiceBot3.png" alt="VoiceBot3" style="position: absolute; top: 0px; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; z-index: 1;">
                         </div>
                         <div class="case-info">
-                            <h3 class="case-title">#БОТ</h3>
+                            <h3 class="case-title">#SAAS</h3>
                             <div class="case-tags">
                             </div>
                         </div>
                     </div>
 
                     <!-- Case 3 -->
-                    <div class="case-card" data-tags="design layout" onclick="window.open('case14.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/Instar.png" alt="Case 14" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title">#ВЕРСТКА</h3>
-                            <div class="case-tags">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 4 -->
                     <div class="case-card" data-tags="analytics software ai" onclick="window.open('ht.html', '_self')">
                         <div class="case-image">
                             <img src="img/HT.png" alt="HT" style="position: absolute; top: -35px; left: 0; width: 100%; height: calc(100% + 35px); object-fit: cover; object-position: top center; z-index: 1; transform: rotate(5deg) scale(1.15);">
@@ -157,7 +152,58 @@
                         </div>
                     </div>
 
-                    <!-- Case 5 -->
+                    <!-- Case 4 — GEO (местами с Yoga) -->
+                    <div class="case-card" data-tags="apps software" onclick="window.open('case15.html', '_self')">
+                        <div class="case-image">
+                            <img src="img/GEO.png" alt="Case 15" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">#ПО</h3>
+                            <div class="case-tags">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 5 — Yoga (местами с GEO) -->
+                    <div class="case-card" data-tags="apps" onclick="window.open('case6.html', '_self')">
+                        <div class="case-image case-image--no-overlay">
+                            <img src="img/Yoga.png" alt="Yoga — обложка приложения" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: 50% 32%; z-index: 1;">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">#APP</h3>
+                            <div class="case-tags">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 6 — приложение автоинструктора (справа от #ПО, вместо скинкейра) -->
+                    <div class="case-card" data-tags="apps software" onclick="window.open('case16.html', '_self')">
+                        <div class="case-image case-image--no-overlay case-image--has-video">
+                            <img class="case-media-poster" src="img/AutoInstructor-splash.png?v=instructor-v18-v1" alt="Автоинструктор — макет приложения">
+                            <video class="case-video" poster="img/AutoInstructor-splash.png?v=instructor-v18-v1" autoplay muted loop playsinline preload="auto" aria-label="Автоинструктор — видео макета приложения">
+                                <source src="mov/AutoInstructor.mp4?v=instructor-v18-v1" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">#APP</h3>
+                            <div class="case-tags">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 7 — AI косметолог (#SMM) -->
+                    <div class="case-card" data-tags="smm marketing" onclick="window.open('case18.html', '_self')">
+                        <div class="case-image">
+                            <img src="img/AICosmetologist.png" alt="AI косметолог — макет на планшетах" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">#SMM</h3>
+                            <div class="case-tags">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 8 — ClariTech (местами с #SEO) -->
                     <div class="case-card" data-tags="analytics software" onclick="window.open('CTF.html', '_self')">
                         <div class="case-image">
                             <img src="img/Clari.png" alt="Clari" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: top center; z-index: 1;">
@@ -169,34 +215,46 @@
                         </div>
                     </div>
 
-                    <!-- Case 6 -->
-                    <div class="case-card" data-tags="apps" onclick="window.open('case6.html', '_self')">
+                    <!-- Case 9 — InStar (#ВЕРСТКА), местами с «Сенсорный пульт» -->
+                    <div class="case-card" data-tags="design layout" onclick="window.open('case14.html', '_self')">
                         <div class="case-image">
-                            <img src="img/Yoga.png" alt="Yoga" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: top center; z-index: 1;">
+                            <img src="img/Instar.png" alt="InStar — макет приложения" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
                         </div>
                         <div class="case-info">
-                            <h3 class="case-title">#APP</h3>
+                            <h3 class="case-title">#ВЕРСТКА</h3>
                             <div class="case-tags">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Case 7 -->
-                    <div class="case-card" data-tags="analytics bots ai" onclick="window.open('VoiceBot2.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/VoiceBot4.png" alt="VoiceBot4" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
+                    <!-- Case 10 — MetaMorfeya / #SEO (местами с ClariTech) -->
+                    <div class="case-card" data-tags="geo marketing" onclick="window.open('case17.html', '_self')">
+                        <div class="case-image case-image--no-overlay">
+                            <img src="img/MetaMorfeya.png" alt="MetaMorfeya — макет сайта на планшетах" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
                         </div>
                         <div class="case-info">
-                            <h3 class="case-title">#БОТ</h3>
+                            <h3 class="case-title">#SEO</h3>
                             <div class="case-tags">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Case 8 -->
+                    <!-- Case 15 -->
+                    <div class="case-card" data-tags="agents ai" onclick="window.open('ai_shniza.html', '_self')">
+                        <div class="case-image">
+                            <img src="img/TelegramBot.png" alt="Телеграмм бот AI-шница" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; z-index: 1;">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">#AI</h3>
+                            <div class="case-tags">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 16 — Сенсорный пульт (#ДИЗАЙН), местами с InStar -->
                     <div class="case-card" data-tags="analytics apps software" onclick="window.open('case8.html', '_self')">
                         <div class="case-image">
-                            <img src="img/RemoteController.png" alt="remoteController" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: top center; z-index: 1;">
+                            <img src="img/RemoteController.png" alt="Сенсорный пульт — промышленный дизайн" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: top center; z-index: 1;">
                         </div>
                         <div class="case-info">
                             <h3 class="case-title">#ДИЗАЙН</h3>
@@ -205,7 +263,7 @@
                         </div>
                     </div>
 
-                    <!-- Case 9 -->
+                    <!-- Case 17 — лиловый сайт (местами с Socialize) -->
                     <div class="case-card" data-tags="sites" onclick="window.open('case9.html', '_self')">
                         <div class="case-image">
                             <img src="img/Pink.png" alt="pink сайт" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: top center; z-index: 1;">
@@ -217,19 +275,19 @@
                         </div>
                     </div>
 
-                    <!-- Case 10 -->
-                    <div class="case-card" data-tags="analytics bots ai" onclick="window.open('VoiceBot3.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/VoiceBot3.png" alt="VoiceBot3" style="position: absolute; top: 0px; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; z-index: 1;">
+                    <!-- Case 18 — Socialize -->
+                    <div class="case-card" data-tags="apps design" onclick="window.open('case14.html', '_self')">
+                        <div class="case-image case-image--no-overlay">
+                            <img src="img/CaseSocialize.png" alt="Socialize — мессенджер и онбординг" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
                         </div>
                         <div class="case-info">
-                            <h3 class="case-title">#SAAS</h3>
+                            <h3 class="case-title">#APP</h3>
                             <div class="case-tags">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Case 11 -->
+                    <!-- Case 19 — маркетплейс Flowers -->
                     <div class="case-card" data-tags="analytics apps" onclick="window.open('case11.html', '_self')">
                         <div class="case-image">
                             <img src="img/Flowers.png" alt="flowers" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
@@ -241,7 +299,19 @@
                         </div>
                     </div>
 
-                    <!-- Case 12 -->
+                    <!-- Case 20 — пиксельная игра -->
+                    <div class="case-card" data-tags="apps design" onclick="window.open('case11.html', '_self')">
+                        <div class="case-image case-image--no-overlay">
+                            <img src="img/CasePixelGame.png?v=metal3-v1" alt="Пиксельная игра — платформер" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: center; z-index: 1;">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">#APP</h3>
+                            <div class="case-tags">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 21 — Financier (местами с голосовым ботом) -->
                     <div class="case-card" data-tags="sites" onclick="window.open('case12.html', '_self')">
                         <div class="case-image">
                             <img src="img/Financier.png" alt="financier" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
@@ -253,7 +323,31 @@
                         </div>
                     </div>
 
-                    <!-- Case 13 -->
+                    <!-- Case 22 — голосовой бот VoiceBot2 -->
+                    <div class="case-card" data-tags="analytics agents ai" onclick="window.open('VoiceBot2.html', '_self')">
+                        <div class="case-image">
+                            <img src="img/VoiceBot4.png" alt="VoiceBot4" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">#АГЕНТЫ</h3>
+                            <div class="case-tags">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 23 — голосовой бот VoiceBot1 -->
+                    <div class="case-card" data-tags="analytics agents ai" onclick="window.open('VoiceBot1.html', '_self')">
+                        <div class="case-image">
+                            <img src="img/VoiceBot1.png" alt="VoiceBot2" style="position: absolute; top: -40px; left: 0; width: 100%; height: calc(100% + 40px); object-fit: cover; object-position: top center; z-index: 1;">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">#АГЕНТЫ</h3>
+                            <div class="case-tags">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 24 -->
                     <div class="case-card" data-tags="analytics sites" onclick="window.open('case13.html', '_self')">
                         <div class="case-image">
                             <img src="img/Photohosting.png" alt="Case 13" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
@@ -265,66 +359,20 @@
                         </div>
                     </div>
 
-                    <!-- Case 14 -->
-                    <div class="case-card" data-tags="bots ai" onclick="window.open('ai_shniza.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/TelegramBot.png" alt="Телеграмм бот AI-шница" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title">#AI</h3>
-                            <div class="case-tags">
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </section>
 
-                    <!-- Case 15 -->
-                    <div class="case-card" data-tags="apps software" onclick="window.open('case15.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/FL.png" alt="Case 15" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title">#ПО</h3>
-                            <div class="case-tags">
-                            </div>
-                        </div>
+    <section class="bottom-cta">
+        <div class="container">
+            <div class="hero-cta">
+                <button class="cta-button">
+                    <img src="img/1.jpg" alt="Profile" class="cta-avatar">
+                    <div class="cta-text">
+                        <div class="cta-line1">Забронируйте звонок</div>
+                        <div class="cta-line2">Неформальный чат</div>
                     </div>
-
-                    <!-- Case 16 -->
-                    <div class="case-card" data-tags="bots ai" onclick="window.open('case16.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/FL.png" alt="Case 16" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title">#AI</h3>
-                            <div class="case-tags">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 17 -->
-                    <div class="case-card" data-tags="geo marketing" onclick="window.open('case17.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/FL.png" alt="Case 17" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title">#SEO</h3>
-                            <div class="case-tags">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 18 -->
-                    <div class="case-card" data-tags="smm marketing" onclick="window.open('case18.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/FL.png" alt="Case 18" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title">#SMM</h3>
-                            <div class="case-tags">
-                            </div>
-                        </div>
-                    </div>
-
+                </button>
             </div>
         </div>
     </section>
