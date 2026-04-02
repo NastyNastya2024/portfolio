@@ -596,6 +596,45 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.45;
 }
 
+/* Вертикальная галерея слайдов кейса (case8 и др.) */
+.case-study-gallery {
+    padding: 36px 0 40px;
+    background: #f7f7fa;
+}
+
+.case-study-gallery__title {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 22px;
+    text-align: center;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+}
+
+.case-study-gallery__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.case-study-gallery__item {
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 0.2px solid #cdcddd;
+    background: #0d1620;
+    box-shadow: 0 4px 18px rgba(22, 22, 29, 0.09);
+}
+
+.case-study-gallery__item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
 /* Features Section */
 .features {
     padding: 8px 0 0;
