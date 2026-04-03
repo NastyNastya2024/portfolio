@@ -255,6 +255,30 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
+.hero.hero--with-embed-preview {
+    overflow: visible;
+    padding-bottom: 32px;
+}
+
+.hero-case-previews {
+    position: relative;
+    z-index: 1;
+    margin: 26px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.hero-case-preview {
+    position: relative;
+    margin: 0;
+}
+
+.hero-case-preview .site-preview-meta {
+    margin-top: 12px;
+}
+
 .hero-content {
     position: relative;
     z-index: 1;
@@ -616,6 +640,54 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/* Длинный скрин макета: видно «окно» фиксированной высоты, остальное — прокрутка внутри (как у iframe) */
+.site-preview-frame.site-preview-frame--image-scroll {
+    max-width: 1100px;
+    margin: 0 auto;
+    height: min(68vh, 560px);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 0.2px solid rgba(205, 205, 221, 0.65);
+    box-shadow: 0 4px 20px rgba(22, 22, 29, 0.08);
+    background: #1a1520;
+}
+
+.site-preview-frame.site-preview-frame--image-scroll .site-preview-frame__scroll {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+.site-preview-frame.site-preview-frame--image-scroll .site-preview-frame__scroll img {
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+.site-preview-section.site-preview-section--static {
+    padding: 16px 0 12px;
+}
+
+.case-study-full-preview {
+    margin: 0 auto;
+    max-width: 1100px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 0.2px solid rgba(205, 205, 221, 0.65);
+    box-shadow: 0 4px 20px rgba(22, 22, 29, 0.08);
+    background: #fff;
+}
+
+.case-study-full-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: top;
 }
 
 .site-preview-meta {
@@ -1559,6 +1631,10 @@ h1, h2, h3, h4, h5, h6 {
         height: min(48vh, 380px);
     }
 
+    .site-preview-frame.site-preview-frame--image-scroll {
+        height: min(48vh, 380px);
+    }
+
     .site-preview-section.site-preview-section--game .site-preview-frame.site-preview-frame--game {
         height: min(78vh, 720px);
     }
@@ -1735,6 +1811,17 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 4px;
     margin-bottom: 13px;
     line-height: 1.4;
+}
+
+.quote-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #49496d;
+    max-width: 640px;
+    margin: 16px auto 0;
+    line-height: 1.55;
 }
 
 .quote-title::before {
