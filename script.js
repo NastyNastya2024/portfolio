@@ -81,12 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
     caseCards.forEach(card => {
         card.style.display = 'block';
     });
-
-    document.querySelectorAll('.case-image--has-video video').forEach((video) => {
-        video.addEventListener('error', () => {
-            video.classList.add('case-video--unavailable');
-        });
-    });
 });
 
 // FAQ Accordion Functionality
