@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Пиксельный платформер</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            width: 100%;
+            min-height: 100%;
+            background: #141428;
+            color: #c5cad3;
+            font-family: system-ui, -apple-system, sans-serif;
+            touch-action: manipulation;
+        }
+        #wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 12px;
+            gap: 12px;
+        }
+        #c {
+            display: block;
+            width: min(100vw - 24px, 640px);
+            height: auto;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            border: 4px solid #3d3d5c;
+            border-radius: 10px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+            background: #0f0f18;
+        }
+        #hud {
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.5;
+            max-width: 640px;
+            opacity: 0.92;
+        }
+        #score {
+            font-variant-numeric: tabular-nums;
+            font-weight: 600;
+            color: #e8b84a;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <canvas id="c" width="320" height="180"></canvas>
+        <div id="hud">
+            <span id="score">Монеты: 0 / 5</span> · ← → или A D · Пробел / ↑ / W — прыжок · R — заново
+        </div>
+    </div>
+    <script>
+(function () {
+    var canvas = document.getElementById('c');
+    var ctx = canvas.getContext('2d');
+    var W = 320, H = 180;
+    var keys = {};
+    var platforms = [
+        { x: 0, y: 152, w: 320, h: 28 },
+        { x: 0, y: 110, w: 72, h: 12 },
+        { x: 100, y: 88, w: 56, h: 12 },
+        { x: 200, y: 105, w: 48, h: 12 },
+        { x: 248, y: 72, w: 72, h: 12 }
+    ];
+    var coins = [
+        { x: 34, y: 96, r: 6, taken: false },
+        { x: 118, y: 76, r: 6, taken: false },
+        { x: 178, y: 94, r: 6, taken: false },
+        { x: 262, y: 60, r: 6, taken: false },
+        { x: 292, y: 136, r: 6, taken: false }
+    ];
+    var flag = { x: 300, y: 124, w: 14, h: 28 };
+    var player = { x: 24, y: 100, w: 12, h: 18, vx: 0, vy: 0, onGround: false };
+    var totalCoins = coins.length;
+    var collected = 0;
+    var won = false;
+
+    function reset() {
+        player.x = 24; player.y = 100; player.vx = 0; player.vy = 0;
+        collected = 0; won = false;
+        for (var i = 0; i < coins.length; i++) coins[i].taken = false;
+        updateHud();
+    }
+
+    function updateHud() {
+        document.getElementById('score').textContent =
+            won ? 'Победа! R — ещё раз' : ('Монеты: ' + collected + ' / ' + totalCoins);
+    }
+
+    function solid(px, py, pw, ph) {
+        for (var i = 0; i < platforms.length; i++) {
+            var p = platforms[i];
+            if (px < p.x + p.w && px + pw > p.x && py < p.y + p.h && py + ph > p.y)
+                return p;
+        }
+        return null;
+    }
+
+    function tick() {
+        if (!won) {
+            var ax = 0;
+            if (keys['ArrowLeft'] || keys['a'] || keys['A']) ax -= 1;
+            if (keys['ArrowRight'] || keys['d'] || keys['D']) ax += 1;
+            player.vx += ax * 0.45;
+            player.vx *= 0.82;
+            if (Math.abs(player.vx) < 0.05) player.vx = 0;
+            if (Math.abs(player.vx) > 2.35) player.vx = (player.vx > 0 ? 1 : -1) * 2.35;
+
+            if ((keys[' '] || keys['ArrowUp'] || keys['w'] || keys['W']) && player.onGround) {
+                player.vy = -5.9;
+                player.onGround = false;
+            }
+
+            player.vy += 0.32;
+            if (player.vy > 7) player.vy = 7;
+
+            player.x += player.vx;
+            var h = solid(player.x, player.y, player.w, player.h);
+            if (h) {
+                if (player.vx > 0) player.x = h.x - player.w;
+                else if (player.vx < 0) player.x = h.x + h.w;
+                player.vx = 0;
+            }
+
+            player.y += player.vy;
+            player.onGround = false;
+            h = solid(player.x, player.y, player.w, player.h);
+            if (h) {
+                if (player.vy > 0) {
+                    player.y = h.y - player.h;
+                    player.onGround = true;
+                } else {
+                    player.y = h.y + h.h;
+                }
+                player.vy = 0;
+            }
+
+            if (player.x < 0) player.x = 0;
+            if (player.x + player.w > W) player.x = W - player.w;
+
+            for (var c = 0; c < coins.length; c++) {
+                var co = coins[c];
+                if (co.taken) continue;
+                var cx = player.x + player.w / 2, cy = player.y + player.h / 2;
+                var dx = cx - co.x, dy = cy - co.y;
+                if (dx * dx + dy * dy < (co.r + 6) * (co.r + 6)) {
+                    co.taken = true;
+                    collected++;
+                    updateHud();
+                }
+            }
+
+            if (collected >= totalCoins &&
+                player.x + player.w > flag.x && player.x < flag.x + flag.w &&
+                player.y + player.h > flag.y && player.y < flag.y + flag.h) {
+                won = true;
+                updateHud();
+            }
+        }
+
+        draw();
+        requestAnimationFrame(tick);
+    }
+
+    function draw() {
+        ctx.imageSmoothingEnabled = false;
+        ctx.fillStyle = '#1e1033';
+        ctx.fillRect(0, 0, W, H);
+        // stars
+        ctx.fillStyle = 'rgba(255,255,255,0.15)';
+        for (var s = 0; s < 40; s++) {
+            ctx.fillRect((s * 53 + 7) % W, (s * 17 + 3) % (H - 40), 1, 1);
+        }
+        // ground decoration
+        ctx.fillStyle = '#2a1f44';
+        ctx.fillRect(0, 0, W, 152);
+
+        for (var i = 0; i < platforms.length; i++) {
+            var p = platforms[i];
+            ctx.fillStyle = '#4a4068';
+            ctx.fillRect(p.x, p.y, p.w, p.h);
+            ctx.fillStyle = '#6b5f8f';
+            ctx.fillRect(p.x, p.y, p.w, 3);
+        }
+
+        for (var j = 0; j < coins.length; j++) {
+            var co = coins[j];
+            if (co.taken) continue;
+            ctx.fillStyle = '#e8b84a';
+            ctx.beginPath();
+            ctx.arc(co.x, co.y, co.r, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#ffe9a8';
+            ctx.fillRect(co.x - 2, co.y - 4, 2, 3);
+        }
+
+        ctx.fillStyle = won ? '#5cff9d' : '#e84a6f';
+        ctx.fillRect(flag.x, flag.y, flag.w, flag.h);
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(flag.x + flag.w - 2, flag.y + 4, 10, 6);
+
+        ctx.fillStyle = '#6ec5ff';
+        ctx.fillRect(Math.round(player.x), Math.round(player.y), player.w, player.h);
+        ctx.fillStyle = '#1a1a2e';
+        ctx.fillRect(Math.round(player.x) + 7, Math.round(player.y) + 5, 4, 4);
+
+        if (won) {
+            ctx.fillStyle = 'rgba(0,0,0,0.55)';
+            ctx.fillRect(0, 0, W, H);
+            ctx.fillStyle = '#fff';
+            ctx.font = '10px monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText('Уровень пройден!', W / 2, H / 2 - 6);
+            ctx.fillText('R — перезапуск', W / 2, H / 2 + 8);
+        }
+    }
+
+    window.addEventListener('keydown', function (e) {
+        keys[e.key] = true;
+        if (e.key === 'r' || e.key === 'R') { reset(); e.preventDefault(); }
+        if (e.key === ' ' || e.key === 'ArrowUp' || e.key === 'ArrowDown') e.preventDefault();
+    });
+    window.addEventListener('keyup', function (e) {
+        keys[e.key] = false;
+    });
+
+    reset();
+    tick();
+})();
+    </script>
+</body>
+</html>

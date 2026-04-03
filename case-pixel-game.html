@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пиксельный платформер — ASYA.KOM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="site-subpage">
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="img/errow_2.png" alt="Arrow" class="logo-arrow logo-arrow-left">
+                    <a href="index.html" class="nav-link">ASYA.KOM</a>
+                    <img src="img/errow_2.png" alt="Arrow" class="logo-arrow logo-arrow-right">
+                </div>
+                <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav nav-dropdown" id="mobile-menu">
+                    <a href="about.html" class="nav-link">Контакты</a>
+                    <a href="about.html" class="nav-link">О нас</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-icon"><img src="img/errow_1.png" alt="Arrow" class="hero-icon-img"></div>
+                <div class="hero-label">ИГРА В БРАУЗЕРЕ</div>
+                <h1 class="hero-title">Пиксельный платформер</h1>
+                <img src="img/15.png" alt="Line" class="hero-line">
+                <p class="hero-subtitle">HTML5 Canvas · пиксельная графика · управление с клавиатуры</p>
+                <img src="img/15.png" alt="Line" class="hero-line">
+                <div class="hero-cta">
+                    <button class="cta-button" type="button">
+                        <img src="img/1.jpg" alt="Profile" class="cta-avatar">
+                        <div class="cta-text">
+                            <div class="cta-line1">Забронируйте звонок</div>
+                            <div class="cta-line2">Неформальный чат</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-blobs" aria-hidden="true">
+                <span class="hero-blob hero-blob--violet hero-blob--1"></span>
+                <span class="hero-blob hero-blob--mint hero-blob--2"></span>
+                <span class="hero-blob hero-blob--violet hero-blob--3"></span>
+                <span class="hero-blob hero-blob--mint hero-blob--4"></span>
+                <span class="hero-blob hero-blob--violet-soft hero-blob--5"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="site-preview-section site-preview-section--game" aria-label="Flower Dash Girl — встроенное приложение">
+        <div class="container">
+            <p class="site-preview-play-here">Играть можно прямо здесь</p>
+            <div class="site-preview-frame site-preview-frame--game site-preview-frame--crop-top">
+                <iframe
+                    src="https://flower-dash-girl.lovable.app/"
+                    title="Flower Dash Girl — игра (Lovable)"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allow="fullscreen"
+                ></iframe>
+            </div>
+            <p class="site-preview-meta">
+                <a href="https://flower-dash-girl.lovable.app/" target="_blank" rel="noopener noreferrer" style="color: #49496D; text-decoration: underline;">Открыть приложение в новой вкладке</a>
+                — если превью не загрузилось
+            </p>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-icon"><img src="img/errow_1.png" alt="Arrow" class="hero-icon-img"></div>
+                <div class="hero-cta">
+                    <button class="cta-button" type="button">
+                        <img src="img/1.jpg" alt="Profile" class="cta-avatar">
+                        <div class="cta-text">
+                            <div class="cta-line1">Забронируйте звонок</div>
+                            <div class="cta-line2">Неформальный чат</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

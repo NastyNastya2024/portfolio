@@ -6,7 +6,7 @@
     <title>ASYA.KOM - Кейс 11</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="site-subpage">
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -16,7 +16,12 @@
                     <a href="index.html" class="nav-link">ASYA.KOM</a>
                     <img src="img/errow_2.png" alt="Arrow" class="logo-arrow logo-arrow-right">
                 </div>
-                <nav class="nav">
+                <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav nav-dropdown" id="mobile-menu">
                     <a href="about.html" class="nav-link">Контакты</a>
                     <a href="about.html" class="nav-link">О нас</a>
                 </nav>
@@ -44,6 +49,13 @@
                        </button>
                     <a href="#works" class="works-link">Примеры работ</a>
                 </div>
+            </div>
+            <div class="hero-blobs" aria-hidden="true">
+                <span class="hero-blob hero-blob--violet hero-blob--1"></span>
+                <span class="hero-blob hero-blob--mint hero-blob--2"></span>
+                <span class="hero-blob hero-blob--violet hero-blob--3"></span>
+                <span class="hero-blob hero-blob--mint hero-blob--4"></span>
+                <span class="hero-blob hero-blob--violet-soft hero-blob--5"></span>
             </div>
         </div>
     </section>

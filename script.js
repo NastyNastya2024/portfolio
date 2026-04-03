@@ -12,10 +12,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// CTA button click handler
-document.querySelector('.cta-button')?.addEventListener('click', function() {
-    // Add your booking logic here
-    console.log('Book a call clicked');
+// CTA button click handler (все кнопки на странице, как на главной и в кейсах)
+document.querySelectorAll('.cta-button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        // Add your booking logic here
+        console.log('Book a call clicked');
+    });
 });
 
 // Burger menu

@@ -56,6 +56,37 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+/* Подстраницы (кейсы, about, FL и др.): единый UI kit с главной */
+body.site-subpage .hero-line {
+    display: none;
+}
+
+body.site-subpage .quote-section,
+body.site-subpage .additional-cards-section,
+body.site-subpage .faq-section,
+body.site-subpage .philosophy-section,
+body.site-subpage .large-card-section,
+body.site-subpage .duplicated-cards-section,
+body.site-subpage .game-preview-section {
+    background: #F7F7FA;
+}
+
+body.site-subpage .case-study-gallery {
+    background: #F7F7FA;
+}
+
+body.site-subpage .faq-item {
+    background: #ffffff;
+    border: 0.2px solid rgba(205, 205, 221, 0.55);
+    box-shadow: 0 2px 10px rgba(22, 22, 29, 0.05);
+}
+
+body.site-subpage .case-study-gallery__item {
+    background: #0d1620;
+    border: 0.2px solid rgba(205, 205, 221, 0.65);
+    box-shadow: 0 4px 20px rgba(22, 22, 29, 0.08);
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", 'Inter', sans-serif;
     letter-spacing: -0.02em;
@@ -587,6 +618,14 @@ h1, h2, h3, h4, h5, h6 {
     border: 0;
 }
 
+.site-preview-section .site-preview-frame .site-preview-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #0d0d12;
+}
+
 .site-preview-meta {
     text-align: center;
     font-size: 12.6px;
@@ -594,6 +633,65 @@ h1, h2, h3, h4, h5, h6 {
     margin: 14px auto 0;
     max-width: 640px;
     line-height: 1.45;
+}
+
+.game-preview-section {
+    padding: 28px 0 12px;
+    background: #f7f7fa;
+}
+
+.game-preview-section .case-study-gallery__title {
+    margin-bottom: 18px;
+}
+
+.game-preview-figure {
+    margin: 0 auto;
+    max-width: 920px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 0.2px solid rgba(205, 205, 221, 0.65);
+    box-shadow: 0 4px 20px rgba(22, 22, 29, 0.08);
+}
+
+.game-preview-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.site-preview-section.site-preview-section--game {
+    padding: 20px 0 28px;
+}
+
+.site-preview-play-here {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+}
+
+.site-preview-section.site-preview-section--game .site-preview-frame.site-preview-frame--game {
+    max-width: 100%;
+    width: 100%;
+    height: min(88vh, 920px);
+}
+
+/* Обрезка верхней панели (заголовок и счётчики) во встроенном превью игры */
+.site-preview-section.site-preview-section--game .site-preview-frame.site-preview-frame--crop-top {
+    position: relative;
+    overflow: hidden;
+}
+
+.site-preview-section.site-preview-section--game .site-preview-frame--crop-top iframe {
+    position: absolute;
+    left: 0;
+    top: -14%;
+    width: 100%;
+    height: 118%;
+    border: 0;
 }
 
 /* Вертикальная галерея слайдов кейса (case8 и др.) */
@@ -1467,6 +1565,15 @@ h1, h2, h3, h4, h5, h6 {
 
     .site-preview-section .site-preview-frame {
         height: min(48vh, 380px);
+    }
+
+    .site-preview-section.site-preview-section--game .site-preview-frame.site-preview-frame--game {
+        height: min(78vh, 720px);
+    }
+
+    .site-preview-section.site-preview-section--game .site-preview-frame--crop-top iframe {
+        top: -11%;
+        height: 115%;
     }
     
     .features-grid {
