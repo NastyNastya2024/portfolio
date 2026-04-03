@@ -618,14 +618,6 @@ h1, h2, h3, h4, h5, h6 {
     border: 0;
 }
 
-.site-preview-section .site-preview-frame .site-preview-video {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background: #0d0d12;
-}
-
 .site-preview-meta {
     text-align: center;
     font-size: 12.6px;
