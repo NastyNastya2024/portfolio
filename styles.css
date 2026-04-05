@@ -673,29 +673,26 @@ h1, h2, h3, h4, h5, h6 {
     padding: 16px 0 12px;
 }
 
-/* Кейс yolga.pro: статичное превью вместо iframe */
-.site-preview-section.site-preview-section--yolga .site-preview-yolga-lead {
-    max-width: 720px;
-    margin: 0 auto 16px;
-    padding: 0 8px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #3a3a48;
-    text-align: center;
-}
-
+/* Кейс yolga.pro: превью видео — минимальная «рамка», фон как у секции */
 .site-preview-section.site-preview-section--yolga .case-study-yolga-videos {
-    padding: 12px;
-    background: #0a0a0c;
+    padding: 0;
+    background: #f7f7fa;
+    border-color: rgba(200, 200, 215, 0.65);
+    box-shadow: 0 2px 14px rgba(22, 22, 29, 0.07);
 }
 
+/* crop screen-recording bezels (side black bars) — applies to both yolga clips */
 .site-preview-section.site-preview-section--yolga .case-study-yolga-video {
     display: block;
     width: 100%;
+    height: min(72vh, 640px);
     max-height: min(72vh, 640px);
+    object-fit: cover;
+    object-position: 43% 50%;
     margin: 0;
-    border-radius: 12px;
-    background: #111;
+    border-radius: 0;
+    vertical-align: top;
+    background: #f7f7fa;
 }
 
 .site-preview-section.site-preview-section--yolga .case-study-yolga-videos--window {
@@ -728,6 +725,113 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-preview-section.site-preview-section--yolga .site-preview-yolga-cta:hover {
     background: #3d3d5c;
+}
+
+.site-preview-section--yolga .yolga-project-block {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 36px;
+    border-top: 1px solid rgba(205, 205, 221, 0.55);
+}
+
+/* Три плашки (инфо / видео / подписка): линия только снизу, не над карточками */
+.site-preview-section--yolga .yolga-project-block--before-second-video {
+    border-top: none;
+    padding-top: 16px;
+    padding-bottom: 0;
+}
+
+.site-preview-section--yolga .yolga-project-block--before-second-video .yolga-divider {
+    margin: 28px 0 0;
+}
+
+/* Плашки после записи админки: линия снизу, без линии над карточками */
+.site-preview-section--yolga .yolga-project-block--after-second-video {
+    border-top: none;
+    padding-top: 16px;
+    padding-bottom: 0;
+}
+
+.site-preview-section--yolga .yolga-divider--after-admin-tabs {
+    margin: 28px 0 12px;
+}
+
+.site-preview-section--yolga .quote-section--yolga-inline {
+    padding: 8px 0 16px;
+    background: transparent;
+}
+
+.site-preview-section--yolga .quote-section--yolga-before-first-video {
+    padding: 8px 0 24px;
+    margin-bottom: 0;
+    background: transparent;
+}
+
+.site-preview-section--yolga .quote-section--yolga-before-second-video {
+    padding: 28px 0 24px;
+    margin-bottom: 0;
+    background: transparent;
+}
+
+.site-preview-section--yolga .quote-section--yolga-inline .quote-subtitle--yolga-method {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-preview-section--yolga .features--yolga-inline {
+    padding: 12px 0 8px;
+    background: transparent;
+}
+
+.site-preview-section--yolga .site-preview-meta--yolga-after-cards {
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.site-preview-section--yolga .yolga-divider {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(200, 200, 215, 0.95);
+    margin: 36px 0 0;
+    max-width: 100%;
+    clear: both;
+}
+
+/* Кейс йога: описание проекта (список вместо FAQ) */
+.case-yolga-project-description {
+    padding: 80px 0 56px;
+}
+
+.case-yolga-project-description .quote-content {
+    max-width: 720px;
+    align-items: stretch;
+}
+
+.case-yolga-project-description-list {
+    list-style: disc;
+    padding-left: 1.35em;
+    margin: 28px 0 0;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #1a1a1a;
+}
+
+.case-yolga-project-description-list li {
+    margin-bottom: 12px;
+}
+
+.case-yolga-project-description-list li:last-child {
+    margin-bottom: 0;
+}
+
+.case-yolga-project-description-list strong {
+    font-weight: 600;
 }
 
 /* Фотохостинг (case13): несколько превью подряд, каждое в своём iframe */
