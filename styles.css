@@ -799,39 +799,48 @@ h1, h2, h3, h4, h5, h6 {
     clear: both;
 }
 
-/* Кейс йога: описание проекта (список вместо FAQ) */
+/* Кейс йога: описание проекта (аккордеон как FAQ) */
 .case-yolga-project-description {
     padding: 80px 0 56px;
 }
 
 .case-yolga-project-description .quote-content {
-    max-width: 720px;
+    max-width: 960px;
     align-items: stretch;
 }
 
-.case-yolga-project-description-list {
-    list-style: disc;
-    padding-left: 1.35em;
-    margin: 28px 0 0;
-    text-align: left;
+.case-yolga-project-description-faq {
     width: 100%;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.55;
-    color: #1a1a1a;
+    max-width: 960px;
+    margin: 28px auto 0;
+    text-align: left;
 }
 
-.case-yolga-project-description-list li {
-    margin-bottom: 12px;
+.case-yolga-project-description-faq .faq-list {
+    gap: 14px;
 }
 
-.case-yolga-project-description-list li:last-child {
-    margin-bottom: 0;
+.case-yolga-project-description-faq .faq-item.active .faq-answer {
+    max-height: 2000px;
 }
 
-.case-yolga-project-description-list strong {
-    font-weight: 600;
+.case-yolga-project-description-faq .faq-answer p + p {
+    margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+    .case-yolga-project-description-faq .faq-question {
+        padding: 18px 20px;
+        font-size: 16px;
+    }
+
+    .case-yolga-project-description-faq .faq-answer {
+        padding: 0 20px;
+    }
+
+    .case-yolga-project-description-faq .faq-item.active .faq-answer {
+        padding: 0 20px 20px 20px;
+    }
 }
 
 /* Фотохостинг (case13): несколько превью подряд, каждое в своём iframe */
