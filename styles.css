@@ -695,6 +695,23 @@ h1, h2, h3, h4, h5, h6 {
     background: #f7f7fa;
 }
 
+/* Мобильная вёрстка: высота от ширины экрана, без «залипшей» десктопной высоты */
+@media (max-width: 768px) {
+    .site-preview-section.site-preview-section--yolga .case-study-yolga-videos {
+        max-width: 100%;
+    }
+
+    .site-preview-section.site-preview-section--yolga .case-study-yolga-video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 9 / 16;
+        max-height: min(88vh, 640px);
+        object-fit: cover;
+        object-position: 43% 50%;
+    }
+}
+
 .site-preview-section.site-preview-section--yolga .case-study-yolga-videos--window {
     margin-top: 28px;
 }
