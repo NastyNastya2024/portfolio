@@ -673,6 +673,138 @@ h1, h2, h3, h4, h5, h6 {
     padding: 16px 0 12px;
 }
 
+/* Кейс yolga.pro: статичное превью вместо iframe */
+.site-preview-section.site-preview-section--yolga .site-preview-yolga-lead {
+    max-width: 720px;
+    margin: 0 auto 16px;
+    padding: 0 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #3a3a48;
+    text-align: center;
+}
+
+.site-preview-section.site-preview-section--yolga .case-study-yolga-videos {
+    padding: 12px;
+    background: #0a0a0c;
+}
+
+.site-preview-section.site-preview-section--yolga .case-study-yolga-video {
+    display: block;
+    width: 100%;
+    max-height: min(72vh, 640px);
+    margin: 0;
+    border-radius: 12px;
+    background: #111;
+}
+
+.site-preview-section.site-preview-section--yolga .case-study-yolga-videos--window {
+    margin-top: 28px;
+}
+
+.site-preview-section.site-preview-section--yolga .case-study-full-preview--external-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.site-preview-section.site-preview-section--yolga .case-study-full-preview--external-link:hover {
+    opacity: 0.92;
+}
+
+.site-preview-section.site-preview-section--yolga .site-preview-yolga-cta {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 10px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: #49496d;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.site-preview-section.site-preview-section--yolga .site-preview-yolga-cta:hover {
+    background: #3d3d5c;
+}
+
+/* Фотохостинг (case13): несколько превью подряд, каждое в своём iframe */
+.site-preview-section.site-preview-section--photohosting {
+    padding: 20px 0 16px;
+}
+
+.site-preview-section.site-preview-section--photohosting .site-preview-block {
+    margin-bottom: 36px;
+}
+
+.site-preview-section.site-preview-section--photohosting .site-preview-block:last-of-type {
+    margin-bottom: 8px;
+}
+
+.site-preview-section.site-preview-section--photohosting .site-preview-block-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 auto 14px;
+    max-width: 1100px;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+}
+
+.site-preview-section.site-preview-section--photohosting .site-preview-frame {
+    /* Полная ширина скрина 1024px — превью крупнее, без лишнего даунскейла */
+    max-width: min(1024px, 100%);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #0a0a0c;
+    border: 0.2px solid rgba(205, 205, 221, 0.55);
+    box-shadow: 0 4px 24px rgba(22, 22, 29, 0.12);
+    height: min(90vh, 860px);
+}
+
+/* Второй скрин фотохостинга: узкий вертикальный макет 658×1024 */
+.site-preview-section.site-preview-section--photohosting .site-preview-block--photohosting-portrait .site-preview-frame {
+    max-width: min(680px, 100%);
+    height: min(92vh, 1040px);
+}
+
+/* Фотохостинг: тёмная и светлая тема рядом */
+.site-preview-duo.site-preview-duo--photohosting {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.site-preview-duo.site-preview-duo--photohosting .site-preview-block {
+    flex: 0 0 auto;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.site-preview-duo.site-preview-duo--photohosting .site-preview-block-title {
+    text-align: center;
+    max-width: none;
+    width: 100%;
+}
+
+.site-preview-duo.site-preview-duo--photohosting .site-preview-block--photohosting-light .site-preview-frame {
+    max-width: min(400px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+    background: #ececee;
+    border-color: rgba(170, 170, 185, 0.55);
+}
+
+.site-preview-section.site-preview-section--photohosting .site-preview-meta {
+    margin-top: 8px;
+}
+
 .case-study-full-preview {
     margin: 0 auto;
     max-width: 1100px;
@@ -1252,6 +1384,15 @@ h1, h2, h3, h4, h5, h6 {
     text-overflow: ellipsis;
 }
 
+.case-caption {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #49496D;
+    font-weight: 400;
+    max-width: 100%;
+}
+
 .case-tags {
     display: flex;
     gap: 8px;
@@ -1270,6 +1411,12 @@ h1, h2, h3, h4, h5, h6 {
     content: '#';
     color: #D6D6E2;
     margin-right: 2px;
+}
+
+.hero-case-tags {
+    justify-content: center;
+    max-width: 720px;
+    margin: 4px auto 0;
 }
 
 .cases-pagination {
@@ -1629,6 +1776,28 @@ h1, h2, h3, h4, h5, h6 {
 
     .site-preview-section .site-preview-frame {
         height: min(48vh, 380px);
+    }
+
+    .site-preview-section.site-preview-section--photohosting .site-preview-frame {
+        max-width: 100%;
+        height: min(78vh, 820px);
+    }
+
+    .site-preview-section.site-preview-section--photohosting .site-preview-block--photohosting-portrait .site-preview-frame {
+        height: min(82vh, 960px);
+    }
+
+    .site-preview-duo.site-preview-duo--photohosting {
+        flex-wrap: wrap;
+    }
+
+    .site-preview-duo.site-preview-duo--photohosting .site-preview-block {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .site-preview-duo.site-preview-duo--photohosting .site-preview-block--photohosting-light .site-preview-frame {
+        max-width: 100%;
     }
 
     .site-preview-frame.site-preview-frame--image-scroll {
@@ -2134,6 +2303,73 @@ h1, h2, h3, h4, h5, h6 {
 .philosophy-section {
     padding: 0;
     background: #FBFBFD;
+}
+
+/* InStar case gallery (case14) — альтернативный стек карточек, если понадобится */
+.instar-case-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 24px 0 40px;
+}
+
+.philosophy-section--instar-top {
+    padding-top: 0;
+}
+
+.instar-case-gallery--after-hero {
+    padding-top: 16px;
+    padding-bottom: 36px;
+}
+
+/* InStar: одно окно, вертикальный скролл превью */
+.instar-preview-window.philosophy-card {
+    max-width: 100%;
+    padding: 16px;
+    margin: 0 auto;
+    border-radius: 16px;
+}
+
+.instar-preview-window.philosophy-card::after {
+    border-radius: 20px;
+}
+
+.instar-preview-scroll {
+    max-height: min(85vh, 920px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    border-radius: 12px;
+    background: #f4f4f8;
+    outline: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.instar-preview-scroll:focus-visible {
+    box-shadow: inset 0 0 0 2px #7c3aed;
+}
+
+.instar-preview-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+}
+
+.instar-preview-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    transform: none;
+}
+
+.instar-scroll-hint {
+    text-align: center;
+    margin: 12px 0 0;
+    font-size: 13px;
+    color: #7A7A9E;
 }
 
 /* FAQ Section */
