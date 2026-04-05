@@ -673,43 +673,24 @@ h1, h2, h3, h4, h5, h6 {
     padding: 16px 0 12px;
 }
 
-/* Кейс yolga.pro: превью видео — минимальная «рамка», фон как у секции */
+/* Кейс yolga.pro: превью видео — рамка/фон; ролик масштабируется по ширине с нативным aspect-ratio */
 .site-preview-section.site-preview-section--yolga .case-study-yolga-videos {
     padding: 0;
+    max-width: 100%;
     background: #f7f7fa;
     border-color: rgba(200, 200, 215, 0.65);
     box-shadow: 0 2px 14px rgba(22, 22, 29, 0.07);
 }
 
-/* crop screen-recording bezels (side black bars) — applies to both yolga clips */
 .site-preview-section.site-preview-section--yolga .case-study-yolga-video {
     display: block;
     width: 100%;
-    height: min(72vh, 640px);
-    max-height: min(72vh, 640px);
-    object-fit: cover;
-    object-position: 43% 50%;
+    max-width: 100%;
+    height: auto;
     margin: 0;
     border-radius: 0;
     vertical-align: top;
     background: #f7f7fa;
-}
-
-/* Мобильная вёрстка: высота от ширины экрана, без «залипшей» десктопной высоты */
-@media (max-width: 768px) {
-    .site-preview-section.site-preview-section--yolga .case-study-yolga-videos {
-        max-width: 100%;
-    }
-
-    .site-preview-section.site-preview-section--yolga .case-study-yolga-video {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        aspect-ratio: 9 / 16;
-        max-height: min(88vh, 640px);
-        object-fit: cover;
-        object-position: 43% 50%;
-    }
 }
 
 .site-preview-section.site-preview-section--yolga .case-study-yolga-videos--window {
