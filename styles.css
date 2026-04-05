@@ -673,7 +673,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 16px 0 12px;
 }
 
-/* Кейс yolga.pro: превью видео — рамка/фон; ролик масштабируется по ширине с нативным aspect-ratio */
+/* Кейс yolga.pro: превью видео — object-fit: cover подрезает вшитую в запись чёрную кромку справа (без перекодирования) */
 .site-preview-section.site-preview-section--yolga .case-study-yolga-videos {
     padding: 0;
     max-width: 100%;
@@ -686,11 +686,21 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     width: 100%;
     max-width: 100%;
-    height: auto;
+    height: min(72vh, 640px);
+    max-height: min(72vh, 640px);
+    object-fit: cover;
+    object-position: 40% 50%;
     margin: 0;
     border-radius: 0;
     vertical-align: top;
     background: #f7f7fa;
+}
+
+@media (max-width: 768px) {
+    .site-preview-section.site-preview-section--yolga .case-study-yolga-video {
+        height: min(88vh, 640px, calc((100vw - 56px) * 16 / 9));
+        max-height: min(88vh, 640px);
+    }
 }
 
 .site-preview-section.site-preview-section--yolga .case-study-yolga-videos--window {
@@ -841,7 +851,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Фотохостинг (case13): несколько превью подряд, каждое в своём iframe */
+/* Фотохостинг (case13): два превью рядом — видео записей экрана */
 .site-preview-section.site-preview-section--photohosting {
     padding: 20px 0 16px;
 }
@@ -876,25 +886,35 @@ h1, h2, h3, h4, h5, h6 {
     height: min(90vh, 860px);
 }
 
-/* Второй скрин фотохостинга: узкий вертикальный макет 658×1024 */
-.site-preview-section.site-preview-section--photohosting .site-preview-block--photohosting-portrait .site-preview-frame {
+/* Второй скрин фотохостинга: узкий вертикальный макет (только iframe/скрин, не видео) */
+.site-preview-section.site-preview-section--photohosting .site-preview-block--photohosting-portrait .site-preview-frame:not(.site-preview-frame--photohosting-video) {
     max-width: min(680px, 100%);
     height: min(92vh, 1040px);
 }
 
-/* Фотохостинг: тёмная и светлая тема рядом */
+/* Видео фотохостинга: горизонтальная ориентация (16:9) */
+.site-preview-section.site-preview-section--photohosting .site-preview-frame--photohosting-video {
+    max-width: min(1100px, 100%);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+/* Фотохостинг: тёмная и светлая тема — по центру, друг под другом */
 .site-preview-duo.site-preview-duo--photohosting {
     display: flex;
+    flex-direction: column;
     flex-wrap: nowrap;
-    gap: 24px;
-    justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
     margin-bottom: 8px;
 }
 
 .site-preview-duo.site-preview-duo--photohosting .site-preview-block {
     flex: 0 0 auto;
     min-width: 0;
+    width: min(1100px, 100%);
     margin-bottom: 0;
 }
 
@@ -905,11 +925,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-preview-duo.site-preview-duo--photohosting .site-preview-block--photohosting-light .site-preview-frame {
-    max-width: min(400px, 100%);
+    max-width: min(1100px, 100%);
     margin-left: auto;
     margin-right: auto;
     background: #ececee;
     border-color: rgba(170, 170, 185, 0.55);
+}
+
+.site-preview-section.site-preview-section--photohosting .site-preview-frame--photohosting-video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #0a0a0c;
+    vertical-align: top;
+}
+
+.site-preview-section.site-preview-section--photohosting .site-preview-block--photohosting-light .site-preview-frame--photohosting-video video {
+    background: #ececee;
 }
 
 .site-preview-section.site-preview-section--photohosting .site-preview-meta {
@@ -1524,6 +1557,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 2px;
 }
 
+/* Хештеги (#) только на главной в сетке кейсов; на внутренних страницах кейсов — без префикса */
+body.site-subpage .case-tag::before {
+    content: none;
+    margin-right: 0;
+}
+
 .hero-case-tags {
     justify-content: center;
     max-width: 720px;
@@ -1894,17 +1933,22 @@ h1, h2, h3, h4, h5, h6 {
         height: min(78vh, 820px);
     }
 
-    .site-preview-section.site-preview-section--photohosting .site-preview-block--photohosting-portrait .site-preview-frame {
+    .site-preview-section.site-preview-section--photohosting .site-preview-block--photohosting-portrait .site-preview-frame:not(.site-preview-frame--photohosting-video) {
         height: min(82vh, 960px);
     }
 
+    .site-preview-section.site-preview-section--photohosting .site-preview-frame--photohosting-video {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        max-height: none;
+    }
+
     .site-preview-duo.site-preview-duo--photohosting {
-        flex-wrap: wrap;
+        gap: 28px;
     }
 
     .site-preview-duo.site-preview-duo--photohosting .site-preview-block {
-        max-width: 100%;
-        flex: 1 1 100%;
+        width: 100%;
     }
 
     .site-preview-duo.site-preview-duo--photohosting .site-preview-block--photohosting-light .site-preview-frame {

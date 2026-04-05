@@ -59,29 +59,35 @@
         </div>
     </section>
 
-    <section class="site-preview-section site-preview-section--photohosting" aria-label="Превью экранов фотохостинга">
+    <section class="site-preview-section site-preview-section--photohosting" aria-label="Видео превью фотохостинга — тёмная и светлая темы">
         <div class="container">
             <div class="site-preview-duo site-preview-duo--photohosting">
                 <div class="site-preview-block site-preview-block--photohosting-portrait">
                     <p class="site-preview-block-title">Тёмная тема</p>
-                    <div class="site-preview-frame">
-                        <iframe
-                            src="case13-preview-2.html"
-                            title="Фотохостинг — тёмная тема, страница с галереей"
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                        ></iframe>
+                    <div class="site-preview-frame site-preview-frame--photohosting-video">
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                            title="Фотохостинг — запись экрана, тёмная тема"
+                        >
+                            <source src="video/photohosting/photohosting-dark-theme.mov" type="video/quicktime">
+                            <source src="video/photohosting/photohosting-dark-theme.mov" type="video/mp4">
+                        </video>
                     </div>
                 </div>
                 <div class="site-preview-block site-preview-block--photohosting-portrait site-preview-block--photohosting-light">
                     <p class="site-preview-block-title">Светлая тема</p>
-                    <div class="site-preview-frame">
-                        <iframe
-                            src="case13-preview-light.html"
-                            title="Фотохостинг — светлая тема"
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                        ></iframe>
+                    <div class="site-preview-frame site-preview-frame--photohosting-video">
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                            title="Фотохостинг — запись экрана, светлая тема"
+                        >
+                            <source src="video/photohosting/photohosting-light-theme.mov" type="video/quicktime">
+                            <source src="video/photohosting/photohosting-light-theme.mov" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>
@@ -109,7 +115,7 @@
                     <ul class="feature-list">
                         <li>Реализация визуала: две темы оформления — тёмная (золото на чёрном) и светлая (нейтральные фоны, плитки партнёров и галерея); сетки альбомов и типографика медиапортала</li>
                         <li>Ключевые сценарии: страница события, главная, лента с фильтрами и вкладками, блоки файлов и спикеров</li>
-                        <li><strong>Готово</strong> — см. превью тёмной и светлой темы выше</li>
+                        <li><strong>Готово</strong> — см. видео тёмной и светлой темы выше</li>
                     </ul>
                     <img src="img/doc_2.png" alt="" class="feature-doc" aria-hidden="true">
                 </div>
