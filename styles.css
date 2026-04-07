@@ -680,6 +680,8 @@ h1, h2, h3, h4, h5, h6 {
     background: #f7f7fa;
     border-color: rgba(200, 200, 215, 0.65);
     box-shadow: 0 2px 14px rgba(22, 22, 29, 0.07);
+    overflow: hidden;
+    border-radius: 12px;
 }
 
 .site-preview-section.site-preview-section--yolga .case-study-yolga-video {
@@ -694,6 +696,8 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 0;
     vertical-align: top;
     background: #f7f7fa;
+    transform: scale(1.035);
+    transform-origin: center center;
 }
 
 @media (max-width: 768px) {
@@ -898,6 +902,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
 }
 
 /* Фотохостинг: тёмная и светлая тема — по центру, друг под другом */
@@ -939,6 +945,8 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: contain;
     background: #0a0a0c;
     vertical-align: top;
+    transform: scale(1.05);
+    transform-origin: center center;
 }
 
 .site-preview-section.site-preview-section--photohosting .site-preview-block--photohosting-light .site-preview-frame--photohosting-video video {
@@ -947,6 +955,110 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-preview-section.site-preview-section--photohosting .site-preview-meta {
     margin-top: 8px;
+}
+
+/* Автоинструктор (case16): каждый ряд — видео (одинаковая ширина) + две плашки */
+.site-preview-section.site-preview-section--autoinstructor {
+    padding: 12px 0 24px;
+}
+
+.autoinstructor-preview-stack {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.site-preview-section.site-preview-section--autoinstructor .autoinstructor-preview-chunk {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.site-preview-section.site-preview-section--autoinstructor .autoinstructor-video-heading {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+
+.autoinstructor-preview-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 22px;
+}
+
+.autoinstructor-preview-video-col {
+    flex: 0 1 40%;
+    max-width: 380px;
+    min-width: 0;
+}
+
+.autoinstructor-preview-plaques {
+    flex: 1 1 56%;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 10px;
+    margin: -10px;
+    padding-top: 32px;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.site-preview-section.site-preview-section--autoinstructor .site-preview-auto-video-wrap {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 0.2px solid rgba(205, 205, 221, 0.65);
+    box-shadow: 0 4px 20px rgba(22, 22, 29, 0.08);
+    background: #0a0a0c;
+}
+
+.site-preview-section.site-preview-section--autoinstructor .site-preview-auto-video-wrap video {
+    display: block;
+    width: 94%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    vertical-align: top;
+    object-fit: contain;
+    background: #0a0a0c;
+    transform: scale(0.97);
+    transform-origin: center center;
+}
+
+.site-preview-section.site-preview-section--autoinstructor .feature-card.feature-card--autoinstructor-plaque {
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.95);
+    transform-origin: center center;
+    position: relative;
+    z-index: 0;
+    min-height: 0;
+    flex: 1 1 auto;
+    padding: 18px 20px 20px;
+    border: 0.2px solid #CDCDDD;
+    box-shadow: 0 4px 12px rgba(224, 224, 255, 0.3);
+}
+
+.site-preview-section.site-preview-section--autoinstructor .feature-card--autoinstructor-plaque .feature-header {
+    margin-bottom: 12px;
+}
+
+.site-preview-section.site-preview-section--autoinstructor .feature-card--autoinstructor-plaque .feature-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.site-preview-section.site-preview-section--autoinstructor .feature-card--autoinstructor-plaque .feature-doc {
+    margin-top: auto;
 }
 
 .case-study-full-preview {
@@ -1953,6 +2065,30 @@ body.site-subpage .case-tag::before {
 
     .site-preview-duo.site-preview-duo--photohosting .site-preview-block--photohosting-light .site-preview-frame {
         max-width: 100%;
+    }
+
+    .autoinstructor-preview-row {
+        flex-direction: column;
+    }
+
+    .autoinstructor-preview-plaques {
+        min-width: 0;
+        flex-direction: column;
+        padding-top: 12px;
+    }
+
+    .autoinstructor-preview-video-col {
+        max-width: none;
+        flex: 1 1 100%;
+    }
+
+    .autoinstructor-preview-stack {
+        gap: 16px;
+    }
+
+    .site-preview-section.site-preview-section--autoinstructor .autoinstructor-video-heading {
+        font-size: 22px;
+        margin-bottom: 10px;
     }
 
     .site-preview-frame.site-preview-frame--image-scroll {
