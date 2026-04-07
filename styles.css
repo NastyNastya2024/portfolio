@@ -1154,6 +1154,25 @@ body.case-autoinstructor .hero .hero-subtitle {
     line-height: 1.45;
 }
 
+.site-preview-summary {
+    text-align: center;
+    font-size: 15px;
+    color: #49496d;
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 20px auto 0;
+}
+
+.site-preview-summary strong {
+    font-weight: 600;
+    color: #3a3d52;
+}
+
+.site-preview-summary a {
+    color: #49496d;
+    text-decoration: underline;
+}
+
 .game-preview-section {
     padding: 28px 0 12px;
     background: #f7f7fa;
