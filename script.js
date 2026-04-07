@@ -13,34 +13,141 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 /**
- * Бронирование звонка: компактное модальное окно + заготовка под LLM.
- * Подключите свой API в window.ASYAKOM_BOOKING_LLM.requestCompletion (см. ниже).
+ * Чат бронирования: сценарий «меню → ответы» (RU/EN). LLM — только если ASYAKOM_BOOKING_LLM.useLLM === true.
+ * Заявки без своего бэка: пункт «Оставить контакты» открывает mailto: на contactEmail с заполненным телом письма.
+ * Свой сервер не нужен; альтернатива — Formspree/Getform (POST с формы на их URL).
  */
 (function () {
     var COPY = {
         ru: {
             title: 'ASYA.KOM',
             subtitle: 'Бронирование звонка',
-            intro: 'Привет! Кратко напишите задачу или удобное время — отвечу и подскажу следующий шаг.',
-            placeholder: 'Сообщение…',
+            introMenu:
+                'Привет! Выберите раздел — ответ пришлю сразу.\n\n' +
+                '• Мои контакты — почта, телефон и Telegram\n' +
+                '• Услуги — направления работы\n' +
+                '• Кейсы — по хештегам портфолио\n' +
+                '• Обо мне — коротко о специалисте\n' +
+                '• Оставить контакты — форма и письмо на почту (без сервера)',
+            placeholder: 'Сообщение или выберите кнопку ниже…',
             send: 'Отправить',
             sendAria: 'Отправить сообщение',
             thinking: 'Печатает…',
             closeAria: 'Закрыть чат',
             error: 'Не удалось получить ответ. Проверьте API или попробуйте позже.',
-            stub: 'ИИ ещё не подключён. Укажите requestCompletion в ASYAKOM_BOOKING_LLM (ваш API + systemPrompt).'
+            menuUnknown:
+                'Не распознала запрос. Выберите одну из кнопок ниже: мои контакты, услуги, кейсы, обо мне или заявка.',
+            chipContacts: 'Мои контакты',
+            chipServices: 'Услуги',
+            chipCases: 'Кейсы',
+            chipAbout: 'Обо мне',
+            chipLead: 'Оставить контакты',
+            chipMenu: '← Главное меню',
+            leadIntro:
+                'Заполните поля и нажмите кнопку — откроется почта с готовым текстом. Отправьте письмо, как обычно. Отдельный сервер не нужен.',
+            leadNamePh: 'Имя',
+            leadEmailPh: 'Email',
+            leadPhonePh: 'Телефон',
+            leadNotePh: 'Задача или удобное время для звонка',
+            leadMailtoBtn: 'Открыть почту и отправить',
+            leadMailtoHint:
+                'Если почта не открылась, скопируйте текст и отправьте на anastkomarova@yandex.ru',
+            leadNeedContact: 'Укажите email или телефон, чтобы я могла ответить.',
+            contactsBody:
+                'Мои контакты:\n\n' +
+                '✉ anastkomarova@yandex.ru\n' +
+                '📞 +7 906 095-92-95\n' +
+                'Telegram: @anastasia_komarova1 (t.me/anastasia_komarova1)\n\n' +
+                'Пишите на почту или в Telegram — отвечу в рабочее время.',
+            servicesBody:
+                'Услуги и направления:\n\n' +
+                '• ИИ-агенты — внедрение и настройка под процессы, CRM, инструменты\n' +
+                '• Приложения и сайты — от лендинга до SaaS, бэкенд и админки\n' +
+                '• Голосовые боты — входящие/исходящие звонки, NPS, запись в CRM\n' +
+                '• Digital marketing — стратегия, контент, метрики в цифровых каналах\n' +
+                '• Аналитика и RnD — исследования, федеративное обучение, прикладной ML\n\n' +
+                'Если нужно что-то узкое — опишите в свободной форме после подключения LLM.',
+            casesBody:
+                'Кейсы на главной можно отфильтровать по тегам (хештеги в карточках совпадают с фильтрами):\n\n' +
+                '• #AI/ML — модели, эксперименты, RnD\n' +
+                '• #Сайты, #GEO/SEO — лендинги, продвижение в поиске и LLM-выдаче\n' +
+                '• #Голосовой бот — сценарии звонков, NPS, интеграции\n' +
+                '• #SaaS, #Приложения — платформы, подписки, личные кабинеты\n' +
+                '• #RAG, #Агенты — маркетплейсы знаний, Telegram/чат-боты\n' +
+                '• #Дизайн, #UI/UX, #Брендинг — интерфейсы и визуал\n' +
+                '• #Аналитика, #Прикладное ПО — внутренние системы и тулзы\n\n' +
+                'Откройте раздел «Все кейсы» на сайте и нажмите нужный тег.',
+            aboutBody:
+                'Обо мне:\n\n' +
+                'Комарова Анастасия — ИТ-специалист из Москвы. В технологиях больше 10 лет; последние 7 лет фокус на ИИ: ' +
+                'прикладные проекты, агенты, аналитика и разработка под задачи бизнеса.',
+            stubHint:
+                'Свободный диалог с ИИ можно будет включить: установите ASYAKOM_BOOKING_LLM.useLLM = true и реализуйте requestCompletion.'
         },
         en: {
             title: 'ASYA.KOM',
             subtitle: 'Book a call',
-            intro: 'Hi! Describe your request or timing — I will reply with next steps.',
-            placeholder: 'Message…',
+            introMenu:
+                'Hi! Pick a topic — I will reply right away.\n\n' +
+                '• Contacts — email & phone\n' +
+                '• Services — what we do\n' +
+                '• Case studies — portfolio hashtags\n' +
+                '• About me — short bio\n' +
+                '• Leave your details — form → email draft (no backend)',
+            placeholder: 'Type a message or use the chips below…',
             send: 'Send',
             sendAria: 'Send message',
             thinking: 'Typing…',
             closeAria: 'Close chat',
             error: 'Could not get a reply. Check your API or try again.',
-            stub: 'LLM not connected yet. Wire up ASYAKOM_BOOKING_LLM.requestCompletion (your API + systemPrompt).'
+            menuUnknown:
+                'I did not catch that. Please use one of the chips below: my contacts, services, cases, about, or lead.',
+            chipContacts: 'My contacts',
+            chipServices: 'Services',
+            chipCases: 'Case studies',
+            chipAbout: 'About me',
+            chipLead: 'Leave your details',
+            chipMenu: '← Main menu',
+            leadIntro:
+                'Fill in the fields and tap the button — your email app opens with a ready message. Send it as usual. No server required.',
+            leadNamePh: 'Name',
+            leadEmailPh: 'Email',
+            leadPhonePh: 'Phone',
+            leadNotePh: 'Project / preferred time for a call',
+            leadMailtoBtn: 'Open email app & send',
+            leadMailtoHint:
+                'If nothing opens, copy the text and send it to anastkomarova@yandex.ru',
+            leadNeedContact: 'Please add an email or phone so I can reply.',
+            contactsBody:
+                'My contacts:\n\n' +
+                '✉ anastkomarova@yandex.ru\n' +
+                '📞 +7 906 095-92-95\n' +
+                'Telegram: @anastasia_komarova1 (t.me/anastasia_komarova1)\n\n' +
+                'Email or Telegram work best — I will reply during business hours.',
+            servicesBody:
+                'Services:\n\n' +
+                '• AI agents — rollout and tuning for your workflows, CRM, tools\n' +
+                '• Apps & websites — landing pages to SaaS, backends, admin panels\n' +
+                '• Voice bots — inbound/outbound, NPS, CRM logging\n' +
+                '• Digital marketing — strategy, content, metrics across channels\n' +
+                '• Analytics & RnD — research, federated learning, applied ML\n\n' +
+                'Need something narrower? Describe it once LLM chat is enabled.',
+            casesBody:
+                'On the homepage you can filter case cards by tags:\n\n' +
+                '• #AI/ML — models, experiments, RnD\n' +
+                '• #Sites, #GEO/SEO — landing, search & generative visibility\n' +
+                '• #Voice bot — calling flows, NPS, integrations\n' +
+                '• #SaaS, #Apps — platforms, subscriptions, dashboards\n' +
+                '• #RAG, #Agents — knowledge marketplaces, Telegram/chat bots\n' +
+                '• #Design, #UI/UX, #Branding — interfaces and visual identity\n' +
+                '• #Analytics, #Software — internal tools and systems\n\n' +
+                'Open “All cases” and click the tag you need.',
+            aboutBody:
+                'About me:\n\n' +
+                'Anastasia Komarova — IT specialist based in Moscow. 10+ years in tech, ' +
+                '7+ years focused on AI: applied projects, agents, analytics, and product-minded engineering.',
+            stubHint:
+                'Free-form AI chat: set ASYAKOM_BOOKING_LLM.useLLM = true and implement requestCompletion.'
         }
     };
 
@@ -54,28 +161,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
 
     /**
-     * @type {{ systemPrompt: string, requestCompletion: function(string): Promise<string> }}
-     * Замените requestCompletion на вызов OpenAI / Anthropic / своего бэкенда.
+     * useLLM: false — сценарное меню. true — вызывается requestCompletion(userMessage, systemPrompt).
      */
-    window.ASYAKOM_BOOKING_LLM = window.ASYAKOM_BOOKING_LLM || {
-        systemPrompt:
-            'You are a concise, friendly studio assistant for ASYA.KOM (analytics, AI, web, voice bots). ' +
-            'The user wants to book an informal call. Acknowledge, ask 1–2 short clarifying questions if needed, ' +
-            'and suggest next step (e.g. leave contact or preferred time). Keep the reply under 120 words. Language: match the user.',
-
-        requestCompletion: function (userMessage) {
-            var self = this;
-            return new Promise(function (resolve) {
-                setTimeout(function () {
-                    resolve(t().stub);
-                }, 350);
-            });
-        }
-    };
+    window.ASYAKOM_BOOKING_LLM = window.ASYAKOM_BOOKING_LLM || {};
+    if (typeof window.ASYAKOM_BOOKING_LLM.useLLM === 'undefined') {
+        window.ASYAKOM_BOOKING_LLM.useLLM = false;
+    }
+    if (!window.ASYAKOM_BOOKING_LLM.systemPrompt) {
+        window.ASYAKOM_BOOKING_LLM.systemPrompt =
+            'You are a concise assistant for ASYA.KOM. The user may book a call. Match the user language.';
+    }
+    if (typeof window.ASYAKOM_BOOKING_LLM.requestCompletion !== 'function') {
+        window.ASYAKOM_BOOKING_LLM.requestCompletion = function (userMessage, systemPrompt) {
+            return Promise.resolve(t().stubHint);
+        };
+    }
+    if (!window.ASYAKOM_BOOKING_LLM.contactEmail) {
+        window.ASYAKOM_BOOKING_LLM.contactEmail = 'anastkomarova@yandex.ru';
+    }
 
     var bookingModalEl = null;
     var bookingLastFocus = null;
     var bookingChatEl = null;
+    var bookingChipsEl = null;
 
     function bookingFormatTime() {
         var d = new Date();
@@ -117,8 +225,231 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         return textSpan;
     }
 
+    function bookingNormalize(s) {
+        return String(s || '')
+            .toLowerCase()
+            .trim()
+            .replace(/ё/g, 'е');
+    }
+
+    function bookingMatchBranch(text) {
+        var x = bookingNormalize(text);
+        if (!x) {
+            return null;
+        }
+        if (
+            /^1\b|^контакт|^мои\s*контакт|^contact|^my\s*contacts|^почт|^mail|^email|^тел|^phone|^телеграм|^telegram/i.test(
+                x
+            )
+        ) {
+            return 'contacts';
+        }
+        if (/^2\b|^услуг|^service|^сервис/i.test(x)) {
+            return 'services';
+        }
+        if (/^3\b|^кейс|^case|^портфол|^portfolio|^хештег|^hashtag|^работ|^work/i.test(x)) {
+            return 'cases';
+        }
+        if (/^4\b|^обо мне|^обо\s*мне|^about|^who|^автор|^биограф/i.test(x)) {
+            return 'about';
+        }
+        if (
+            /^5\b|^заявк|оставить контакт|свои контакт|написать вам|свой телефон|^lead\b|leave.*details|my details|reach out/i.test(
+                x
+            )
+        ) {
+            return 'lead';
+        }
+        if (/меню|^menu|^назад$|^back$|^главн/i.test(x)) {
+            return 'menu';
+        }
+        return null;
+    }
+
+    function bookingTreeResponse(branch) {
+        var s = t();
+        if (branch === 'contacts') {
+            return s.contactsBody;
+        }
+        if (branch === 'services') {
+            return s.servicesBody;
+        }
+        if (branch === 'cases') {
+            return s.casesBody;
+        }
+        if (branch === 'about') {
+            return s.aboutBody;
+        }
+        if (branch === 'menu') {
+            return s.introMenu;
+        }
+        if (branch === 'lead') {
+            return s.leadIntro;
+        }
+        return null;
+    }
+
+    function bookingRenderChips(list) {
+        if (!bookingChipsEl) {
+            return;
+        }
+        bookingChipsEl.innerHTML = '';
+        if (!list || !list.length) {
+            bookingChipsEl.hidden = true;
+            return;
+        }
+        bookingChipsEl.hidden = false;
+        list.forEach(function (item) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'booking-messenger__chip';
+            b.textContent = item.label;
+            b.setAttribute('data-booking-chip', item.branch);
+            bookingChipsEl.appendChild(b);
+        });
+    }
+
+    function bookingDefaultRootChips() {
+        var s = t();
+        return [
+            { branch: 'contacts', label: s.chipContacts },
+            { branch: 'services', label: s.chipServices },
+            { branch: 'cases', label: s.chipCases },
+            { branch: 'about', label: s.chipAbout },
+            { branch: 'lead', label: s.chipLead }
+        ];
+    }
+
+    function bookingContactEmail() {
+        return (window.ASYAKOM_BOOKING_LLM && window.ASYAKOM_BOOKING_LLM.contactEmail) || 'anastkomarova@yandex.ru';
+    }
+
+    function bookingChipsOnlyMode() {
+        return !(window.ASYAKOM_BOOKING_LLM && window.ASYAKOM_BOOKING_LLM.useLLM);
+    }
+
+    /** Поле ввода скрыто без LLM — только чипы; при открытой заявке всегда скрыт композер. */
+    function bookingApplyComposerVisibility() {
+        if (!bookingModalEl) {
+            return;
+        }
+        var composer = bookingModalEl.querySelector('#booking-modal-composer');
+        var wrap = bookingModalEl.querySelector('#booking-lead-wrap');
+        if (!composer || !wrap) {
+            return;
+        }
+        var leadOpen = !wrap.hidden;
+        composer.hidden = leadOpen || bookingChipsOnlyMode();
+    }
+
+    function bookingSetLeadFormVisible(show) {
+        if (!bookingModalEl) {
+            return;
+        }
+        var wrap = bookingModalEl.querySelector('#booking-lead-wrap');
+        if (!wrap) {
+            return;
+        }
+        wrap.hidden = !show;
+        if (!show) {
+            bookingModalEl.querySelector('#booking-lead-name').value = '';
+            bookingModalEl.querySelector('#booking-lead-email').value = '';
+            bookingModalEl.querySelector('#booking-lead-phone').value = '';
+            bookingModalEl.querySelector('#booking-lead-note').value = '';
+        }
+        bookingApplyComposerVisibility();
+    }
+
+    function bookingRefreshLeadPlaceholders() {
+        if (!bookingModalEl) {
+            return;
+        }
+        var s = t();
+        bookingModalEl.querySelector('#booking-lead-name').placeholder = s.leadNamePh;
+        bookingModalEl.querySelector('#booking-lead-email').placeholder = s.leadEmailPh;
+        bookingModalEl.querySelector('#booking-lead-phone').placeholder = s.leadPhonePh;
+        bookingModalEl.querySelector('#booking-lead-note').placeholder = s.leadNotePh;
+        bookingModalEl.querySelector('#booking-lead-mailto').textContent = s.leadMailtoBtn;
+        bookingModalEl.querySelector('#booking-lead-hint').textContent = s.leadMailtoHint;
+    }
+
+    function bookingBackChip() {
+        return [{ branch: 'menu', label: t().chipMenu }];
+    }
+
+    function bookingRunTreeTurn(displayedUserText, branchForReply) {
+        var errEl = bookingModalEl.querySelector('#booking-modal-error');
+        errEl.hidden = true;
+        errEl.textContent = '';
+
+        bookingAppendBubble('user', displayedUserText);
+
+        var submit = bookingModalEl.querySelector('#booking-modal-submit');
+        var input = bookingModalEl.querySelector('#booking-modal-input');
+        submit.disabled = true;
+
+        var typingTextSpan = bookingAppendBubble('bot', t().thinking);
+
+        window.setTimeout(function () {
+            typingTextSpan.parentElement.classList.remove('booking-messenger__bubble--error');
+            var body = bookingTreeResponse(branchForReply);
+            if (!body) {
+                body = t().menuUnknown;
+                typingTextSpan.textContent = body;
+                bookingRenderChips(bookingDefaultRootChips());
+                bookingSetLeadFormVisible(false);
+            } else {
+                typingTextSpan.textContent = body;
+                bookingRenderChips(branchForReply === 'menu' ? bookingDefaultRootChips() : bookingBackChip());
+                bookingSetLeadFormVisible(branchForReply === 'lead');
+            }
+            submit.disabled = false;
+            bookingScrollChat();
+            var leadW = bookingModalEl.querySelector('#booking-lead-wrap');
+            if (!leadW || leadW.hidden) {
+                if (bookingChipsOnlyMode()) {
+                    var ch = bookingModalEl.querySelector('.booking-messenger__chip');
+                    if (ch) {
+                        ch.focus();
+                    }
+                } else {
+                    input.focus();
+                }
+            } else {
+                bookingModalEl.querySelector('#booking-lead-name').focus();
+            }
+        }, 320);
+    }
+
+    function bookingHandleChipClick(branch) {
+        if (!bookingModalEl || bookingModalEl.hidden) {
+            return;
+        }
+        var labelMap = {
+            contacts: t().chipContacts,
+            services: t().chipServices,
+            cases: t().chipCases,
+            about: t().chipAbout,
+            lead: t().chipLead,
+            menu: t().chipMenu
+        };
+        var shown = labelMap[branch] || branch;
+        bookingRunTreeTurn(shown, branch === 'menu' ? 'menu' : branch);
+    }
+
+    function bookingSyncMessengerModeClass(modalRoot) {
+        var panel = modalRoot && modalRoot.querySelector('.booking-messenger');
+        if (!panel) {
+            return;
+        }
+        var llm = window.ASYAKOM_BOOKING_LLM && window.ASYAKOM_BOOKING_LLM.useLLM;
+        panel.classList.toggle('booking-messenger--scenario', !llm);
+        bookingApplyComposerVisibility();
+    }
+
     function ensureBookingModal() {
         if (bookingModalEl) {
+            bookingSyncMessengerModeClass(bookingModalEl);
             return bookingModalEl;
         }
         var str = t();
@@ -143,8 +474,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             '"><span aria-hidden="true">×</span></button>' +
             '</header>' +
             '<div class="booking-messenger__chat" id="booking-modal-chat"></div>' +
+            '<div class="booking-messenger__chips" id="booking-modal-chips" hidden></div>' +
             '<p class="booking-messenger__error" id="booking-modal-error" role="alert" hidden></p>' +
-            '<div class="booking-messenger__composer">' +
+            '<div class="booking-messenger__lead" id="booking-lead-wrap" hidden>' +
+            '<input class="booking-messenger__lead-field" type="text" id="booking-lead-name" autocomplete="name" />' +
+            '<input class="booking-messenger__lead-field" type="email" id="booking-lead-email" autocomplete="email" />' +
+            '<input class="booking-messenger__lead-field" type="tel" id="booking-lead-phone" autocomplete="tel" />' +
+            '<textarea class="booking-messenger__lead-field booking-messenger__lead-note" id="booking-lead-note" rows="2"></textarea>' +
+            '<button type="button" class="booking-messenger__lead-submit" id="booking-lead-mailto"></button>' +
+            '<p class="booking-messenger__lead-hint" id="booking-lead-hint"></p>' +
+            '</div>' +
+            '<div class="booking-messenger__composer" id="booking-modal-composer">' +
             '<label class="visually-hidden" for="booking-modal-input">' +
             escapeHtml(str.placeholder) +
             '</label>' +
@@ -164,10 +504,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         document.body.appendChild(root);
         bookingModalEl = root;
         bookingChatEl = root.querySelector('#booking-modal-chat');
+        bookingChipsEl = root.querySelector('#booking-modal-chips');
+
+        bookingChipsEl.addEventListener('click', function (e) {
+            var chip = e.target.closest('[data-booking-chip]');
+            if (!chip) {
+                return;
+            }
+            var br = chip.getAttribute('data-booking-chip');
+            if (br && br.trim()) {
+                bookingHandleChipClick(br.trim());
+            }
+        });
 
         var input = root.querySelector('#booking-modal-input');
         var submit = root.querySelector('#booking-modal-submit');
         var errEl = root.querySelector('#booking-modal-error');
+
+        bookingRefreshLeadPlaceholders();
+        root.querySelector('#booking-lead-mailto').addEventListener('click', function () {
+            var n = root.querySelector('#booking-lead-name').value.trim();
+            var em = root.querySelector('#booking-lead-email').value.trim();
+            var ph = root.querySelector('#booking-lead-phone').value.trim();
+            var nt = root.querySelector('#booking-lead-note').value.trim();
+            errEl.hidden = true;
+            errEl.textContent = '';
+            if (!em && !ph) {
+                errEl.textContent = t().leadNeedContact;
+                errEl.hidden = false;
+                return;
+            }
+            var en = pageLang() === 'en';
+            var subj = en ? 'ASYA.KOM — website lead' : 'ASYA.KOM — заявка с сайта';
+            var lines = [
+                en ? 'Lead from ASYA.KOM site (chat widget)' : 'Заявка с сайта ASYA.KOM (виджет чата)',
+                '',
+                (en ? 'Name' : 'Имя') + ': ' + (n || '—'),
+                'Email: ' + (em || '—'),
+                (en ? 'Phone' : 'Телефон') + ': ' + (ph || '—'),
+                '',
+                (en ? 'Message' : 'Сообщение') + ':',
+                nt || '—'
+            ];
+            var href =
+                'mailto:' +
+                bookingContactEmail() +
+                '?subject=' +
+                encodeURIComponent(subj) +
+                '&body=' +
+                encodeURIComponent(lines.join('\n'));
+            window.location.href = href;
+        });
 
         root.querySelectorAll('[data-booking-close]').forEach(function (el) {
             el.addEventListener('click', function () {
@@ -192,35 +579,46 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             }
 
             input.value = '';
-            bookingAppendBubble('user', text);
-            submit.disabled = true;
 
-            var typingTextSpan = bookingAppendBubble('bot', t().thinking);
+            if (window.ASYAKOM_BOOKING_LLM.useLLM) {
+                bookingAppendBubble('user', text);
+                submit.disabled = true;
+                var typingLLM = bookingAppendBubble('bot', t().thinking);
+                var prompt = window.ASYAKOM_BOOKING_LLM.systemPrompt;
+                var fn = window.ASYAKOM_BOOKING_LLM.requestCompletion;
+                Promise.resolve()
+                    .then(function () {
+                        return fn.call(window.ASYAKOM_BOOKING_LLM, text, prompt);
+                    })
+                    .then(function (answer) {
+                        typingLLM.textContent = (answer != null ? String(answer) : '').trim() || '—';
+                        typingLLM.parentElement.classList.remove('booking-messenger__bubble--error');
+                    })
+                    .catch(function () {
+                        typingLLM.textContent = t().error;
+                        typingLLM.parentElement.classList.add('booking-messenger__bubble--error');
+                        errEl.textContent = t().error;
+                        errEl.hidden = false;
+                    })
+                    .finally(function () {
+                        submit.disabled = false;
+                        bookingScrollChat();
+                        bookingRenderChips([]);
+                        input.focus();
+                    });
+                return;
+            }
 
-            var prompt = window.ASYAKOM_BOOKING_LLM.systemPrompt;
-            var fn = window.ASYAKOM_BOOKING_LLM.requestCompletion;
+            var branch = bookingMatchBranch(text);
+            if (!branch) {
+                bookingRunTreeTurn(text, null);
+                return;
+            }
 
-            Promise.resolve()
-                .then(function () {
-                    return fn.call(window.ASYAKOM_BOOKING_LLM, text, prompt);
-                })
-                .then(function (answer) {
-                    var out = (answer != null ? String(answer) : '').trim() || '—';
-                    typingTextSpan.textContent = out;
-                })
-                .catch(function () {
-                    typingTextSpan.textContent = t().error;
-                    typingTextSpan.parentElement.classList.add('booking-messenger__bubble--error');
-                    errEl.textContent = t().error;
-                    errEl.hidden = false;
-                })
-                .finally(function () {
-                    submit.disabled = false;
-                    bookingScrollChat();
-                    input.focus();
-                });
+            bookingRunTreeTurn(text, branch);
         });
 
+        bookingSyncMessengerModeClass(root);
         return root;
     }
 
@@ -239,8 +637,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     function openBookingModal() {
         var modal = ensureBookingModal();
+        bookingSyncMessengerModeClass(modal);
         var str = t();
         bookingChatEl = modal.querySelector('#booking-modal-chat');
+        bookingChipsEl = modal.querySelector('#booking-modal-chips');
         modal.querySelector('#booking-modal-title').textContent = str.title;
         modal.querySelector('#booking-modal-subtitle').textContent = str.subtitle;
         var input = modal.querySelector('#booking-modal-input');
@@ -253,13 +653,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         modal.hidden = false;
         input.value = '';
         bookingChatEl.innerHTML = '';
-        bookingAppendBubble('bot', str.intro);
+        bookingSetLeadFormVisible(false);
+        bookingRefreshLeadPlaceholders();
+        bookingAppendBubble('bot', str.introMenu);
+        bookingRenderChips(bookingDefaultRootChips());
         var err = modal.querySelector('#booking-modal-error');
         err.hidden = true;
         err.textContent = '';
 
         setTimeout(function () {
-            input.focus();
+            if (bookingChipsOnlyMode()) {
+                var firstChip = modal.querySelector('.booking-messenger__chip');
+                if (firstChip) {
+                    firstChip.focus();
+                } else {
+                    modal.querySelector('.booking-messenger__close').focus();
+                }
+            } else {
+                input.focus();
+            }
             bookingScrollChat();
         }, 10);
     }
