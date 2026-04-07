@@ -1660,6 +1660,24 @@ body.case-autoinstructor .hero .hero-subtitle {
     display: none;
 }
 
+/* обложка кейса «Маркетплейс цветов»: исходный кадр слегка наклонён по часовой — поворот против + zoom скрывают чёрные углы */
+.case-image--flower-market-cover {
+    background: #c8d8e8;
+}
+
+.case-image--flower-market-cover .case-cover-img--flower-market {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 118%;
+    height: 118%;
+    object-fit: cover;
+    object-position: center;
+    transform: translate(-50%, -50%) rotate(-3.4deg) scale(1.04);
+    transform-origin: center center;
+}
+
 .case-image--has-video .case-media-poster {
     position: absolute;
     top: -20px;
@@ -2668,6 +2686,52 @@ body.site-subpage .case-tag::before {
     display: block;
     border-radius: 16px;
     transform: rotate(-0.5deg);
+}
+
+/* case11: коллаж «Оформление проекта» — отдельный файл от обложки на index; в исходнике лёгкий наклон и тёмная кромка — zoom + поворот обрезают углы */
+.philosophy-section--flower-market {
+    padding: 12px 0 36px;
+}
+
+.philosophy-section--flower-market .philosophy-card--flower-market {
+    max-width: min(880px, 94vw);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 12px 14px;
+    transform: scale(1);
+    transform-origin: center center;
+}
+
+.philosophy-section--flower-market .flower-market-preview-crop {
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ffffff;
+    line-height: 0;
+    position: relative;
+    aspect-ratio: 873 / 1024;
+    width: 100%;
+}
+
+.philosophy-section--flower-market .philosophy-image--flower-market {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 120%;
+    height: 120%;
+    max-width: none;
+    border-radius: 0;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    transform: translate(-50%, -50%) rotate(1.85deg);
+    transform-origin: center center;
+}
+
+@media (max-width: 768px) {
+    .philosophy-section--flower-market .philosophy-card--flower-market {
+        max-width: 100%;
+        padding: 10px;
+    }
 }
 
 /* Image Slider Styles */
