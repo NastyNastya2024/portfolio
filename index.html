@@ -1,461 +1,471 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASYA.KOM - Аналитика, разработка, продвижение</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ASYA.KOM - Аналитика, разработка, продвижение</title>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="img/errow_2.png" alt="Arrow" class="logo-arrow logo-arrow-left">
-                    <a href="index.html" class="nav-link">ASYA.KOM</a>
-                    <img src="img/errow_2.png" alt="Arrow" class="logo-arrow logo-arrow-right">
-                </div>
-                <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <nav class="nav nav-dropdown" id="mobile-menu">
-                    <a href="about.html" class="nav-link">Контакты</a>
-                    <a href="about.html" class="nav-link">О нас</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+<!-- Header -->
+<header class="header">
+<div class="container">
+<div class="header-content">
+<div class="logo">
+<img alt="Arrow" class="logo-arrow logo-arrow-left" src="img/errow_2.png"/>
+<a class="nav-link" href="index.html">ASYA.KOM</a>
+<img alt="Arrow" class="logo-arrow logo-arrow-right" src="img/errow_2.png"/>
+</div>
+<div class="header-trailing">
+<div aria-label="Язык" class="lang-switch" role="navigation">
+<a class="lang-switch__link" href="en/index.html" hreflang="en" lang="en">EN</a>
+<span aria-hidden="true" class="lang-switch__sep">·</span>
+<span aria-current="true" class="lang-switch__current">RU</span>
+</div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-icon"><img src="img/errow_1.png" alt="Arrow" class="hero-icon-img"></div>
-                    <div class="hero-label">кастомная разработка</div>
-                <h1 class="hero-title">AI для бизнеса,<br>решения под ваши задачи.</h1>
-                <div class="hero-cta">
-                       <button class="cta-button">
-                           <img src="img/1.jpg" alt="Profile" class="cta-avatar">
-                           <div class="cta-text">
-                               <div class="cta-line1">Забронируйте звонок</div>
-                               <div class="cta-line2">Неформальный чат</div>
-                           </div>
-                       </button>
-                </div>
-            </div>
-            <div class="hero-blobs" aria-hidden="true">
-                <span class="hero-blob hero-blob--violet hero-blob--1"></span>
-                <span class="hero-blob hero-blob--mint hero-blob--2"></span>
-                <span class="hero-blob hero-blob--violet hero-blob--3"></span>
-                <span class="hero-blob hero-blob--mint hero-blob--4"></span>
-                <span class="hero-blob hero-blob--violet-soft hero-blob--5"></span>
-            </div>
-        </div>
-    </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="services-grid">
-                <button type="button" class="service-card service-card--filter" data-filter-tags="agents" data-filter-match="any" aria-label="Показать кейсы: ИИ-агенты">
-                    <div class="service-title-row">
-                        <img src="img/ok.png" alt="" class="service-check" aria-hidden="true">
-                        <h3 class="service-title">Внедрение ИИ-агентов</h3>
-                    </div>
-                    <p class="service-description">Внедрение и настройка ИИ-агентов под ваши бизнес-процессы и инструменты.</p>
-                </button>
-
-                <button type="button" class="service-card service-card--filter" data-filter-tags="apps sites" data-filter-match="any" aria-label="Показать кейсы: приложения и сайты">
-                    <div class="service-title-row">
-                        <img src="img/ok.png" alt="" class="service-check" aria-hidden="true">
-                        <h3 class="service-title">Приложения и сайты</h3>
-                    </div>
-                    <p class="service-description">Создание мобильных приложений и сайтов с помощью искусственного интеллекта.</p>
-                </button>
-
-                <button type="button" class="service-card service-card--filter" data-filter-tags="voice" data-filter-match="any" aria-label="Показать кейсы: голосовые боты">
-                    <div class="service-title-row">
-                        <img src="img/ok.png" alt="" class="service-check" aria-hidden="true">
-                        <h3 class="service-title">Голосовые боты</h3>
-                    </div>
-                    <p class="service-description">AI-агенты для звонков: приём и совершение звонков, запись клиентов, обновление CRM.</p>
-                </button>
-
-                <button type="button" class="service-card service-card--filter" data-filter-tags="ai software" data-filter-match="all" aria-label="Показать кейсы: AI и прикладное ПО (вайбкодинг)">
-                    <div class="service-title-row">
-                        <img src="img/ok.png" alt="" class="service-check" aria-hidden="true">
-                        <h3 class="service-title">Обучение вайбкодингу</h3>
-                    </div>
-                    <p class="service-description">Курсы и практика по вайбкодингу: разработка через естественный язык и ИИ.</p>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cases Section -->
-    <section class="cases" id="works">
-        <div class="container">
-            <!-- Filters -->
-            <!-- Теги по частоте в data-tags карточек (index): частые слева, редкие за «…» -->
-            <div class="cases-filters-wrap">
-                <div class="cases-filters cases-filters-scroll">
-                    <button type="button" class="filter-btn filter-btn--all active" data-filter="all">ВСЕ КЕЙСЫ</button>
-                    <div class="cases-filters-distributed">
-                        <button type="button" class="filter-btn" data-filter="ai">AI/ML</button>
-                        <button type="button" class="filter-btn" data-filter="software">ПРИКЛАДНОЕ ПО</button>
-                        <button type="button" class="filter-btn" data-filter="sites">САЙТЫ</button>
-                        <button type="button" class="filter-btn" data-filter="analytics">АНАЛИТИКА</button>
-                        <button type="button" class="filter-btn" data-filter="apps">ПРИЛОЖЕНИЯ</button>
-                        <button type="button" class="filter-btn" data-filter="design">ДИЗАЙН</button>
-                        <button type="button" class="filter-btn" data-filter="agents">АГЕНТЫ</button>
-                        <button type="button" class="filter-btn" data-filter="marketing">МАРКЕТИНГ</button>
-                        <button type="button" class="filter-btn" data-filter="rag">RAG</button>
-                        <button type="button" class="filter-btn" data-filter="branding">БРЕНДИНГ</button>
-                        <button type="button" class="filter-btn" data-filter="geo">GEO/SEO</button>
-                        <button type="button" class="filter-btn" data-filter="integration">ИНТЕГРАЦИИ</button>
-                        <button type="button" class="filter-btn" data-filter="mobile">МОБАЙЛ</button>
-                        <button type="button" class="filter-btn" data-filter="smm">SMM</button>
-                        <button type="button" class="filter-btn" data-filter="uiux">UI/UX</button>
-                    </div>
-                </div>
-                <button type="button" class="filter-btn filter-btn--more" aria-expanded="false" aria-controls="cases-filters-extra" aria-haspopup="true" aria-label="Показать остальные теги">…</button>
-                <div id="cases-filters-extra" class="cases-filters-extra" hidden>
-                    <div class="cases-filters-extra-inner"></div>
-                </div>
-            </div>
-
-            <!-- Cases Grid -->
-            <div class="cases-grid">
-                <!-- Case 1 -->
-                    <div class="case-card" data-tags="analytics sites ai software" onclick="window.open('FL.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/FL.png" alt="Федеративное обучение" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">Федеративное обучение</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">AI/ML</span>
-                                <span class="case-tag">Сайт</span>
-                                <span class="case-tag">Прикладное ПО</span>
-                                <span class="case-tag">RnD</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 2 — голосовой бот для салона красоты -->
-                    <div class="case-card" data-tags="analytics agents ai voice" onclick="window.open('VoiceBot3.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/VoiceBot3.png" alt="Голосовой бот для салона красоты" style="position: absolute; top: 0px; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">Голосовой бот для салона красоты</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">AI/ML</span>
-                                <span class="case-tag">Голосовой бот</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 3 — термообработка труб -->
-                    <div class="case-card" data-tags="analytics software ai" onclick="window.open('ht.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/HT.png" alt="AI/ML для термообработки труб" style="position: absolute; top: -35px; left: 0; width: 100%; height: calc(100% + 35px); object-fit: cover; object-position: top center; z-index: 1; transform: rotate(5deg) scale(1.15);">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">AI/ML для термообработки труб</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">AI/ML</span>
-                                <span class="case-tag">Прикладное ПО</span>
-                                <span class="case-tag">RnD</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 4 — GEO (местами с Yoga) -->
-                    <div class="case-card" data-tags="geo sites software" onclick="window.open('case15.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/GEO.png" alt="GEO / SEO — лендинг платформы" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">Сайт GEO продвижение</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">GEO/SEO</span>
-                                <span class="case-tag">Сайт</span>
-                                <span class="case-tag">Лендинг</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 5 — Yoga (местами с GEO) -->
-                    <div class="case-card" data-tags="apps sites software" onclick="window.open('case6.html', '_self')">
-                        <div class="case-image case-image--no-overlay">
-                            <img src="img/Yoga.png" alt="SaaS-платформа для мастера йоги — сайт, клуб, видео и админка" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: 50% 32%; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">SaaS-платформа для мастера йоги</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">SaaS</span>
-                                <span class="case-tag">Сайт</span>
-                                <span class="case-tag">Админка</span>
-                                <span class="case-tag">CRM</span>
-                                <span class="case-tag">S3</span>
-                                <span class="case-tag">Видео</span>
-                                <span class="case-tag">Подписки</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 6 — приложение автоинструктора (справа от #ПО, вместо скинкейра) -->
-                    <div class="case-card" data-tags="apps software design" onclick="window.open('case16.html', '_self')">
-                        <div class="case-image case-image--no-overlay">
-                            <img src="img/AutoInstructor-app-cover.png" alt="Автоинструктор — мокап приложения: профиль инструктора и расписание занятий, АКПП" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">Приложение для автоинструктора</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">#автоинструктор</span>
-                                <span class="case-tag">#обучениевождению</span>
-                                <span class="case-tag">#АКПП</span>
-                                <span class="case-tag">#UIUX</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 7 — AI-косметолог (сайт / приложение / ИИ-агент, LLM) -->
-                    <div class="case-card" data-tags="smm marketing ai sites apps software rag" onclick="window.open('case18.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/AICosmetologist.png" alt="AI-косметолог: сайт, приложение, ИИ-агент с интегрированной LLM" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">AI-косметолог</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">Сайт</span>
-                                <span class="case-tag">App</span>
-                                <span class="case-tag">ИИ-агент</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 8 — ClariTech (местами с #SEO) -->
-                    <div class="case-card" data-tags="analytics software design ai" onclick="window.open('CTF.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/Clari.png" alt="ClariTech — интерфейс системы" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">ClariTech</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">UX</span>
-                                <span class="case-tag">UI</span>
-                                <span class="case-tag">WebDesign</span>
-                                <span class="case-tag">AI</span>
-                                <span class="case-tag">ProductDesign</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 9 — InStar, местами с «Сенсорный пульт» -->
-                    <div class="case-card" data-tags="design apps branding uiux mobile integration ai" onclick="window.open('instar.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/Instar.png" alt="InStar — маркетплейс для AI-креаторов" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">InStar</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">#UIUX</span>
-                                <span class="case-tag">#Брендинг</span>
-                                <span class="case-tag">Моб приложение</span>
-                                <span class="case-tag">Интеграция AI моделей</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 10 — MetaMorfeya / #SEO (местами с ClariTech) -->
-                    <div class="case-card" data-tags="sites design marketing apps" onclick="window.open('case17.html', '_self')">
-                        <div class="case-image case-image--no-overlay">
-                            <img src="img/MetaMorfeya.png" alt="MetaMorfeya — макет сайта на планшетах" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">Meta Morfeya</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">Tilda</span>
-                                <span class="case-tag">Игра</span>
-                                <span class="case-tag">AIGraphics</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 15 — Сенсорный пульт (местами с ботом AI-шница) -->
-                    <div class="case-card" data-tags="analytics apps software design" onclick="window.open('case8.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/RemoteController.png" alt="Сенсорный пульт — промышленный дизайн" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">Сенсорный пульт</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">дизайн</span>
-                                <span class="case-tag">промышленный дизайн</span>
-                                <span class="case-tag">CustDev</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 16 — AI-шница / Telegram-бот (местами с пультом) -->
-                    <div class="case-card" data-tags="agents ai sites design" onclick="window.open('ai_shniza.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/TelegramBot.png" alt="{AI}шница — LLM-маркетплейс в Telegram и сайт" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">{AI}шница</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">LLM-маркетплейс</span>
-                                <span class="case-tag">Сайт</span>
-                                <span class="case-tag">TelegramBot</span>
-                                <span class="case-tag">AI</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 17 — StyleGenie: RAG, несколько маркетплейсов + ателье (case14) -->
-                    <div class="case-card" data-tags="sites software ai rag apps marketing design" onclick="window.open('case14.html', '_self')">
-                        <div class="case-image case-image--no-overlay">
-                            <img src="img/CaseMarketplaceCreators.png" alt="StyleGenie — RAG, единая витрина маркетплейсов и ателье" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">StyleGenie</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">RAG</span>
-                                <span class="case-tag">Маркетплейсы</span>
-                                <span class="case-tag">Ателье</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 18 — лиловый AI-лендинг (местами с маркетплейсом креаторов) -->
-                    <div class="case-card" data-tags="sites software ai" onclick="window.open('case9.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/Pink.png" alt="Лендинг AI-компании — превью кейса" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">Лендинг AI-компании</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">AI</span>
-                                <span class="case-tag">Сайт</span>
-                                <span class="case-tag">Лендинг</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 19 — пиксельный платформер (колонки местами с маркетплейсом) -->
-                    <div class="case-card" data-tags="apps design" onclick="window.open('case-pixel-game.html', '_self')">
-                        <div class="case-image case-image--no-overlay">
-                            <img src="img/CasePixelGame.png?v=metal3-v1" alt="Пиксельный платформер" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">Пиксельный платформер</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">игра</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 20 — маркетплейс цветов (UI kit, покупатель и продавец) -->
-                    <div class="case-card" data-tags="design apps analytics" onclick="window.open('case11.html', '_self')">
-                        <div class="case-image case-image--no-overlay case-image--flower-market-cover">
-                            <img src="img/FlowerMarketplace-ui-kit.png?v=metal-example" alt="Маркетплейс цветов — два экрана приложения на фоне превью" class="case-cover-img--flower-market" loading="lazy">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">Маркетплейс цветов</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">UI kit</span>
-                                <span class="case-tag">Покупатель</span>
-                                <span class="case-tag">Продавец</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 21 — голосовой бот VoiceBot2 (колонки местами с Financier) -->
-                    <div class="case-card" data-tags="analytics agents ai voice" onclick="window.open('VoiceBot2.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/VoiceBot4.png" alt="Лидген-бот для студии маникюра — голосовой бот на Twin" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">Лидген-бот для студии маникюра</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">Голосовой бот</span>
-                                <span class="case-tag">Лидген</span>
-                                <span class="case-tag">ИИ-агент</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 22 — Financier (местами с голосовым ботом) -->
-                    <div class="case-card" data-tags="sites" onclick="window.open('case12.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/Financier.png?v=financier-monitor-2026" alt="Финансьер — лендинг на мониторе, консалтинг" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">Финансьер</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">Сайт</span>
-                                <span class="case-tag">UX/UI</span>
-                                <span class="case-tag">WordPress</span>
-                                <span class="case-tag">Брендинг</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 23 — Photohosting (колонки местами с VoiceBot1) -->
-                    <div class="case-card" data-tags="analytics sites" onclick="window.open('case13.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/Photohosting.png" alt="Фотохостинг — превью на мониторе, сетка фото мероприятия" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">Фотохостинг</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">Дизайн</span>
-                                <span class="case-tag">UI kit</span>
-                                <span class="case-tag">Разработка</span>
-                                <span class="case-tag">Аналитика</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case 24 — голосовой бот VoiceBot1 -->
-                    <div class="case-card" data-tags="analytics agents ai voice" onclick="window.open('VoiceBot1.html', '_self')">
-                        <div class="case-image">
-                            <img src="img/VoiceBot1.png" alt="SPA-центр — голосовой NPS-опрос на Twin" style="position: absolute; top: -40px; left: 0; width: 100%; height: calc(100% + 40px); object-fit: cover; object-position: top center; z-index: 1;">
-                        </div>
-                        <div class="case-info">
-                            <h3 class="case-title" style="white-space: normal; line-height: 1.35;">SPA-центр: NPS опрос</h3>
-                            <div class="case-tags">
-                                <span class="case-tag">Голосовой бот</span>
-                                <span class="case-tag">NPS</span>
-                                <span class="case-tag">ИИ-агент</span>
-                            </div>
-                        </div>
-                    </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="bottom-cta">
-        <div class="container">
-            <div class="hero-cta">
-                <button class="cta-button">
-                    <img src="img/1.jpg" alt="Profile" class="cta-avatar">
-                    <div class="cta-text">
-                        <div class="cta-line1">Забронируйте звонок</div>
-                        <div class="cta-line2">Неформальный чат</div>
-                    </div>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-icon"><img alt="Arrow" class="hero-icon-img" src="img/errow_1.png"/></div>
+<div class="hero-label">кастомная разработка</div>
+<h1 class="hero-title">AI для бизнеса,<br/>решения под ваши задачи.</h1>
+<div class="hero-cta">
+<button class="cta-button">
+<img alt="Profile" class="cta-avatar" src="img/1.jpg"/>
+<div class="cta-text">
+<div class="cta-line1">Забронируйте звонок</div>
+<div class="cta-line2">Неформальный чат</div>
+</div>
+</button>
+</div>
+</div>
+<div aria-hidden="true" class="hero-blobs">
+<span class="hero-blob hero-blob--violet hero-blob--1"></span>
+<span class="hero-blob hero-blob--mint hero-blob--2"></span>
+<span class="hero-blob hero-blob--violet hero-blob--3"></span>
+<span class="hero-blob hero-blob--mint hero-blob--4"></span>
+<span class="hero-blob hero-blob--violet-soft hero-blob--5"></span>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="features">
+<div class="container">
+<div class="services-grid">
+<div class="service-card">
+<div class="service-title-row">
+<img alt="" aria-hidden="true" class="service-check" src="img/ok.png"/>
+<h3 class="service-title">Внедрение ИИ-агентов</h3>
+</div>
+<p class="service-description">Внедрение и настройка ИИ-агентов под ваши бизнес-процессы и инструменты.</p>
+</div>
+<div class="service-card">
+<div class="service-title-row">
+<img alt="" aria-hidden="true" class="service-check" src="img/ok.png"/>
+<h3 class="service-title">Приложения и сайты</h3>
+</div>
+<p class="service-description">Создание мобильных приложений и сайтов с помощью искусственного интеллекта.</p>
+</div>
+<div class="service-card">
+<div class="service-title-row">
+<img alt="" aria-hidden="true" class="service-check" src="img/ok.png"/>
+<h3 class="service-title">Голосовые боты</h3>
+</div>
+<p class="service-description">AI-агенты для звонков: приём и совершение звонков, запись клиентов, обновление CRM.</p>
+</div>
+<div class="service-card">
+<div class="service-title-row">
+<img alt="" aria-hidden="true" class="service-check" src="img/ok.png"/>
+<h3 class="service-title">Обучение вайбкодингу</h3>
+</div>
+<p class="service-description">Курсы и практика по вайбкодингу: разработка через естественный язык и ИИ.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Cases Section -->
+<section class="cases" id="works">
+<div class="container">
+<!-- Filters -->
+<!-- Теги по частоте в data-tags карточек (index): частые слева, редкие за «…» -->
+<div class="cases-filters-wrap">
+<div class="cases-filters cases-filters-scroll">
+<button class="filter-btn filter-btn--all active" data-filter="all" type="button">ВСЕ КЕЙСЫ</button>
+<div class="cases-filters-distributed">
+<button class="filter-btn" data-filter="ai" type="button">AI/ML</button>
+<button class="filter-btn" data-filter="software" type="button">ПРИКЛАДНОЕ ПО</button>
+<button class="filter-btn" data-filter="sites" type="button">САЙТЫ</button>
+<button class="filter-btn" data-filter="analytics" type="button">АНАЛИТИКА</button>
+<button class="filter-btn" data-filter="apps" type="button">ПРИЛОЖЕНИЯ</button>
+<button class="filter-btn" data-filter="design" type="button">ДИЗАЙН</button>
+<button class="filter-btn" data-filter="agents" type="button">АГЕНТЫ</button>
+<button class="filter-btn" data-filter="marketing" type="button">МАРКЕТИНГ</button>
+<button class="filter-btn" data-filter="rag" type="button">RAG</button>
+<button class="filter-btn" data-filter="branding" type="button">БРЕНДИНГ</button>
+<button class="filter-btn" data-filter="geo" type="button">GEO/SEO</button>
+<button class="filter-btn" data-filter="integration" type="button">ИНТЕГРАЦИИ</button>
+<button class="filter-btn" data-filter="mobile" type="button">МОБАЙЛ</button>
+<button class="filter-btn" data-filter="smm" type="button">SMM</button>
+<button class="filter-btn" data-filter="uiux" type="button">UI/UX</button>
+</div>
+</div>
+<button aria-controls="cases-filters-extra" aria-expanded="false" aria-haspopup="true" aria-label="Показать остальные теги" class="filter-btn filter-btn--more" type="button">…</button>
+<div class="cases-filters-extra" hidden="" id="cases-filters-extra">
+<div class="cases-filters-extra-inner"></div>
+</div>
+</div>
+<!-- Cases Grid -->
+<div class="cases-grid">
+<!-- Case 1 -->
+<div class="case-card" data-tags="analytics sites ai software" onclick="window.open('FL.html', '_self')">
+<div class="case-image">
+<img alt="Федеративное обучение" src="img/FL.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">Федеративное обучение</h3>
+<div class="case-tags">
+<span class="case-tag">AI/ML</span>
+<span class="case-tag">Сайт</span>
+<span class="case-tag">Прикладное ПО</span>
+<span class="case-tag">RnD</span>
+</div>
+</div>
+</div>
+<!-- Case 2 — голосовой бот для салона красоты -->
+<div class="case-card" data-tags="analytics agents ai" onclick="window.open('VoiceBot3.html', '_self')">
+<div class="case-image">
+<img alt="Голосовой бот для салона красоты" src="img/VoiceBot3.png" style="position: absolute; top: 0px; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">Голосовой бот для салона красоты</h3>
+<div class="case-tags">
+<span class="case-tag">AI/ML</span>
+<span class="case-tag">Голосовой бот</span>
+</div>
+</div>
+</div>
+<!-- Case 3 — термообработка труб -->
+<div class="case-card" data-tags="analytics software ai" onclick="window.open('ht.html', '_self')">
+<div class="case-image">
+<img alt="AI/ML для термообработки труб" src="img/HT.png" style="position: absolute; top: -35px; left: 0; width: 100%; height: calc(100% + 35px); object-fit: cover; object-position: top center; z-index: 1; transform: rotate(5deg) scale(1.15);"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">AI/ML для термообработки труб</h3>
+<div class="case-tags">
+<span class="case-tag">AI/ML</span>
+<span class="case-tag">Прикладное ПО</span>
+<span class="case-tag">RnD</span>
+</div>
+</div>
+</div>
+<!-- Case 4 — GEO (местами с Yoga) -->
+<div class="case-card" data-tags="geo sites software" onclick="window.open('case15.html', '_self')">
+<div class="case-image">
+<img alt="GEO / SEO — лендинг платформы" src="img/GEO.png" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">Сайт GEO продвижение</h3>
+<div class="case-tags">
+<span class="case-tag">GEO/SEO</span>
+<span class="case-tag">Сайт</span>
+<span class="case-tag">Лендинг</span>
+</div>
+</div>
+</div>
+<!-- Case 5 — Yoga (местами с GEO) -->
+<div class="case-card" data-tags="apps sites software" onclick="window.open('case6.html', '_self')">
+<div class="case-image case-image--no-overlay">
+<img alt="SaaS-платформа для мастера йоги — сайт, клуб, видео и админка" src="img/Yoga.png" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: 50% 32%; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">SaaS-платформа для мастера йоги</h3>
+<div class="case-tags">
+<span class="case-tag">SaaS</span>
+<span class="case-tag">Сайт</span>
+<span class="case-tag">Админка</span>
+<span class="case-tag">CRM</span>
+<span class="case-tag">S3</span>
+<span class="case-tag">Видео</span>
+<span class="case-tag">Подписки</span>
+</div>
+</div>
+</div>
+<!-- Case 6 — приложение автоинструктора (справа от #ПО, вместо скинкейра) -->
+<div class="case-card" data-tags="apps software design" onclick="window.open('case16.html', '_self')">
+<div class="case-image case-image--no-overlay">
+<img alt="Автоинструктор — мокап приложения: профиль инструктора и расписание занятий, АКПП" src="img/AutoInstructor-app-cover.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">Приложение для автоинструктора</h3>
+<div class="case-tags">
+<span class="case-tag">#автоинструктор</span>
+<span class="case-tag">#обучениевождению</span>
+<span class="case-tag">#АКПП</span>
+<span class="case-tag">#UIUX</span>
+</div>
+</div>
+</div>
+<!-- Case 7 — AI-косметолог (сайт / приложение / ИИ-агент, LLM) -->
+<div class="case-card" data-tags="smm marketing ai sites apps software rag" onclick="window.open('case18.html', '_self')">
+<div class="case-image">
+<img alt="AI-косметолог: сайт, приложение, ИИ-агент с интегрированной LLM" src="img/AICosmetologist.png" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">AI-косметолог</h3>
+<div class="case-tags">
+<span class="case-tag">Сайт</span>
+<span class="case-tag">App</span>
+<span class="case-tag">ИИ-агент</span>
+</div>
+</div>
+</div>
+<!-- Case 8 — ClariTech (местами с #SEO) -->
+<div class="case-card" data-tags="analytics software design ai" onclick="window.open('CTF.html', '_self')">
+<div class="case-image">
+<img alt="ClariTech — интерфейс системы" src="img/Clari.png" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">ClariTech</h3>
+<div class="case-tags">
+<span class="case-tag">UX</span>
+<span class="case-tag">UI</span>
+<span class="case-tag">WebDesign</span>
+<span class="case-tag">AI</span>
+<span class="case-tag">ProductDesign</span>
+</div>
+</div>
+</div>
+<!-- Case 9 — InStar, местами с «Сенсорный пульт» -->
+<div class="case-card" data-tags="design apps branding uiux mobile integration ai" onclick="window.open('instar.html', '_self')">
+<div class="case-image">
+<img alt="InStar — маркетплейс для AI-креаторов" src="img/Instar.png" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">InStar</h3>
+<div class="case-tags">
+<span class="case-tag">#UIUX</span>
+<span class="case-tag">#Брендинг</span>
+<span class="case-tag">Моб приложение</span>
+<span class="case-tag">Интеграция AI моделей</span>
+</div>
+</div>
+</div>
+<!-- Case 10 — MetaMorfeya / #SEO (местами с ClariTech) -->
+<div class="case-card" data-tags="sites design marketing apps" onclick="window.open('case17.html', '_self')">
+<div class="case-image case-image--no-overlay">
+<img alt="MetaMorfeya — макет сайта на планшетах" src="img/MetaMorfeya.png" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">Meta Morfeya</h3>
+<div class="case-tags">
+<span class="case-tag">Tilda</span>
+<span class="case-tag">Игра</span>
+<span class="case-tag">AIGraphics</span>
+</div>
+</div>
+</div>
+<!-- Case 15 — Сенсорный пульт (местами с ботом AI-шница) -->
+<div class="case-card" data-tags="analytics apps software design" onclick="window.open('case8.html', '_self')">
+<div class="case-image">
+<img alt="Сенсорный пульт — промышленный дизайн" src="img/RemoteController.png" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">Сенсорный пульт</h3>
+<div class="case-tags">
+<span class="case-tag">дизайн</span>
+<span class="case-tag">промышленный дизайн</span>
+<span class="case-tag">CustDev</span>
+</div>
+</div>
+</div>
+<!-- Case 16 — AI-шница / Telegram-бот (местами с пультом) -->
+<div class="case-card" data-tags="agents ai sites design" onclick="window.open('ai_shniza.html', '_self')">
+<div class="case-image">
+<img alt="{AI}шница — LLM-маркетплейс в Telegram и сайт" src="img/TelegramBot.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">{AI}шница</h3>
+<div class="case-tags">
+<span class="case-tag">LLM-маркетплейс</span>
+<span class="case-tag">Сайт</span>
+<span class="case-tag">TelegramBot</span>
+<span class="case-tag">AI</span>
+</div>
+</div>
+</div>
+<!-- Case 17 — StyleGenie: RAG, несколько маркетплейсов + ателье (case14) -->
+<div class="case-card" data-tags="sites software ai rag apps marketing design" onclick="window.open('case14.html', '_self')">
+<div class="case-image case-image--no-overlay">
+<img alt="StyleGenie — RAG, единая витрина маркетплейсов и ателье" src="img/CaseMarketplaceCreators.png" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">StyleGenie</h3>
+<div class="case-tags">
+<span class="case-tag">RAG</span>
+<span class="case-tag">Маркетплейсы</span>
+<span class="case-tag">Ателье</span>
+</div>
+</div>
+</div>
+<!-- Case 18 — лиловый AI-лендинг (местами с маркетплейсом креаторов) -->
+<div class="case-card" data-tags="sites software ai" onclick="window.open('case9.html', '_self')">
+<div class="case-image">
+<img alt="Лендинг AI-компании — превью кейса" src="img/Pink.png" style="position: absolute; top: -30px; left: 0; width: 100%; height: calc(100% + 30px); object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">Лендинг AI-компании</h3>
+<div class="case-tags">
+<span class="case-tag">AI</span>
+<span class="case-tag">Сайт</span>
+<span class="case-tag">Лендинг</span>
+</div>
+</div>
+</div>
+<!-- Case 19 — пиксельный платформер (колонки местами с маркетплейсом) -->
+<div class="case-card" data-tags="apps design" onclick="window.open('case-pixel-game.html', '_self')">
+<div class="case-image case-image--no-overlay">
+<img alt="Пиксельный платформер" src="img/CasePixelGame.png?v=metal3-v1" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">Пиксельный платформер</h3>
+<div class="case-tags">
+<span class="case-tag">игра</span>
+</div>
+</div>
+</div>
+<!-- Case 20 — маркетплейс цветов (UI kit, покупатель и продавец) -->
+<div class="case-card" data-tags="design apps analytics" onclick="window.open('case11.html', '_self')">
+<div class="case-image case-image--no-overlay case-image--flower-market-cover">
+<img alt="Маркетплейс цветов — два экрана приложения на фоне превью" class="case-cover-img--flower-market" loading="lazy" src="img/FlowerMarketplace-ui-kit.png?v=metal-example"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">Маркетплейс цветов</h3>
+<div class="case-tags">
+<span class="case-tag">UI kit</span>
+<span class="case-tag">Покупатель</span>
+<span class="case-tag">Продавец</span>
+</div>
+</div>
+</div>
+<!-- Case 21 — голосовой бот VoiceBot2 (колонки местами с Financier) -->
+<div class="case-card" data-tags="analytics agents ai" onclick="window.open('VoiceBot2.html', '_self')">
+<div class="case-image">
+<img alt="Лидген-бот для студии маникюра — голосовой бот на Twin" src="img/VoiceBot4.png" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">Лидген-бот для студии маникюра</h3>
+<div class="case-tags">
+<span class="case-tag">Голосовой бот</span>
+<span class="case-tag">Лидген</span>
+<span class="case-tag">ИИ-агент</span>
+</div>
+</div>
+</div>
+<!-- Case 22 — Financier (местами с голосовым ботом) -->
+<div class="case-card" data-tags="sites" onclick="window.open('case12.html', '_self')">
+<div class="case-image">
+<img alt="Финансьер — лендинг на мониторе, консалтинг" src="img/Financier.png?v=financier-monitor-2026" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">Финансьер</h3>
+<div class="case-tags">
+<span class="case-tag">Сайт</span>
+<span class="case-tag">UX/UI</span>
+<span class="case-tag">WordPress</span>
+<span class="case-tag">Брендинг</span>
+</div>
+</div>
+</div>
+<!-- Case 23 — Photohosting (колонки местами с VoiceBot1) -->
+<div class="case-card" data-tags="analytics sites" onclick="window.open('case13.html', '_self')">
+<div class="case-image">
+<img alt="Фотохостинг — превью на мониторе, сетка фото мероприятия" src="img/Photohosting.png" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">Фотохостинг</h3>
+<div class="case-tags">
+<span class="case-tag">Дизайн</span>
+<span class="case-tag">UI kit</span>
+<span class="case-tag">Разработка</span>
+<span class="case-tag">Аналитика</span>
+</div>
+</div>
+</div>
+<!-- Case 24 — голосовой бот VoiceBot1 -->
+<div class="case-card" data-tags="analytics agents ai" onclick="window.open('VoiceBot1.html', '_self')">
+<div class="case-image">
+<img alt="SPA-центр — голосовой NPS-опрос на Twin" src="img/VoiceBot1.png" style="position: absolute; top: -40px; left: 0; width: 100%; height: calc(100% + 40px); object-fit: cover; object-position: top center; z-index: 1;"/>
+</div>
+<div class="case-info">
+<h3 class="case-title" style="white-space: normal; line-height: 1.35;">SPA-центр: NPS опрос</h3>
+<div class="case-tags">
+<span class="case-tag">Голосовой бот</span>
+<span class="case-tag">NPS</span>
+<span class="case-tag">ИИ-агент</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bottom-cta">
+<div class="container">
+<div class="hero-cta">
+<button class="cta-button">
+<img alt="Profile" class="cta-avatar" src="img/1.jpg"/>
+<div class="cta-text">
+<div class="cta-line1">Забронируйте звонок</div>
+<div class="cta-line2">Неформальный чат</div>
+</div>
+</button>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="container">
+<button class="footer-legal-trigger" data-open-legal-modal="" type="button">
+                Реквизиты и юридическая информация
+            </button>
+</div>
+</footer>
+<div aria-labelledby="legal-modal-title" aria-modal="true" class="legal-modal" hidden="" id="legal-modal" role="dialog">
+<div class="legal-modal__backdrop" data-close-legal-modal="" tabindex="-1"></div>
+<div class="legal-modal__panel">
+<button aria-label="Закрыть" class="legal-modal__close" data-close-legal-modal="" type="button">×</button>
+<h2 class="legal-modal__title" id="legal-modal-title">Реквизиты и юридическая информация</h2>
+<div class="legal-modal__body">
+<p class="legal-modal__note">Индивидуальный предприниматель. Данные для договора и оплаты.</p>
+<dl class="legal-dl">
+<dt>Название организации</dt>
+<dd>ИНДИВИДУАЛЬНЫЙ ПРЕДПРИНИМАТЕЛЬ КОМАРОВА АНАСТАСИЯ АЛЕКСАНДРОВНА</dd>
+<dt>Юридический адрес</dt>
+<dd>141310, РОССИЯ, МОСКОВСКАЯ ОБЛ, Г СЕРГИЕВ ПОСАД, Г СЕРГИЕВ ПОСАД, ПР-КТ КРАСНОЙ АРМИИ, Д 6, КВ 91</dd>
+<dt>ИНН</dt>
+<dd>504231947047</dd>
+<dt>ОГРНИП</dt>
+<dd>322508100272216</dd>
+<dt>Расчётный счёт</dt>
+<dd>40802810400006421655</dd>
+<dt>Банк</dt>
+<dd>АО «ТБанк»</dd>
+<dt>ИНН банка</dt>
+<dd>7710140679</dd>
+<dt>БИК</dt>
+<dd>044525974</dd>
+<dt>Корр. счёт банка</dt>
+<dd>30101810145250000974</dd>
+</dl>
+<p class="legal-modal__phone"><strong>Телефон:</strong> <a href="tel:+79060959295">+7 906 095‑92‑95</a></p>
+</div>
+</div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>

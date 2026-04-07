@@ -1,320 +1,348 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaaS-платформа для мастера йоги — ASYA.KOM</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SaaS-платформа для мастера йоги — ASYA.KOM</title>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body class="site-subpage">
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="img/errow_2.png" alt="Arrow" class="logo-arrow logo-arrow-left">
-                    <a href="index.html" class="nav-link">ASYA.KOM</a>
-                    <img src="img/errow_2.png" alt="Arrow" class="logo-arrow logo-arrow-right">
-                </div>
-                <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <nav class="nav nav-dropdown" id="mobile-menu">
-                    <a href="about.html" class="nav-link">Контакты</a>
-                    <a href="about.html" class="nav-link">О нас</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+<!-- Header -->
+<header class="header">
+<div class="container">
+<div class="header-content">
+<div class="logo">
+<img alt="Arrow" class="logo-arrow logo-arrow-left" src="img/errow_2.png"/>
+<a class="nav-link" href="index.html">ASYA.KOM</a>
+<img alt="Arrow" class="logo-arrow logo-arrow-right" src="img/errow_2.png"/>
+</div>
+<div class="header-trailing">
+<div aria-label="Язык" class="lang-switch" role="navigation">
+<a class="lang-switch__link" href="en/case6.html" hreflang="en" lang="en">EN</a>
+<span aria-hidden="true" class="lang-switch__sep">·</span>
+<span aria-current="true" class="lang-switch__current">RU</span>
+</div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-icon"><img src="img/errow_1.png" alt="Arrow" class="hero-icon-img"></div>
-                    <div class="hero-label">КЛИЕНТСКИЙ ПРОЕКТ</div>
-                <h1 class="hero-title">Сайт мастера йоги</h1>
-                <img src="img/15.png" alt="Line" class="hero-line">
-                    <p class="hero-subtitle">SaaS-платформа для эксперта</p>
-                <img src="img/15.png" alt="Line" class="hero-line">
-                <div class="case-tags hero-case-tags" aria-label="Теги проекта">
-                    <span class="case-tag">SaaS</span>
-                    <span class="case-tag">Сайт</span>
-                    <span class="case-tag">Админка</span>
-                    <span class="case-tag">CRM</span>
-                    <span class="case-tag">S3</span>
-                    <span class="case-tag">Видео</span>
-                    <span class="case-tag">Подписки</span>
-                    <span class="case-tag">Платежи</span>
-                </div>
-                <div class="hero-cta">
-                       <button class="cta-button">
-                           <img src="img/1.jpg" alt="Profile" class="cta-avatar">
-                           <div class="cta-text">
-                               <div class="cta-line1">Забронируйте звонок</div>
-                               <div class="cta-line2">Неформальный чат</div>
-                           </div>
-                       </button>
-                </div>
-            </div>
-            <div class="hero-blobs" aria-hidden="true">
-                <span class="hero-blob hero-blob--violet hero-blob--1"></span>
-                <span class="hero-blob hero-blob--mint hero-blob--2"></span>
-                <span class="hero-blob hero-blob--violet hero-blob--3"></span>
-                <span class="hero-blob hero-blob--mint hero-blob--4"></span>
-                <span class="hero-blob hero-blob--violet-soft hero-blob--5"></span>
-            </div>
-        </div>
-    </section>
 
-    <section class="site-preview-section site-preview-section--static site-preview-section--yolga" aria-label="Превью проекта yolga.pro">
-        <div class="container">
-            <section class="quote-section quote-section--yolga-inline quote-section--yolga-before-first-video" aria-label="Внешний сайт проекта">
-                <div class="quote-content">
-                    <div class="quote-headline">
-                        <h2 class="quote-title">Внешний сайт проекта</h2>
-                        <p class="quote-subtitle quote-subtitle--yolga-method">Ниже — запись экрана сайта yolga.pro</p>
-                    </div>
-                </div>
-            </section>
-
-            <div class="case-study-full-preview case-study-yolga-videos">
-                <video class="case-study-yolga-video" controls playsinline preload="metadata" aria-label="Запись экрана сайта yolga.pro, фрагмент 1">
-                    <source src="video/yolga/yolga-preview.mov?v=20260405-1334" type="video/quicktime">
-                    <source src="video/yolga/yolga-preview.mov?v=20260405-1334" type="video/mp4">
-                </video>
-            </div>
-
-            <div class="yolga-project-block yolga-project-block--before-second-video">
-                <section class="features features--yolga-inline" aria-label="yolga.pro: информация, видео, подписка">
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="feature-header">
-                                <img src="img/ok.png" alt="" class="feature-check" aria-hidden="true">
-                                <span class="feature-step">1</span>
-                            </div>
-                            <h2 class="feature-title">Инфо-сайт</h2>
-                            <ul class="feature-list">
-                                <li>О мастере и программах</li>
-                                <li>Клуб, ретриты, блог</li>
-                                <li>Контакты и вход в аккаунт</li>
-                            </ul>
-                            <img src="img/doc_2.png" alt="" class="feature-doc" aria-hidden="true">
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-header">
-                                <img src="img/ok.png" alt="" class="feature-check" aria-hidden="true">
-                                <span class="feature-step">2</span>
-                            </div>
-                            <h2 class="feature-title">Видео</h2>
-                            <ul class="feature-list">
-                                <li>Безлимитное число видео на сайте</li>
-                                <li>Смена видимости ролика (доступ, приватность)</li>
-                                <li>Своя обложка для каждого видео</li>
-                                <li>Режим просмотра</li>
-                            </ul>
-                            <img src="img/doc_1.png" alt="" class="feature-doc" aria-hidden="true">
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-header">
-                                <img src="img/ok.png" alt="" class="feature-check" aria-hidden="true">
-                                <span class="feature-step">3</span>
-                            </div>
-                            <h2 class="feature-title">Подписка</h2>
-                            <ul class="feature-list">
-                                <li>Тарифы клуба</li>
-                                <li>Регулярные трансляции и записи</li>
-                                <li>Оплата и продление доступа</li>
-                            </ul>
-                            <img src="img/doc_2.png" alt="" class="feature-doc" aria-hidden="true">
-                        </div>
-                    </div>
-                </section>
-                <hr class="yolga-divider" aria-hidden="true">
-            </div>
-
-            <section class="quote-section quote-section--yolga-inline quote-section--yolga-before-second-video" aria-label="Админка для сайта">
-                <div class="quote-content">
-                    <div class="quote-headline">
-                        <h2 class="quote-title">Админка для сайта</h2>
-                        <p class="quote-subtitle quote-subtitle--yolga-method">Ниже — запись экрана админ-панели</p>
-                    </div>
-                </div>
-            </section>
-
-            <div class="case-study-full-preview case-study-yolga-videos case-study-yolga-videos--window">
-                <video class="case-study-yolga-video" controls playsinline preload="metadata" aria-label="Запись экрана сайта yolga.pro, фрагмент 2">
-                    <source src="video/yolga/yolga-preview-2.mov?v=20260405-1335" type="video/quicktime">
-                    <source src="video/yolga/yolga-preview-2.mov?v=20260405-1335" type="video/mp4">
-                </video>
-            </div>
-
-            <div class="yolga-project-block yolga-project-block--after-second-video">
-                <section class="features features--yolga-inline" aria-label="Админка: кастомизация, чат, ученики">
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="feature-header">
-                                <img src="img/ok.png" alt="" class="feature-check" aria-hidden="true">
-                                <span class="feature-step">1</span>
-                            </div>
-                            <h2 class="feature-title">Контент</h2>
-                            <ul class="feature-list">
-                                <li>Редактирование текстов и блоков на сайте</li>
-                                <li>Гибкая компоновка разделов</li>
-                                <li>Визуальное оформление без кода</li>
-                            </ul>
-                            <img src="img/doc_2.png" alt="" class="feature-doc" aria-hidden="true">
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-header">
-                                <img src="img/ok.png" alt="" class="feature-check" aria-hidden="true">
-                                <span class="feature-step">2</span>
-                            </div>
-                            <h2 class="feature-title">Чат</h2>
-                            <ul class="feature-list">
-                                <li>Переписка с учениками внутри платформы</li>
-                                <li>Уведомления и быстрые ответы</li>
-                                <li>История сообщений</li>
-                            </ul>
-                            <img src="img/doc_1.png" alt="" class="feature-doc" aria-hidden="true">
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-header">
-                                <img src="img/ok.png" alt="" class="feature-check" aria-hidden="true">
-                                <span class="feature-step">3</span>
-                            </div>
-                            <h2 class="feature-title">Кабинет ученика</h2>
-                            <ul class="feature-list">
-                                <li>Личный кабинет и доступ к материалам</li>
-                                <li>Подписки и статусы доступа</li>
-                                <li>Прогресс и активности</li>
-                            </ul>
-                            <img src="img/doc_2.png" alt="" class="feature-doc" aria-hidden="true">
-                        </div>
-                    </div>
-                </section>
-                <hr class="yolga-divider yolga-divider--after-admin-tabs" aria-hidden="true">
-            </div>
-        </div>
-    </section>
-
-    <!-- Описание проекта -->
-    <section class="quote-section case-yolga-project-description" aria-label="Описание проекта">
-        <div class="container">
-            <div class="quote-content">
-                <div class="quote-headline">
-                    <h2 class="quote-title">Описание проекта</h2>
-                </div>
-                <div class="faq-wrapper case-yolga-project-description-faq">
-                    <div class="faq-list">
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Встроенная внутренняя CRM</span>
-                                <span class="faq-icon" aria-hidden="true">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>В платформе есть собственная CRM: учёт учеников и контактов, история взаимодействий, подписки и доступы привязаны к карточке клиента без экспорта во внешние сервисы. Можно видеть полную картину по человеку — платежи, сообщения в чате, активные программы и статусы — и работать с аудиторией из одной админки.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Безлимитное видео — развёрнуто хранилище S3</span>
-                                <span class="faq-icon" aria-hidden="true">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Видеотека не упирается в лимит файлов на приложение: ролики и обложки хранятся в объектном хранилище S3. Так проще масштабировать объём, разгрузить основной сервер и выстроить выдачу по политикам доступа. Подключение хранилища оформлено как отдельный контур: загрузка, выдача и права на объекты не смешиваются с бизнес-логикой самого сайта.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Интеграция с платёжной системой</span>
-                                <span class="faq-icon" aria-hidden="true">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Приём оплаты встроен через платёжного провайдера: пользователь оплачивает подписку или доступ к программе на стороне провайдера, а платформа получает подтверждение по callback/webhook. После успешной оплаты статус доступа обновляется автоматически — без ручной проверки чеков. Это снижает ошибки и ускоряет выдачу материалов сразу после оплаты.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Трекинг подписки (дата и тариф)</span>
-                                <span class="faq-icon" aria-hidden="true">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>В системе фиксируется, какой тариф активен у ученика, дата начала и окончания периода, история продлений. В админке это видно в карточке пользователя; в личном кабинете — понятный статус «до какого числа оплачено» и название текущего плана. Так проще поддерживать клубную модель и отвечать на вопросы об доступе без поиска по переписке.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Чат для коммуникации со всеми учениками</span>
-                                <span class="faq-icon" aria-hidden="true">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Коммуникация централизована внутри платформы: мастер и ученики переписываются без ухода в сторонние мессенджеры. Сохраняется история сообщений, проще вести объявления и ответы по программе. Уведомления и быстрые ответы поддерживают регулярный контакт всей аудитории курса или клуба.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Личный кабинет ученика</span>
-                                <span class="faq-icon" aria-hidden="true">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>У каждого ученика есть личный кабинет: вход по учётной записи, список купленных или доступных программ, материалы и видео по подписке. Отображаются подписка и статусы доступа, прогресс и активность в рамках платформы. Это снижает нагрузку на поддержку: статус и контент видны пользователю самостоятельно.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Скрытые видео внутри платформы</span>
-                                <span class="faq-icon" aria-hidden="true">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Часть роликов не показывается на публичной витрине сайта: они доступны только внутри платформы — например, по подписке клуба, уровню доступа или отдельной группе. В админке задаётся видимость и режим просмотра, чтобы разделять открытый контент и закрытые практики или частные эфиры.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Интерфейс для создания мероприятий через админку</span>
-                                <span class="faq-icon" aria-hidden="true">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Мероприятия (ретриты, встречи, офлайн- или онлайн-события) заводятся из админ-панели: название, описание, дата и место, публикация на внешнем сайте. После события можно загрузить фотогалерею — отдельный набор снимков к каждому мероприятию, без смешивания с общей медиатекой. Так посетители видят структурированную ленту событий с иллюстрациями.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Блог — подгрузка статей и фотографий</span>
-                                <span class="faq-icon" aria-hidden="true">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Блог встроен в платформу: статьи с текстом и изображениями создаются и редактируются из админки, медиа подгружаются в контент без отдельного внешнего CMS. Публикация идёт на информационный раздел сайта в едином стиле с остальными страницами проекта.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hero Section Duplicate -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-icon"><img src="img/errow_1.png" alt="Arrow" class="hero-icon-img"></div>
-                <div class="hero-cta">
-                       <button class="cta-button">
-                           <img src="img/1.jpg" alt="Profile" class="cta-avatar">
-                           <div class="cta-text">
-                               <div class="cta-line1">Забронируйте звонок</div>
-                               <div class="cta-line2">Неформальный чат</div>
-                           </div>
-                       </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-icon"><img alt="Arrow" class="hero-icon-img" src="img/errow_1.png"/></div>
+<div class="hero-label">КЛИЕНТСКИЙ ПРОЕКТ</div>
+<h1 class="hero-title">Сайт мастера йоги</h1>
+<img alt="Line" class="hero-line" src="img/15.png"/>
+<p class="hero-subtitle">SaaS-платформа для эксперта</p>
+<img alt="Line" class="hero-line" src="img/15.png"/>
+<div aria-label="Теги проекта" class="case-tags hero-case-tags">
+<span class="case-tag">SaaS</span>
+<span class="case-tag">Сайт</span>
+<span class="case-tag">Админка</span>
+<span class="case-tag">CRM</span>
+<span class="case-tag">S3</span>
+<span class="case-tag">Видео</span>
+<span class="case-tag">Подписки</span>
+<span class="case-tag">Платежи</span>
+</div>
+<div class="hero-cta">
+<button class="cta-button">
+<img alt="Profile" class="cta-avatar" src="img/1.jpg"/>
+<div class="cta-text">
+<div class="cta-line1">Забронируйте звонок</div>
+<div class="cta-line2">Неформальный чат</div>
+</div>
+</button>
+</div>
+</div>
+<div aria-hidden="true" class="hero-blobs">
+<span class="hero-blob hero-blob--violet hero-blob--1"></span>
+<span class="hero-blob hero-blob--mint hero-blob--2"></span>
+<span class="hero-blob hero-blob--violet hero-blob--3"></span>
+<span class="hero-blob hero-blob--mint hero-blob--4"></span>
+<span class="hero-blob hero-blob--violet-soft hero-blob--5"></span>
+</div>
+</div>
+</section>
+<section aria-label="Превью проекта yolga.pro" class="site-preview-section site-preview-section--static site-preview-section--yolga">
+<div class="container">
+<section aria-label="Внешний сайт проекта" class="quote-section quote-section--yolga-inline quote-section--yolga-before-first-video">
+<div class="quote-content">
+<div class="quote-headline">
+<h2 class="quote-title">Внешний сайт проекта</h2>
+<p class="quote-subtitle quote-subtitle--yolga-method">Ниже — запись экрана сайта yolga.pro</p>
+</div>
+</div>
+</section>
+<div class="case-study-full-preview case-study-yolga-videos">
+<video aria-label="Запись экрана сайта yolga.pro, фрагмент 1" class="case-study-yolga-video" controls="" playsinline="" preload="metadata">
+<source src="video/yolga/yolga-preview.mov?v=20260405-1334" type="video/quicktime"/>
+<source src="video/yolga/yolga-preview.mov?v=20260405-1334" type="video/mp4"/>
+</video>
+</div>
+<div class="yolga-project-block yolga-project-block--before-second-video">
+<section aria-label="yolga.pro: информация, видео, подписка" class="features features--yolga-inline">
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-header">
+<img alt="" aria-hidden="true" class="feature-check" src="img/ok.png"/>
+<span class="feature-step">1</span>
+</div>
+<h2 class="feature-title">Инфо-сайт</h2>
+<ul class="feature-list">
+<li>О мастере и программах</li>
+<li>Клуб, ретриты, блог</li>
+<li>Контакты и вход в аккаунт</li>
+</ul>
+<img alt="" aria-hidden="true" class="feature-doc" src="img/doc_2.png"/>
+</div>
+<div class="feature-card">
+<div class="feature-header">
+<img alt="" aria-hidden="true" class="feature-check" src="img/ok.png"/>
+<span class="feature-step">2</span>
+</div>
+<h2 class="feature-title">Видео</h2>
+<ul class="feature-list">
+<li>Безлимитное число видео на сайте</li>
+<li>Смена видимости ролика (доступ, приватность)</li>
+<li>Своя обложка для каждого видео</li>
+<li>Режим просмотра</li>
+</ul>
+<img alt="" aria-hidden="true" class="feature-doc" src="img/doc_1.png"/>
+</div>
+<div class="feature-card">
+<div class="feature-header">
+<img alt="" aria-hidden="true" class="feature-check" src="img/ok.png"/>
+<span class="feature-step">3</span>
+</div>
+<h2 class="feature-title">Подписка</h2>
+<ul class="feature-list">
+<li>Тарифы клуба</li>
+<li>Регулярные трансляции и записи</li>
+<li>Оплата и продление доступа</li>
+</ul>
+<img alt="" aria-hidden="true" class="feature-doc" src="img/doc_2.png"/>
+</div>
+</div>
+</section>
+<hr aria-hidden="true" class="yolga-divider"/>
+</div>
+<section aria-label="Админка для сайта" class="quote-section quote-section--yolga-inline quote-section--yolga-before-second-video">
+<div class="quote-content">
+<div class="quote-headline">
+<h2 class="quote-title">Админка для сайта</h2>
+<p class="quote-subtitle quote-subtitle--yolga-method">Ниже — запись экрана админ-панели</p>
+</div>
+</div>
+</section>
+<div class="case-study-full-preview case-study-yolga-videos case-study-yolga-videos--window">
+<video aria-label="Запись экрана сайта yolga.pro, фрагмент 2" class="case-study-yolga-video" controls="" playsinline="" preload="metadata">
+<source src="video/yolga/yolga-preview-2.mov?v=20260405-1335" type="video/quicktime"/>
+<source src="video/yolga/yolga-preview-2.mov?v=20260405-1335" type="video/mp4"/>
+</video>
+</div>
+<div class="yolga-project-block yolga-project-block--after-second-video">
+<section aria-label="Админка: кастомизация, чат, ученики" class="features features--yolga-inline">
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-header">
+<img alt="" aria-hidden="true" class="feature-check" src="img/ok.png"/>
+<span class="feature-step">1</span>
+</div>
+<h2 class="feature-title">Контент</h2>
+<ul class="feature-list">
+<li>Редактирование текстов и блоков на сайте</li>
+<li>Гибкая компоновка разделов</li>
+<li>Визуальное оформление без кода</li>
+</ul>
+<img alt="" aria-hidden="true" class="feature-doc" src="img/doc_2.png"/>
+</div>
+<div class="feature-card">
+<div class="feature-header">
+<img alt="" aria-hidden="true" class="feature-check" src="img/ok.png"/>
+<span class="feature-step">2</span>
+</div>
+<h2 class="feature-title">Чат</h2>
+<ul class="feature-list">
+<li>Переписка с учениками внутри платформы</li>
+<li>Уведомления и быстрые ответы</li>
+<li>История сообщений</li>
+</ul>
+<img alt="" aria-hidden="true" class="feature-doc" src="img/doc_1.png"/>
+</div>
+<div class="feature-card">
+<div class="feature-header">
+<img alt="" aria-hidden="true" class="feature-check" src="img/ok.png"/>
+<span class="feature-step">3</span>
+</div>
+<h2 class="feature-title">Кабинет ученика</h2>
+<ul class="feature-list">
+<li>Личный кабинет и доступ к материалам</li>
+<li>Подписки и статусы доступа</li>
+<li>Прогресс и активности</li>
+</ul>
+<img alt="" aria-hidden="true" class="feature-doc" src="img/doc_2.png"/>
+</div>
+</div>
+</section>
+<hr aria-hidden="true" class="yolga-divider yolga-divider--after-admin-tabs"/>
+</div>
+</div>
+</section>
+<!-- Описание проекта -->
+<section aria-label="Описание проекта" class="quote-section case-yolga-project-description">
+<div class="container">
+<div class="quote-content">
+<div class="quote-headline">
+<h2 class="quote-title">Описание проекта</h2>
+</div>
+<div class="faq-wrapper case-yolga-project-description-faq">
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-question">
+<span>Встроенная внутренняя CRM</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<p>В платформе есть собственная CRM: учёт учеников и контактов, история взаимодействий, подписки и доступы привязаны к карточке клиента без экспорта во внешние сервисы. Можно видеть полную картину по человеку — платежи, сообщения в чате, активные программы и статусы — и работать с аудиторией из одной админки.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>Безлимитное видео — развёрнуто хранилище S3</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<p>Видеотека не упирается в лимит файлов на приложение: ролики и обложки хранятся в объектном хранилище S3. Так проще масштабировать объём, разгрузить основной сервер и выстроить выдачу по политикам доступа. Подключение хранилища оформлено как отдельный контур: загрузка, выдача и права на объекты не смешиваются с бизнес-логикой самого сайта.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>Интеграция с платёжной системой</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<p>Приём оплаты встроен через платёжного провайдера: пользователь оплачивает подписку или доступ к программе на стороне провайдера, а платформа получает подтверждение по callback/webhook. После успешной оплаты статус доступа обновляется автоматически — без ручной проверки чеков. Это снижает ошибки и ускоряет выдачу материалов сразу после оплаты.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>Трекинг подписки (дата и тариф)</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<p>В системе фиксируется, какой тариф активен у ученика, дата начала и окончания периода, история продлений. В админке это видно в карточке пользователя; в личном кабинете — понятный статус «до какого числа оплачено» и название текущего плана. Так проще поддерживать клубную модель и отвечать на вопросы об доступе без поиска по переписке.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>Чат для коммуникации со всеми учениками</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<p>Коммуникация централизована внутри платформы: мастер и ученики переписываются без ухода в сторонние мессенджеры. Сохраняется история сообщений, проще вести объявления и ответы по программе. Уведомления и быстрые ответы поддерживают регулярный контакт всей аудитории курса или клуба.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>Личный кабинет ученика</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<p>У каждого ученика есть личный кабинет: вход по учётной записи, список купленных или доступных программ, материалы и видео по подписке. Отображаются подписка и статусы доступа, прогресс и активность в рамках платформы. Это снижает нагрузку на поддержку: статус и контент видны пользователю самостоятельно.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>Скрытые видео внутри платформы</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<p>Часть роликов не показывается на публичной витрине сайта: они доступны только внутри платформы — например, по подписке клуба, уровню доступа или отдельной группе. В админке задаётся видимость и режим просмотра, чтобы разделять открытый контент и закрытые практики или частные эфиры.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>Интерфейс для создания мероприятий через админку</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<p>Мероприятия (ретриты, встречи, офлайн- или онлайн-события) заводятся из админ-панели: название, описание, дата и место, публикация на внешнем сайте. После события можно загрузить фотогалерею — отдельный набор снимков к каждому мероприятию, без смешивания с общей медиатекой. Так посетители видят структурированную ленту событий с иллюстрациями.</p>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>Блог — подгрузка статей и фотографий</span>
+<span aria-hidden="true" class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<p>Блог встроен в платформу: статьи с текстом и изображениями создаются и редактируются из админки, медиа подгружаются в контент без отдельного внешнего CMS. Публикация идёт на информационный раздел сайта в едином стиле с остальными страницами проекта.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Hero Section Duplicate -->
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-icon"><img alt="Arrow" class="hero-icon-img" src="img/errow_1.png"/></div>
+<div class="hero-cta">
+<button class="cta-button">
+<img alt="Profile" class="cta-avatar" src="img/1.jpg"/>
+<div class="cta-text">
+<div class="cta-line1">Забронируйте звонок</div>
+<div class="cta-line2">Неформальный чат</div>
+</div>
+</button>
+</div>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="container">
+<button class="footer-legal-trigger" data-open-legal-modal="" type="button">
+                Реквизиты и юридическая информация
+            </button>
+</div>
+</footer>
+<div aria-labelledby="legal-modal-title" aria-modal="true" class="legal-modal" hidden="" id="legal-modal" role="dialog">
+<div class="legal-modal__backdrop" data-close-legal-modal="" tabindex="-1"></div>
+<div class="legal-modal__panel">
+<button aria-label="Закрыть" class="legal-modal__close" data-close-legal-modal="" type="button">×</button>
+<h2 class="legal-modal__title" id="legal-modal-title">Реквизиты и юридическая информация</h2>
+<div class="legal-modal__body">
+<p class="legal-modal__note">Индивидуальный предприниматель. Данные для договора и оплаты.</p>
+<dl class="legal-dl">
+<dt>Название организации</dt>
+<dd>ИНДИВИДУАЛЬНЫЙ ПРЕДПРИНИМАТЕЛЬ КОМАРОВА АНАСТАСИЯ АЛЕКСАНДРОВНА</dd>
+<dt>Юридический адрес</dt>
+<dd>141310, РОССИЯ, МОСКОВСКАЯ ОБЛ, Г СЕРГИЕВ ПОСАД, Г СЕРГИЕВ ПОСАД, ПР-КТ КРАСНОЙ АРМИИ, Д 6, КВ 91</dd>
+<dt>ИНН</dt>
+<dd>504231947047</dd>
+<dt>ОГРНИП</dt>
+<dd>322508100272216</dd>
+<dt>Расчётный счёт</dt>
+<dd>40802810400006421655</dd>
+<dt>Банк</dt>
+<dd>АО «ТБанк»</dd>
+<dt>ИНН банка</dt>
+<dd>7710140679</dd>
+<dt>БИК</dt>
+<dd>044525974</dd>
+<dt>Корр. счёт банка</dt>
+<dd>30101810145250000974</dd>
+</dl>
+<p class="legal-modal__phone"><strong>Телефон:</strong> <a href="tel:+79060959295">+7 906 095‑92‑95</a></p>
+</div>
+</div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
-

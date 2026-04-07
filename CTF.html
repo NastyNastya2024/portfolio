@@ -1,298 +1,323 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASYA.KOM - Аналитика, разработка, продвижение</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ASYA.KOM - Аналитика, разработка, продвижение</title>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body class="site-subpage">
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="img/errow_2.png" alt="Arrow" class="logo-arrow logo-arrow-left">
-                    <a href="index.html" class="nav-link">ASYA.KOM</a>
-                    <img src="img/errow_2.png" alt="Arrow" class="logo-arrow logo-arrow-right">
-                </div>
-                <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <nav class="nav nav-dropdown" id="mobile-menu">
-                    <a href="about.html" class="nav-link">Контакты</a>
-                    <a href="about.html" class="nav-link">О нас</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+<!-- Header -->
+<header class="header">
+<div class="container">
+<div class="header-content">
+<div class="logo">
+<img alt="Arrow" class="logo-arrow logo-arrow-left" src="img/errow_2.png"/>
+<a class="nav-link" href="index.html">ASYA.KOM</a>
+<img alt="Arrow" class="logo-arrow logo-arrow-right" src="img/errow_2.png"/>
+</div>
+<div class="header-trailing">
+<div aria-label="Язык" class="lang-switch" role="navigation">
+<a class="lang-switch__link" href="en/CTF.html" hreflang="en" lang="en">EN</a>
+<span aria-hidden="true" class="lang-switch__sep">·</span>
+<span aria-current="true" class="lang-switch__current">RU</span>
+</div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-icon"><img src="img/errow_1.png" alt="Arrow" class="hero-icon-img"></div>
-                    <div class="hero-label">креативный сервис</div>
-                <h1 class="hero-title">ClariTech</h1>
-                <img src="img/15.png" alt="Line" class="hero-line">
-                    <p class="hero-subtitle">система управления затратами и финансового моделирования</p>
-                <img src="img/15.png" alt="Line" class="hero-line">
-                <div class="case-tags hero-case-tags" aria-label="Теги проекта">
-                    <span class="case-tag">UX</span>
-                    <span class="case-tag">UI</span>
-                    <span class="case-tag">WebDesign</span>
-                    <span class="case-tag">AI</span>
-                    <span class="case-tag">ProductDesign</span>
-                </div>
-                <div class="hero-cta" style="display: flex; justify-content: center;">
-                       <button class="cta-button">
-                           <img src="img/1.jpg" alt="Profile" class="cta-avatar">
-                           <div class="cta-text">
-                               <div class="cta-line1">Забронируйте звонок</div>
-                               <div class="cta-line2">Неформальный чат</div>
-                           </div>
-                       </button>
-                </div>
-            </div>
-            <div class="hero-blobs" aria-hidden="true">
-                <span class="hero-blob hero-blob--violet hero-blob--1"></span>
-                <span class="hero-blob hero-blob--mint hero-blob--2"></span>
-                <span class="hero-blob hero-blob--violet hero-blob--3"></span>
-                <span class="hero-blob hero-blob--mint hero-blob--4"></span>
-                <span class="hero-blob hero-blob--violet-soft hero-blob--5"></span>
-            </div>
-        </div>
-    </section>
 
-    <!-- Additional Cards Section -->
-    <section class="additional-cards-section">
-        <div class="container">
-            <div class="additional-cards-grid">
-                <!-- Left: Large Card -->
-                <div class="large-step-card">
-                    <div class="feature-header">
-                        <img src="img/ok.png" alt="Check" class="feature-check">
-                        <span class="feature-step">Общее описание</span>
-                    </div>
-                    <p class="step-description">ClariTech — это специализированная информационная система для моделирования, анализа и управления затратами предприятия. Система предназначена для построения прозрачной финансовой модели организации, в которой отражаются источники расходов, правила их распределения и влияние затрат на продукты, проекты, услуги и подразделения. ClariTech позволяет перейти от разрозненных расчётов в таблицах к единой структурированной модели, основанной на причинно-следственных связях.</p>
-                    <p class="step-description">В основе ClariTech лежит графовый подход к финансовому моделированию. Система поддерживает загрузку данных из внешних источников, автоматический расчёт себестоимости, сценарный и план-факт анализ, а также выявление причин отклонений финансовых показателей.</p>
-                    <p class="step-description">ClariTech применяется как инструмент управленческого учёта и поддержки принятия решений. Он используется финансовыми службами и руководством для повышения прозрачности расходов, оценки эффективности деятельности, оптимизации затрат и обоснования управленческих решений. Система может работать как в облачном формате, так и в корпоративной ИТ-среде, дополняя ERP и BI-решения, но не заменяя их.</p>
-                </div>
-
-                <!-- Right: Two Small Cards -->
-                <div class="small-cards-column">
-                    <div class="small-card">
-                        <div class="small-card-number">Облако тегов</div>
-                        <div class="small-card-text">
-                            <div class="tech-cloud">
-                                <span class="tech-tag">Cost Allocation</span>
-                                <span class="tech-tag">Cost Management</span>
-                                <span class="tech-tag">Financial Modeling</span>
-                                <span class="tech-tag">Management Accounting</span>
-                                <span class="tech-tag">Profitability Analysis</span>
-                                <span class="tech-tag">Decision Support</span>
-                                <span class="tech-tag">Enterprise Analytics</span>
-                                <span class="tech-tag">Graph Analytics</span>
-                                <span class="tech-tag">Scenario Planning</span>
-                                <span class="tech-tag">SaaS</span>
-                                <span class="tech-tag">Cloud Platform</span>
-                                <span class="tech-tag">Web Application</span>
-                                <span class="tech-tag">ERP/BI Integration</span>
-                                <span class="tech-tag">API Platform</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="small-card">
-                        <div class="small-card-number">Актуальные ссылки</div>
-                        <div class="small-card-text">
-                            <div class="tech-cloud">
-                                <a href="https://costviz.online/#/login" target="_blank" class="tech-tag">https://costviz.online/#/login</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quote Section Duplicate -->
-    <section class="quote-section">
-        <div class="container">
-            <div class="quote-content">
-                <div class="quote-headline">
-                    <h2 class="quote-title">Описание проекта</h2>
-                    <p class="quote-subtitle">UI/UX редизайн платформы</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <div class="faq-wrapper">
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Этап 1. До редизайна (Было)</span>
-                            <span class="faq-icon">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p style="margin-bottom: 12px;">Исходный интерфейс платформы формировался органически и со временем приобрёл большое количество повторяющихся и несогласованных паттернов, что существенно усложняло работу пользователей.</p>
-                            <ul style="margin-left: 20px; margin-bottom: 12px; padding-left: 20px; list-style-type: disc;">
-                                <li style="margin-bottom: 8px;">Отсутствовала чёткая структура интерфейса: навигация между моделями осуществлялась через верхнюю панель без логического разделения на разделы.</li>
-                                <li style="margin-bottom: 8px;">Управление полным TCO, прямыми и нераспределёнными затратами было вынесено в верхнее меню, без очевидной связи с контекстом текущей модели.</li>
-                                <li style="margin-bottom: 8px;">Работа с узлами модели была сложной: отсутствовал единый интерфейс управления связями, из-за чего пользователю было трудно понять структуру и логику модели.</li>
-                                <li style="margin-bottom: 8px;">Процесс вставки параметров в формулы был неинтуитивным и требовал лишних действий.</li>
-                                <li style="margin-bottom: 8px;">Управление узлом было распределено между несколькими зонами интерфейса: боковой панелью, нижней панелью с выпадающими списками в центре экрана и боковым меню.</li>
-                                <li style="margin-bottom: 8px;">Управление узлами осуществлялось через множество дополнительных кнопок, иконки которых были когнитивно неочевидны и требовали обучения.</li>
-                                <li style="margin-bottom: 8px;">Несмотря на наличие полезных функций (смена языка, режим редактирования для администратора, быстрая кнопка выхода), они не были интегрированы в единую логичную систему.</li>
-                            </ul>
-                            <p style="margin-top: 12px;">В результате интерфейс выглядел перегруженным, сложным для освоения и плохо масштабируемым.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Image Slider Block -->
-                    <div style="margin-top: 5px; margin-bottom: 5px; position: relative;">
-                        <div class="image-slider" id="slider-after-question2">
-                            <div class="slider-container">
-                                <div class="slider-slide active">
-                                    <div class="philosophy-card">
-                                        <img src="img/ctf_old_1.png" alt="CTF Old 1" class="philosophy-image">
-                                    </div>
-                                </div>
-                                <div class="slider-slide">
-                                    <div class="philosophy-card">
-                                        <img src="img/ctf_old_2.png" alt="CTF Old 2" class="philosophy-image">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slider-pagination">
-                                <span class="pagination-dot active" data-slide="0"></span>
-                                <span class="pagination-dot" data-slide="1"></span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Этап 2. После редизайна (Стало)</span>
-                            <span class="faq-icon">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p style="margin-bottom: 12px;">В ходе редизайна был выполнен комплексный пересмотр UX-архитектуры с целью убрать повторяющиеся паттерны, упростить навигацию и сделать работу с моделями более прозрачной.</p>
-                            <ul style="margin-left: 20px; margin-bottom: 12px; padding-left: 20px; list-style-type: disc;">
-                                <li style="margin-bottom: 8px;">По запросу заказчика добавлена кнопка меню в верхней части экрана для переключения между моделями.</li>
-                                <li style="margin-bottom: 8px;">Главное меню вынесено в верхнюю навигацию и структурировано.</li>
-                                <li style="margin-bottom: 8px;">Добавлены новые логические разделы (например, Справочники и Настройки), что повысило целостность интерфейса.</li>
-                                <li style="margin-bottom: 8px;">Сохранены и логично интегрированы ключевые сервисные функции: смена языка, режим редактирования для администратора и быстрая кнопка выхода.</li>
-                                <li style="margin-bottom: 8px;">Убрана сетка для построения модели — интерфейс стал визуально легче и менее перегруженным.</li>
-                                <li style="margin-bottom: 8px;">Разработана новая форма редактирования узлов.</li>
-                                <li style="margin-bottom: 8px;">Все действия и кнопки сгруппированы в единые смысловые блоки, устранено дублирование.</li>
-                                <li style="margin-bottom: 8px;">Создано компактное меню для наиболее важных и часто используемых действий.</li>
-                                <li style="margin-bottom: 8px;">Добавлена кнопка быстрого добавления элементов на экран.</li>
-                                <li style="margin-bottom: 8px;">Управление узлами вынесено в отдельный «паспорт узла», что упростило навигацию между узлами и сделало настройку каждого узла более понятной и изолированной.</li>
-                                <li style="margin-bottom: 8px;">Реализована возможность фиксировать решение и демонстрировать его другим пользователям.</li>
-                            </ul>
-                            <p style="margin-top: 12px;">В результате платформа получила более чистую, логичную и масштабируемую UX-архитектуру, снизился когнитивный порог входа, а работа с моделями и узлами стала значительно быстрее и прозрачнее.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Image Slider Block -->
-                    <div style="margin-top: 5px; margin-bottom: 5px; position: relative;">
-                        <div class="image-slider" id="slider-after-question3">
-                            <div class="slider-container">
-                                <div class="slider-slide active">
-                                    <div class="philosophy-card">
-                                        <img src="img/ctf_new_4.png" alt="CTF New 4" class="philosophy-image">
-                                    </div>
-                                </div>
-                                <div class="slider-slide">
-                                    <div class="philosophy-card">
-                                        <img src="img/ctf_new_2.png" alt="CTF New 2" class="philosophy-image">
-                                    </div>
-                                </div>
-                                <div class="slider-slide">
-                                    <div class="philosophy-card">
-                                        <img src="img/ctf_new_3.png" alt="CTF New 3" class="philosophy-image">
-                                    </div>
-                                </div>
-                                <div class="slider-slide">
-                                    <div class="philosophy-card">
-                                        <img src="img/ctf_new_1.png" alt="CTF New 1" class="philosophy-image">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slider-pagination">
-                                <span class="pagination-dot active" data-slide="0"></span>
-                                <span class="pagination-dot" data-slide="1"></span>
-                                <span class="pagination-dot" data-slide="2"></span>
-                                <span class="pagination-dot" data-slide="3"></span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Расширение функциональности платформы: разработка новых разделов и обновление UI-компонентов</span>
-                            <span class="faq-icon">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>В рамках редизайна платформы была выполнена комплексная переработка UI-кита с целью унификации визуальных компонентов и улучшения пользовательского опыта. Все интерфейсные элементы были переработаны с учётом современных принципов дизайна и требований к доступности.</p>
-                            <p>Параллельно с обновлением существующих компонентов была реализована разработка значительного количества новых функциональных разделов, которые ранее отсутствовали в системе. Среди созданных модулей были внедрены такие разделы, как «Отчеты» и «Справочники», которые расширили возможности платформы и улучшили структуру навигации.</p>
-                            <p>Раздел «Отчеты» обеспечивает пользователям возможность генерации и экспорта аналитических данных, визуализации ключевых показателей и формирования документов для дальнейшего использования. Раздел «Справочники» предоставляет централизованный доступ к справочной информации, управление данными и настройку параметров системы.</p>
-                            <p>Все новые разделы были интегрированы в общую архитектуру платформы с использованием обновлённого UI-кита, что обеспечило визуальную согласованность и единообразие интерфейса на всех уровнях системы.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Image Block -->
-                    <div style="margin-top: 5px; margin-bottom: 5px;">
-                        <div class="philosophy-card">
-                            <img src="img/ctf_new_5.png" alt="CTF New 5" class="philosophy-image">
-                        </div>
-                    </div>
-                    
-                    <!-- Section Header -->
-                    <div style="margin-top: 40px; margin-bottom: 20px; text-align: center;">
-                        <div class="quote-headline" style="text-align: center; display: inline-block;">
-                            <h2 class="quote-title" style="text-align: center;">Прототип проекта</h2>
-                            <p class="quote-subtitle" style="text-align: center;">UI/UX редизайн платформы</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Прототип (статичный макет вместо видео) -->
-                    <div style="margin-top: 5px; margin-bottom: 5px;">
-                        <div class="philosophy-card">
-                            <img src="img/ctf_new_1.png" alt="ClariTech — прототип интерфейса после редизайна" class="philosophy-image" style="width: 70%; height: auto; object-fit: cover; transform: rotate(-0.5deg); margin: 0 auto; display: block; clip-path: inset(2px);">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hero Section Duplicate -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-icon"><img src="img/errow_1.png" alt="Arrow" class="hero-icon-img"></div>
-                <div class="hero-cta">
-                       <button class="cta-button">
-                           <img src="img/1.jpg" alt="Profile" class="cta-avatar">
-                           <div class="cta-text">
-                               <div class="cta-line1">Забронируйте звонок</div>
-                               <div class="cta-line2">Неформальный чат</div>
-                           </div>
-                       </button>
-                </div>
-            </div>
-        </div>
-    </section>
-   
-    <script src="script.js"></script>
-    <script>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-icon"><img alt="Arrow" class="hero-icon-img" src="img/errow_1.png"/></div>
+<div class="hero-label">креативный сервис</div>
+<h1 class="hero-title">ClariTech</h1>
+<img alt="Line" class="hero-line" src="img/15.png"/>
+<p class="hero-subtitle">система управления затратами и финансового моделирования</p>
+<img alt="Line" class="hero-line" src="img/15.png"/>
+<div aria-label="Теги проекта" class="case-tags hero-case-tags">
+<span class="case-tag">UX</span>
+<span class="case-tag">UI</span>
+<span class="case-tag">WebDesign</span>
+<span class="case-tag">AI</span>
+<span class="case-tag">ProductDesign</span>
+</div>
+<div class="hero-cta" style="display: flex; justify-content: center;">
+<button class="cta-button">
+<img alt="Profile" class="cta-avatar" src="img/1.jpg"/>
+<div class="cta-text">
+<div class="cta-line1">Забронируйте звонок</div>
+<div class="cta-line2">Неформальный чат</div>
+</div>
+</button>
+</div>
+</div>
+<div aria-hidden="true" class="hero-blobs">
+<span class="hero-blob hero-blob--violet hero-blob--1"></span>
+<span class="hero-blob hero-blob--mint hero-blob--2"></span>
+<span class="hero-blob hero-blob--violet hero-blob--3"></span>
+<span class="hero-blob hero-blob--mint hero-blob--4"></span>
+<span class="hero-blob hero-blob--violet-soft hero-blob--5"></span>
+</div>
+</div>
+</section>
+<!-- Additional Cards Section -->
+<section class="additional-cards-section">
+<div class="container">
+<div class="additional-cards-grid">
+<!-- Left: Large Card -->
+<div class="large-step-card">
+<div class="feature-header">
+<img alt="Check" class="feature-check" src="img/ok.png"/>
+<span class="feature-step">Общее описание</span>
+</div>
+<p class="step-description">ClariTech — это специализированная информационная система для моделирования, анализа и управления затратами предприятия. Система предназначена для построения прозрачной финансовой модели организации, в которой отражаются источники расходов, правила их распределения и влияние затрат на продукты, проекты, услуги и подразделения. ClariTech позволяет перейти от разрозненных расчётов в таблицах к единой структурированной модели, основанной на причинно-следственных связях.</p>
+<p class="step-description">В основе ClariTech лежит графовый подход к финансовому моделированию. Система поддерживает загрузку данных из внешних источников, автоматический расчёт себестоимости, сценарный и план-факт анализ, а также выявление причин отклонений финансовых показателей.</p>
+<p class="step-description">ClariTech применяется как инструмент управленческого учёта и поддержки принятия решений. Он используется финансовыми службами и руководством для повышения прозрачности расходов, оценки эффективности деятельности, оптимизации затрат и обоснования управленческих решений. Система может работать как в облачном формате, так и в корпоративной ИТ-среде, дополняя ERP и BI-решения, но не заменяя их.</p>
+</div>
+<!-- Right: Two Small Cards -->
+<div class="small-cards-column">
+<div class="small-card">
+<div class="small-card-number">Облако тегов</div>
+<div class="small-card-text">
+<div class="tech-cloud">
+<span class="tech-tag">Cost Allocation</span>
+<span class="tech-tag">Cost Management</span>
+<span class="tech-tag">Financial Modeling</span>
+<span class="tech-tag">Management Accounting</span>
+<span class="tech-tag">Profitability Analysis</span>
+<span class="tech-tag">Decision Support</span>
+<span class="tech-tag">Enterprise Analytics</span>
+<span class="tech-tag">Graph Analytics</span>
+<span class="tech-tag">Scenario Planning</span>
+<span class="tech-tag">SaaS</span>
+<span class="tech-tag">Cloud Platform</span>
+<span class="tech-tag">Web Application</span>
+<span class="tech-tag">ERP/BI Integration</span>
+<span class="tech-tag">API Platform</span>
+</div>
+</div>
+</div>
+<div class="small-card">
+<div class="small-card-number">Актуальные ссылки</div>
+<div class="small-card-text">
+<div class="tech-cloud">
+<a class="tech-tag" href="https://costviz.online/#/login" target="_blank">https://costviz.online/#/login</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quote Section Duplicate -->
+<section class="quote-section">
+<div class="container">
+<div class="quote-content">
+<div class="quote-headline">
+<h2 class="quote-title">Описание проекта</h2>
+<p class="quote-subtitle">UI/UX редизайн платформы</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="faq-section">
+<div class="container">
+<div class="faq-wrapper">
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-question">
+<span>Этап 1. До редизайна (Было)</span>
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<p style="margin-bottom: 12px;">Исходный интерфейс платформы формировался органически и со временем приобрёл большое количество повторяющихся и несогласованных паттернов, что существенно усложняло работу пользователей.</p>
+<ul style="margin-left: 20px; margin-bottom: 12px; padding-left: 20px; list-style-type: disc;">
+<li style="margin-bottom: 8px;">Отсутствовала чёткая структура интерфейса: навигация между моделями осуществлялась через верхнюю панель без логического разделения на разделы.</li>
+<li style="margin-bottom: 8px;">Управление полным TCO, прямыми и нераспределёнными затратами было вынесено в верхнее меню, без очевидной связи с контекстом текущей модели.</li>
+<li style="margin-bottom: 8px;">Работа с узлами модели была сложной: отсутствовал единый интерфейс управления связями, из-за чего пользователю было трудно понять структуру и логику модели.</li>
+<li style="margin-bottom: 8px;">Процесс вставки параметров в формулы был неинтуитивным и требовал лишних действий.</li>
+<li style="margin-bottom: 8px;">Управление узлом было распределено между несколькими зонами интерфейса: боковой панелью, нижней панелью с выпадающими списками в центре экрана и боковым меню.</li>
+<li style="margin-bottom: 8px;">Управление узлами осуществлялось через множество дополнительных кнопок, иконки которых были когнитивно неочевидны и требовали обучения.</li>
+<li style="margin-bottom: 8px;">Несмотря на наличие полезных функций (смена языка, режим редактирования для администратора, быстрая кнопка выхода), они не были интегрированы в единую логичную систему.</li>
+</ul>
+<p style="margin-top: 12px;">В результате интерфейс выглядел перегруженным, сложным для освоения и плохо масштабируемым.</p>
+</div>
+</div>
+<!-- Image Slider Block -->
+<div style="margin-top: 5px; margin-bottom: 5px; position: relative;">
+<div class="image-slider" id="slider-after-question2">
+<div class="slider-container">
+<div class="slider-slide active">
+<div class="philosophy-card">
+<img alt="CTF Old 1" class="philosophy-image" src="img/ctf_old_1.png"/>
+</div>
+</div>
+<div class="slider-slide">
+<div class="philosophy-card">
+<img alt="CTF Old 2" class="philosophy-image" src="img/ctf_old_2.png"/>
+</div>
+</div>
+</div>
+<div class="slider-pagination">
+<span class="pagination-dot active" data-slide="0"></span>
+<span class="pagination-dot" data-slide="1"></span>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>Этап 2. После редизайна (Стало)</span>
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<p style="margin-bottom: 12px;">В ходе редизайна был выполнен комплексный пересмотр UX-архитектуры с целью убрать повторяющиеся паттерны, упростить навигацию и сделать работу с моделями более прозрачной.</p>
+<ul style="margin-left: 20px; margin-bottom: 12px; padding-left: 20px; list-style-type: disc;">
+<li style="margin-bottom: 8px;">По запросу заказчика добавлена кнопка меню в верхней части экрана для переключения между моделями.</li>
+<li style="margin-bottom: 8px;">Главное меню вынесено в верхнюю навигацию и структурировано.</li>
+<li style="margin-bottom: 8px;">Добавлены новые логические разделы (например, Справочники и Настройки), что повысило целостность интерфейса.</li>
+<li style="margin-bottom: 8px;">Сохранены и логично интегрированы ключевые сервисные функции: смена языка, режим редактирования для администратора и быстрая кнопка выхода.</li>
+<li style="margin-bottom: 8px;">Убрана сетка для построения модели — интерфейс стал визуально легче и менее перегруженным.</li>
+<li style="margin-bottom: 8px;">Разработана новая форма редактирования узлов.</li>
+<li style="margin-bottom: 8px;">Все действия и кнопки сгруппированы в единые смысловые блоки, устранено дублирование.</li>
+<li style="margin-bottom: 8px;">Создано компактное меню для наиболее важных и часто используемых действий.</li>
+<li style="margin-bottom: 8px;">Добавлена кнопка быстрого добавления элементов на экран.</li>
+<li style="margin-bottom: 8px;">Управление узлами вынесено в отдельный «паспорт узла», что упростило навигацию между узлами и сделало настройку каждого узла более понятной и изолированной.</li>
+<li style="margin-bottom: 8px;">Реализована возможность фиксировать решение и демонстрировать его другим пользователям.</li>
+</ul>
+<p style="margin-top: 12px;">В результате платформа получила более чистую, логичную и масштабируемую UX-архитектуру, снизился когнитивный порог входа, а работа с моделями и узлами стала значительно быстрее и прозрачнее.</p>
+</div>
+</div>
+<!-- Image Slider Block -->
+<div style="margin-top: 5px; margin-bottom: 5px; position: relative;">
+<div class="image-slider" id="slider-after-question3">
+<div class="slider-container">
+<div class="slider-slide active">
+<div class="philosophy-card">
+<img alt="CTF New 4" class="philosophy-image" src="img/ctf_new_4.png"/>
+</div>
+</div>
+<div class="slider-slide">
+<div class="philosophy-card">
+<img alt="CTF New 2" class="philosophy-image" src="img/ctf_new_2.png"/>
+</div>
+</div>
+<div class="slider-slide">
+<div class="philosophy-card">
+<img alt="CTF New 3" class="philosophy-image" src="img/ctf_new_3.png"/>
+</div>
+</div>
+<div class="slider-slide">
+<div class="philosophy-card">
+<img alt="CTF New 1" class="philosophy-image" src="img/ctf_new_1.png"/>
+</div>
+</div>
+</div>
+<div class="slider-pagination">
+<span class="pagination-dot active" data-slide="0"></span>
+<span class="pagination-dot" data-slide="1"></span>
+<span class="pagination-dot" data-slide="2"></span>
+<span class="pagination-dot" data-slide="3"></span>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>Расширение функциональности платформы: разработка новых разделов и обновление UI-компонентов</span>
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<p>В рамках редизайна платформы была выполнена комплексная переработка UI-кита с целью унификации визуальных компонентов и улучшения пользовательского опыта. Все интерфейсные элементы были переработаны с учётом современных принципов дизайна и требований к доступности.</p>
+<p>Параллельно с обновлением существующих компонентов была реализована разработка значительного количества новых функциональных разделов, которые ранее отсутствовали в системе. Среди созданных модулей были внедрены такие разделы, как «Отчеты» и «Справочники», которые расширили возможности платформы и улучшили структуру навигации.</p>
+<p>Раздел «Отчеты» обеспечивает пользователям возможность генерации и экспорта аналитических данных, визуализации ключевых показателей и формирования документов для дальнейшего использования. Раздел «Справочники» предоставляет централизованный доступ к справочной информации, управление данными и настройку параметров системы.</p>
+<p>Все новые разделы были интегрированы в общую архитектуру платформы с использованием обновлённого UI-кита, что обеспечило визуальную согласованность и единообразие интерфейса на всех уровнях системы.</p>
+</div>
+</div>
+<!-- Image Block -->
+<div style="margin-top: 5px; margin-bottom: 5px;">
+<div class="philosophy-card">
+<img alt="CTF New 5" class="philosophy-image" src="img/ctf_new_5.png"/>
+</div>
+</div>
+<!-- Section Header -->
+<div style="margin-top: 40px; margin-bottom: 20px; text-align: center;">
+<div class="quote-headline" style="text-align: center; display: inline-block;">
+<h2 class="quote-title" style="text-align: center;">Прототип проекта</h2>
+<p class="quote-subtitle" style="text-align: center;">UI/UX редизайн платформы</p>
+</div>
+</div>
+<!-- Прототип (статичный макет вместо видео) -->
+<div style="margin-top: 5px; margin-bottom: 5px;">
+<div class="philosophy-card">
+<img alt="ClariTech — прототип интерфейса после редизайна" class="philosophy-image" src="img/ctf_new_1.png" style="width: 70%; height: auto; object-fit: cover; transform: rotate(-0.5deg); margin: 0 auto; display: block; clip-path: inset(2px);"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Hero Section Duplicate -->
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-icon"><img alt="Arrow" class="hero-icon-img" src="img/errow_1.png"/></div>
+<div class="hero-cta">
+<button class="cta-button">
+<img alt="Profile" class="cta-avatar" src="img/1.jpg"/>
+<div class="cta-text">
+<div class="cta-line1">Забронируйте звонок</div>
+<div class="cta-line2">Неформальный чат</div>
+</div>
+</button>
+</div>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="container">
+<button class="footer-legal-trigger" data-open-legal-modal="" type="button">
+                Реквизиты и юридическая информация
+            </button>
+</div>
+</footer>
+<div aria-labelledby="legal-modal-title" aria-modal="true" class="legal-modal" hidden="" id="legal-modal" role="dialog">
+<div class="legal-modal__backdrop" data-close-legal-modal="" tabindex="-1"></div>
+<div class="legal-modal__panel">
+<button aria-label="Закрыть" class="legal-modal__close" data-close-legal-modal="" type="button">×</button>
+<h2 class="legal-modal__title" id="legal-modal-title">Реквизиты и юридическая информация</h2>
+<div class="legal-modal__body">
+<p class="legal-modal__note">Индивидуальный предприниматель. Данные для договора и оплаты.</p>
+<dl class="legal-dl">
+<dt>Название организации</dt>
+<dd>ИНДИВИДУАЛЬНЫЙ ПРЕДПРИНИМАТЕЛЬ КОМАРОВА АНАСТАСИЯ АЛЕКСАНДРОВНА</dd>
+<dt>Юридический адрес</dt>
+<dd>141310, РОССИЯ, МОСКОВСКАЯ ОБЛ, Г СЕРГИЕВ ПОСАД, Г СЕРГИЕВ ПОСАД, ПР-КТ КРАСНОЙ АРМИИ, Д 6, КВ 91</dd>
+<dt>ИНН</dt>
+<dd>504231947047</dd>
+<dt>ОГРНИП</dt>
+<dd>322508100272216</dd>
+<dt>Расчётный счёт</dt>
+<dd>40802810400006421655</dd>
+<dt>Банк</dt>
+<dd>АО «ТБанк»</dd>
+<dt>ИНН банка</dt>
+<dd>7710140679</dd>
+<dt>БИК</dt>
+<dd>044525974</dd>
+<dt>Корр. счёт банка</dt>
+<dd>30101810145250000974</dd>
+</dl>
+<p class="legal-modal__phone"><strong>Телефон:</strong> <a href="tel:+79060959295">+7 906 095‑92‑95</a></p>
+</div>
+</div>
+</div>
+<script src="script.js"></script>
+<script>
         // Image Slider with Pagination
         document.addEventListener('DOMContentLoaded', function() {
             const slider = document.getElementById('slider-after-question2');
@@ -357,5 +382,3 @@
     </script>
 </body>
 </html>
-
-

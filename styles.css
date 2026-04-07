@@ -51,6 +51,9 @@ body {
     background: #F7F7FA;
     color: #16161d;
     line-height: 1.62;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -126,6 +129,44 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
+.header-trailing {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+}
+
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: #5c5c7b;
+}
+
+.lang-switch__link {
+    text-decoration: none;
+    color: #3a3a4d;
+    transition: color 0.2s ease;
+}
+
+.lang-switch__link:hover {
+    color: #12121a;
+}
+
+.lang-switch__current {
+    color: #12121a;
+    font-weight: 700;
+}
+
+.lang-switch__sep {
+    color: rgba(92, 92, 123, 0.45);
+    user-select: none;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -133,67 +174,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 15px;
     font-weight: 600;
     color: #1a1a1a;
-}
-
-.burger {
-    width: 44px;
-    height: 44px;
-    border: 1px solid rgba(205, 205, 221, 0.45);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.92);
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    padding: 0;
-    cursor: pointer;
-    box-shadow: 0 1px 2px rgba(22, 22, 29, 0.04), 0 6px 16px rgba(90, 90, 120, 0.06);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.burger:hover {
-    border-color: rgba(191, 193, 214, 0.75);
-    box-shadow: 0 2px 4px rgba(22, 22, 29, 0.05), 0 10px 22px rgba(90, 90, 120, 0.08);
-}
-
-.burger span {
-    display: block;
-    width: 18px;
-    height: 2px;
-    background: #5c5c7b;
-    border-radius: 2px;
-}
-
-.nav.nav-dropdown {
-    position: absolute;
-    top: calc(100% + 10px);
-    right: 0;
-    display: none;
-    flex-direction: column;
-    gap: 12px;
-    padding: 16px 18px;
-    background: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(205, 205, 221, 0.5);
-    border-radius: 16px;
-    box-shadow:
-        0 4px 6px -1px rgba(22, 22, 29, 0.05),
-        0 16px 40px -12px rgba(60, 60, 90, 0.14);
-    z-index: 50;
-    min-width: 188px;
-}
-
-.nav.nav-dropdown.is-open {
-    display: flex;
-}
-
-.nav.nav-dropdown .nav-link {
-    padding: 6px 2px;
-}
-
-/* Hide desktop inline nav when using burger */
-.header-content > .nav:not(.nav-dropdown) {
-    display: none;
 }
 
 .logo-icon {
@@ -234,12 +214,6 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.07em;
     color: #1a1a1a;
     line-height: 1.15;
-}
-
-.nav.nav-dropdown .nav-link {
-    color: #5c5c7b;
-    font-weight: 500;
-    letter-spacing: 0.01em;
 }
 
 .nav-link:hover {
@@ -598,7 +572,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bottom-cta {
-    padding: 32px 0 64px;
+    padding: 32px 0 24px;
     background: #F7F7FA;
     border-top: 1px solid rgba(22, 22, 29, 0.05);
 }
@@ -1308,6 +1282,7 @@ body.case-autoinstructor .hero .hero-subtitle {
     padding: 22px 24px;
     text-decoration: none;
     color: inherit;
+    text-align: left;
     transition: transform 0.22s ease, border-color 0.22s ease, outline-color 0.22s ease, box-shadow 0.22s ease;
     -webkit-tap-highlight-color: transparent;
     outline: 1px solid rgba(205, 205, 221, 0.55);
@@ -1315,24 +1290,6 @@ body.case-autoinstructor .hero .hero-subtitle {
     box-shadow:
         0 1px 2px rgba(22, 22, 29, 0.03),
         0 10px 28px rgba(70, 70, 100, 0.06);
-}
-
-button.service-card {
-    width: 100%;
-    max-width: 100%;
-    font: inherit;
-    text-align: left;
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-.service-card--filter.active {
-    border-color: rgba(58, 58, 72, 0.35);
-    outline-color: rgba(58, 58, 72, 0.45);
-    box-shadow:
-        0 2px 4px rgba(22, 22, 29, 0.05),
-        0 12px 32px rgba(70, 70, 100, 0.1);
 }
 
 .service-card-muted {
@@ -1347,6 +1304,8 @@ button.service-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
+    text-align: left;
     gap: 8px;
     margin-bottom: 12px;
 }
@@ -1365,6 +1324,8 @@ button.service-card {
     margin: 0;
     color: #12121a;
     letter-spacing: -0.02em;
+    text-align: left;
+    width: 100%;
 }
 
 .service-description {
@@ -1372,6 +1333,8 @@ button.service-card {
     font-size: 13px;
     line-height: 1.5;
     color: rgba(82, 82, 102, 0.9);
+    text-align: left;
+    width: 100%;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1384,9 +1347,6 @@ button.service-card {
             0 16px 40px rgba(70, 70, 100, 0.09);
     }
 
-    .service-card--filter.active:hover {
-        transform: translateY(-2px);
-    }
 }
 
 .service-link {
@@ -3067,4 +3027,183 @@ body.site-subpage .case-tag::before {
     .small-card-number {
         font-size: 36px;
     }
+}
+
+/* Footer — юридическая информация */
+.site-footer {
+    padding: 10px 0 32px;
+    margin-top: auto;
+    border-top: none;
+    background: transparent;
+}
+
+/* Плотнее: кнопка «Забронируйте звонок» / CTA и ссылка на реквизиты */
+.bottom-cta + .site-footer,
+.hero + .site-footer {
+    padding-top: 4px;
+}
+
+.hero:has(+ .site-footer) {
+    padding-bottom: 12px;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-legal-trigger {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(22, 22, 29, 0.38);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-underline-offset: 3px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.footer-legal-trigger:hover {
+    color: rgba(73, 73, 109, 0.75);
+    text-decoration: underline;
+    text-decoration-color: rgba(73, 73, 109, 0.35);
+    background: none;
+}
+
+.footer-legal-trigger:focus-visible {
+    outline: 2px solid rgba(73, 73, 109, 0.35);
+    outline-offset: 2px;
+}
+
+body.legal-modal-open {
+    overflow: hidden;
+}
+
+.legal-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+}
+
+.legal-modal[hidden] {
+    display: none;
+}
+
+.legal-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(22, 22, 29, 0.45);
+    backdrop-filter: blur(4px);
+}
+
+.legal-modal__panel {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 520px;
+    max-height: min(88vh, 720px);
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 24px 64px rgba(22, 22, 29, 0.18);
+    padding: 28px 28px 24px;
+    border: 1px solid rgba(73, 73, 109, 0.1);
+}
+
+.legal-modal__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background: #f2f2f7;
+    color: #49496D;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.legal-modal__close:hover {
+    background: #e8e8ef;
+    color: #16161d;
+}
+
+.legal-modal__title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #16161d;
+    margin: 0 48px 16px 0;
+    line-height: 1.35;
+}
+
+.legal-modal__body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #49496D;
+}
+
+.legal-modal__note {
+    margin: 0 0 20px;
+    font-size: 14px;
+    color: #6b6b8a;
+}
+
+.legal-dl {
+    margin: 0;
+}
+
+.legal-dl dt {
+    font-weight: 600;
+    color: #16161d;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 16px;
+    margin-bottom: 6px;
+}
+
+.legal-dl dt:first-child {
+    margin-top: 0;
+}
+
+.legal-dl dd {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.legal-modal__phone {
+    margin: 24px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(73, 73, 109, 0.12);
+    font-size: 15px;
+    color: #16161d;
+}
+
+.legal-modal__phone a {
+    color: #49496D;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.legal-modal__phone a:hover {
+    color: #16161d;
 }

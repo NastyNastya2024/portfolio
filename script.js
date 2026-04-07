@@ -20,28 +20,6 @@ document.querySelectorAll('.cta-button').forEach(function (btn) {
     });
 });
 
-// Burger menu
-document.addEventListener('DOMContentLoaded', function() {
-    const burger = document.querySelector('.burger');
-    const menu = document.querySelector('.nav.nav-dropdown');
-
-    if (!burger || !menu) return;
-
-    const closeMenu = () => {
-        menu.classList.remove('is-open');
-        burger.setAttribute('aria-expanded', 'false');
-    };
-
-    burger.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = menu.classList.toggle('is-open');
-        burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-
-    document.addEventListener('click', closeMenu);
-    window.addEventListener('resize', closeMenu);
-});
-
 // Cases Filter: равномерно по ширине; не поместившиеся — в выпадающий список «…»
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('section.cases').forEach(function (casesSection) {
@@ -112,9 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function applyFilter(filter) {
-            document.querySelectorAll('.features .service-card--filter').forEach(function (c) {
-                c.classList.remove('active');
-            });
             setActiveFilter(filter);
             caseCards.forEach(function (card) {
                 const raw = card.getAttribute('data-tags') || '';
@@ -134,53 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        function clearTagFiltersVisual() {
-            wrap.querySelectorAll('.filter-btn[data-filter]').forEach(function (b) {
-                b.classList.remove('active');
-            });
-            if (moreBtn) {
-                moreBtn.classList.remove('filter-btn--more-active');
-            }
-        }
-
-        function applyServiceCardFilter(button) {
-            const raw = button.getAttribute('data-filter-tags') || '';
-            const tokens = raw.split(/\s+/).filter(Boolean);
-            const matchMode = button.getAttribute('data-filter-match') || 'any';
-
-            document.querySelectorAll('.features .service-card--filter').forEach(function (c) {
-                c.classList.toggle('active', c === button);
-            });
-
-            clearTagFiltersVisual();
-            if (extraPanel && !extraPanel.hidden) {
-                extraPanel.hidden = true;
-                if (moreBtn) moreBtn.setAttribute('aria-expanded', 'false');
-            }
-
-            caseCards.forEach(function (card) {
-                const tags = (card.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean);
-                const ok = matchMode === 'all'
-                    ? tokens.every(function (t) { return tags.includes(t); })
-                    : tokens.some(function (t) { return tags.includes(t); });
-
-                if (ok) {
-                    card.classList.remove('hidden');
-                    card.style.display = '';
-                    card.style.opacity = '0';
-                    setTimeout(function () {
-                        card.style.transition = 'opacity 0.3s';
-                        card.style.opacity = '1';
-                    }, 10);
-                } else {
-                    card.classList.add('hidden');
-                    card.style.display = 'none';
-                }
-            });
-
-            casesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
         wrap.querySelectorAll('.filter-btn[data-filter]').forEach(function (button) {
             button.addEventListener('click', function () {
                 applyFilter(this.getAttribute('data-filter'));
@@ -188,13 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     extraPanel.hidden = true;
                     if (moreBtn) moreBtn.setAttribute('aria-expanded', 'false');
                 }
-            });
-        });
-
-        const featureServiceCards = document.querySelectorAll('.features .service-card--filter');
-        featureServiceCards.forEach(function (sc) {
-            sc.addEventListener('click', function () {
-                applyServiceCardFilter(sc);
             });
         });
 
@@ -239,6 +160,51 @@ document.addEventListener('DOMContentLoaded', function() {
         caseCards.forEach(function (card) {
             card.style.display = '';
         });
+    });
+});
+
+// Юридическая информация и реквизиты (модальное окно)
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('legal-modal');
+    if (!modal) return;
+
+    const openBtns = document.querySelectorAll('[data-open-legal-modal]');
+    const closeEls = modal.querySelectorAll('[data-close-legal-modal]');
+    let lastFocus = null;
+
+    function openModal() {
+        lastFocus = document.activeElement;
+        modal.hidden = false;
+        document.body.classList.add('legal-modal-open');
+        const closeBtn = modal.querySelector('.legal-modal__close');
+        if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal() {
+        modal.hidden = true;
+        document.body.classList.remove('legal-modal-open');
+        if (lastFocus && typeof lastFocus.focus === 'function') {
+            lastFocus.focus();
+        }
+    }
+
+    openBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            openModal();
+        });
+    });
+
+    closeEls.forEach(function (el) {
+        el.addEventListener('click', function () {
+            closeModal();
+        });
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !modal.hidden) {
+            closeModal();
+        }
     });
 });
 
