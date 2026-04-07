@@ -984,7 +984,7 @@ body.case-autoinstructor .hero .hero-subtitle {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 32px;
 }
 
 .site-preview-section.site-preview-section--autoinstructor .autoinstructor-preview-chunk {
@@ -1015,7 +1015,7 @@ body.case-autoinstructor .hero .hero-subtitle {
 }
 
 .site-preview-section.site-preview-section--autoinstructor .autoinstructor-chunk-head .quote-subtitle {
-    margin-top: 12px;
+    margin-top: 26px;
     margin-bottom: 0;
     max-width: 48rem;
     margin-left: auto;
@@ -2150,7 +2150,7 @@ body.site-subpage .case-tag::before {
     }
 
     .autoinstructor-preview-stack {
-        gap: 16px;
+        gap: 26px;
     }
 
     .site-preview-section.site-preview-section--autoinstructor .autoinstructor-chunk-head.quote-headline {
@@ -2165,7 +2165,7 @@ body.site-subpage .case-tag::before {
     .site-preview-section.site-preview-section--autoinstructor .autoinstructor-chunk-head .quote-subtitle {
         font-size: 10px;
         letter-spacing: 0.14em;
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
     .site-preview-frame.site-preview-frame--image-scroll {
