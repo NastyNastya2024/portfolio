@@ -118,14 +118,31 @@
     <section class="cases" id="works">
         <div class="container">
             <!-- Filters -->
-            <div class="cases-filters">
-                <button class="filter-btn active" data-filter="all">ВСЕ КЕЙСЫ</button>
-                <button class="filter-btn" data-filter="analytics">АНАЛИТИКА</button>
-                <button class="filter-btn" data-filter="sites">САЙТЫ</button>
-                <button class="filter-btn" data-filter="apps">ПРИЛОЖЕНИЯ</button>
-                <button class="filter-btn" data-filter="agents">АГЕНТЫ</button>
-                <button class="filter-btn" data-filter="software">ПРИКЛАДНОЕ ПО</button>
-                <button class="filter-btn" data-filter="ai">AI/ML</button>
+            <div class="cases-filters-wrap">
+                <div class="cases-filters cases-filters-scroll">
+                    <button type="button" class="filter-btn filter-btn--all active" data-filter="all">ВСЕ КЕЙСЫ</button>
+                    <div class="cases-filters-distributed">
+                        <button type="button" class="filter-btn" data-filter="ai">AI/ML</button>
+                        <button type="button" class="filter-btn" data-filter="software">ПРИКЛАДНОЕ ПО</button>
+                        <button type="button" class="filter-btn" data-filter="sites">САЙТЫ</button>
+                        <button type="button" class="filter-btn" data-filter="analytics">АНАЛИТИКА</button>
+                        <button type="button" class="filter-btn" data-filter="apps">ПРИЛОЖЕНИЯ</button>
+                        <button type="button" class="filter-btn" data-filter="design">ДИЗАЙН</button>
+                        <button type="button" class="filter-btn" data-filter="agents">АГЕНТЫ</button>
+                        <button type="button" class="filter-btn" data-filter="marketing">МАРКЕТИНГ</button>
+                        <button type="button" class="filter-btn" data-filter="rag">RAG</button>
+                        <button type="button" class="filter-btn" data-filter="branding">БРЕНДИНГ</button>
+                        <button type="button" class="filter-btn" data-filter="geo">GEO/SEO</button>
+                        <button type="button" class="filter-btn" data-filter="integration">ИНТЕГРАЦИИ</button>
+                        <button type="button" class="filter-btn" data-filter="mobile">МОБАЙЛ</button>
+                        <button type="button" class="filter-btn" data-filter="smm">SMM</button>
+                        <button type="button" class="filter-btn" data-filter="uiux">UI/UX</button>
+                    </div>
+                </div>
+                <button type="button" class="filter-btn filter-btn--more" aria-expanded="false" aria-controls="cases-filters-extra-about" aria-haspopup="true" aria-label="Показать остальные теги">…</button>
+                <div id="cases-filters-extra-about" class="cases-filters-extra" hidden>
+                    <div class="cases-filters-extra-inner"></div>
+                </div>
             </div>
 
             <!-- Cases Grid -->

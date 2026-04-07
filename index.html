@@ -60,37 +60,37 @@
     <section class="features">
         <div class="container">
             <div class="services-grid">
-                <a class="service-card" href="about.html">
+                <button type="button" class="service-card service-card--filter" data-filter-tags="agents" data-filter-match="any" aria-label="Показать кейсы: ИИ-агенты">
                     <div class="service-title-row">
-                        <img src="img/ok.png" alt="Check" class="service-check">
+                        <img src="img/ok.png" alt="" class="service-check" aria-hidden="true">
                         <h3 class="service-title">Внедрение ИИ-агентов</h3>
                     </div>
                     <p class="service-description">Внедрение и настройка ИИ-агентов под ваши бизнес-процессы и инструменты.</p>
-                </a>
+                </button>
 
-                <a class="service-card" href="about.html">
+                <button type="button" class="service-card service-card--filter" data-filter-tags="apps sites" data-filter-match="any" aria-label="Показать кейсы: приложения и сайты">
                     <div class="service-title-row">
-                        <img src="img/ok.png" alt="Check" class="service-check">
+                        <img src="img/ok.png" alt="" class="service-check" aria-hidden="true">
                         <h3 class="service-title">Приложения и сайты</h3>
                     </div>
                     <p class="service-description">Создание мобильных приложений и сайтов с помощью искусственного интеллекта.</p>
-                </a>
+                </button>
 
-                <a class="service-card" href="about.html">
+                <button type="button" class="service-card service-card--filter" data-filter-tags="voice" data-filter-match="any" aria-label="Показать кейсы: голосовые боты">
                     <div class="service-title-row">
-                        <img src="img/ok.png" alt="Check" class="service-check">
+                        <img src="img/ok.png" alt="" class="service-check" aria-hidden="true">
                         <h3 class="service-title">Голосовые боты</h3>
                     </div>
                     <p class="service-description">AI-агенты для звонков: приём и совершение звонков, запись клиентов, обновление CRM.</p>
-                </a>
+                </button>
 
-                <a class="service-card" href="about.html">
+                <button type="button" class="service-card service-card--filter" data-filter-tags="ai software" data-filter-match="all" aria-label="Показать кейсы: AI и прикладное ПО (вайбкодинг)">
                     <div class="service-title-row">
-                        <img src="img/ok.png" alt="Check" class="service-check">
+                        <img src="img/ok.png" alt="" class="service-check" aria-hidden="true">
                         <h3 class="service-title">Обучение вайбкодингу</h3>
                     </div>
                     <p class="service-description">Курсы и практика по вайбкодингу: разработка через естественный язык и ИИ.</p>
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -99,19 +99,32 @@
     <section class="cases" id="works">
         <div class="container">
             <!-- Filters -->
-            <div class="cases-filters">
-                <button class="filter-btn active" data-filter="all">ВСЕ КЕЙСЫ</button>
-                <button class="filter-btn" data-filter="analytics">АНАЛИТИКА</button>
-                <button class="filter-btn" data-filter="design">ДИЗАЙН</button>
-                <button class="filter-btn" data-filter="layout">ВЕРСТКА</button>
-                <button class="filter-btn" data-filter="sites">САЙТЫ</button>
-                <button class="filter-btn" data-filter="apps">ПРИЛОЖЕНИЯ</button>
-                <button class="filter-btn" data-filter="agents">АГЕНТЫ</button>
-                <button class="filter-btn" data-filter="software">ПРИКЛАДНОЕ ПО</button>
-                <button class="filter-btn" data-filter="ai">AI/ML</button>
-                <button class="filter-btn" data-filter="rag">RAG/CAD</button>
-                <button class="filter-btn" data-filter="geo">GEO/SEO</button>
-                <span class="cases-filters-spacer"></span>
+            <!-- Теги по частоте в data-tags карточек (index): частые слева, редкие за «…» -->
+            <div class="cases-filters-wrap">
+                <div class="cases-filters cases-filters-scroll">
+                    <button type="button" class="filter-btn filter-btn--all active" data-filter="all">ВСЕ КЕЙСЫ</button>
+                    <div class="cases-filters-distributed">
+                        <button type="button" class="filter-btn" data-filter="ai">AI/ML</button>
+                        <button type="button" class="filter-btn" data-filter="software">ПРИКЛАДНОЕ ПО</button>
+                        <button type="button" class="filter-btn" data-filter="sites">САЙТЫ</button>
+                        <button type="button" class="filter-btn" data-filter="analytics">АНАЛИТИКА</button>
+                        <button type="button" class="filter-btn" data-filter="apps">ПРИЛОЖЕНИЯ</button>
+                        <button type="button" class="filter-btn" data-filter="design">ДИЗАЙН</button>
+                        <button type="button" class="filter-btn" data-filter="agents">АГЕНТЫ</button>
+                        <button type="button" class="filter-btn" data-filter="marketing">МАРКЕТИНГ</button>
+                        <button type="button" class="filter-btn" data-filter="rag">RAG</button>
+                        <button type="button" class="filter-btn" data-filter="branding">БРЕНДИНГ</button>
+                        <button type="button" class="filter-btn" data-filter="geo">GEO/SEO</button>
+                        <button type="button" class="filter-btn" data-filter="integration">ИНТЕГРАЦИИ</button>
+                        <button type="button" class="filter-btn" data-filter="mobile">МОБАЙЛ</button>
+                        <button type="button" class="filter-btn" data-filter="smm">SMM</button>
+                        <button type="button" class="filter-btn" data-filter="uiux">UI/UX</button>
+                    </div>
+                </div>
+                <button type="button" class="filter-btn filter-btn--more" aria-expanded="false" aria-controls="cases-filters-extra" aria-haspopup="true" aria-label="Показать остальные теги">…</button>
+                <div id="cases-filters-extra" class="cases-filters-extra" hidden>
+                    <div class="cases-filters-extra-inner"></div>
+                </div>
             </div>
 
             <!-- Cases Grid -->
@@ -133,7 +146,7 @@
                     </div>
 
                     <!-- Case 2 — голосовой бот для салона красоты -->
-                    <div class="case-card" data-tags="analytics agents ai" onclick="window.open('VoiceBot3.html', '_self')">
+                    <div class="case-card" data-tags="analytics agents ai voice" onclick="window.open('VoiceBot3.html', '_self')">
                         <div class="case-image">
                             <img src="img/VoiceBot3.png" alt="Голосовой бот для салона красоты" style="position: absolute; top: 0px; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; z-index: 1;">
                         </div>
@@ -364,7 +377,7 @@
                     </div>
 
                     <!-- Case 21 — голосовой бот VoiceBot2 (колонки местами с Financier) -->
-                    <div class="case-card" data-tags="analytics agents ai" onclick="window.open('VoiceBot2.html', '_self')">
+                    <div class="case-card" data-tags="analytics agents ai voice" onclick="window.open('VoiceBot2.html', '_self')">
                         <div class="case-image">
                             <img src="img/VoiceBot4.png" alt="Лидген-бот для студии маникюра — голосовой бот на Twin" style="position: absolute; top: -20px; left: 0; width: 100%; height: calc(100% + 20px); object-fit: cover; object-position: top center; z-index: 1;">
                         </div>
@@ -411,7 +424,7 @@
                     </div>
 
                     <!-- Case 24 — голосовой бот VoiceBot1 -->
-                    <div class="case-card" data-tags="analytics agents ai" onclick="window.open('VoiceBot1.html', '_self')">
+                    <div class="case-card" data-tags="analytics agents ai voice" onclick="window.open('VoiceBot1.html', '_self')">
                         <div class="case-image">
                             <img src="img/VoiceBot1.png" alt="SPA-центр — голосовой NPS-опрос на Twin" style="position: absolute; top: -40px; left: 0; width: 100%; height: calc(100% + 40px); object-fit: cover; object-position: top center; z-index: 1;">
                         </div>
