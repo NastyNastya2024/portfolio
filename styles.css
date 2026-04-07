@@ -71,6 +71,10 @@ body.site-subpage .game-preview-section {
     background: #F7F7FA;
 }
 
+body.site-subpage .quote-section {
+    background: #f7f7f9;
+}
+
 body.site-subpage .case-study-gallery {
     background: #F7F7FA;
 }
@@ -957,9 +961,22 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 8px;
 }
 
-/* Автоинструктор (case16): каждый ряд — видео (одинаковая ширина) + две плашки */
+/* Автоинструктор (case16): hero в формате FL — верхний лейбл CAPS, жирный h1, нижний CAPS */
+body.case-autoinstructor .hero .hero-title {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+body.case-autoinstructor .hero .hero-subtitle {
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.45;
+}
+
+/* Автоинструктор (case16): каждый ряд — видео + три плашки в колонке */
 .site-preview-section.site-preview-section--autoinstructor {
-    padding: 12px 0 24px;
+    padding: 12px 0 48px;
 }
 
 .autoinstructor-preview-stack {
@@ -978,18 +995,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-preview-section.site-preview-section--autoinstructor .autoinstructor-video-heading {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", 'Inter', sans-serif;
-    font-size: 28px;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin: 0 0 14px;
-    letter-spacing: -0.02em;
-    line-height: 1.25;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    text-align: left;
+    padding: 12px 0 0 2px;
 }
 
 .autoinstructor-preview-row {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 22px;
 }
 
@@ -997,6 +1016,14 @@ h1, h2, h3, h4, h5, h6 {
     flex: 0 1 40%;
     max-width: 380px;
     min-width: 0;
+}
+
+.site-preview-section.site-preview-section--autoinstructor .site-preview-auto-video-wrap.autoinstructor-preview-video-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    min-height: 0;
 }
 
 .autoinstructor-preview-plaques {
@@ -1010,6 +1037,8 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 32px;
     overflow: visible;
     box-sizing: border-box;
+    align-self: stretch;
+    min-height: 0;
 }
 
 .site-preview-section.site-preview-section--autoinstructor .site-preview-auto-video-wrap {
@@ -1022,15 +1051,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-preview-section.site-preview-section--autoinstructor .site-preview-auto-video-wrap video {
     display: block;
-    width: 94%;
+    width: auto;
     max-width: 100%;
     height: auto;
+    max-height: 100%;
     margin: 0 auto;
     vertical-align: top;
     object-fit: contain;
     background: #0a0a0c;
-    transform: scale(0.97);
-    transform-origin: center center;
+    flex-shrink: 1;
 }
 
 .site-preview-section.site-preview-section--autoinstructor .feature-card.feature-card--autoinstructor-plaque {
@@ -1054,11 +1083,31 @@ h1, h2, h3, h4, h5, h6 {
 .site-preview-section.site-preview-section--autoinstructor .feature-card--autoinstructor-plaque .feature-title {
     font-size: 22px;
     font-weight: 700;
+    color: #000000;
     margin-bottom: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", 'Inter', sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+}
+
+.site-preview-section.site-preview-section--autoinstructor .feature-card--autoinstructor-plaque .feature-list {
+    margin-bottom: 0;
+}
+
+.site-preview-section.site-preview-section--autoinstructor .feature-card--autoinstructor-plaque .feature-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .site-preview-section.site-preview-section--autoinstructor .feature-card--autoinstructor-plaque .feature-doc {
-    margin-top: auto;
+    position: static;
+    width: 70%;
+    max-width: 190px;
+    margin: 18px 0 0 auto;
+    transform: none;
+    left: auto;
+    align-self: flex-end;
+    display: block;
 }
 
 .case-study-full-preview {
@@ -2203,10 +2252,10 @@ body.site-subpage .case-tag::before {
     }
 }
 
-/* Quote Section */
+/* Quote Section — заголовок + подзаголовок в CAPS, тонкие уголки #d1d5f0 */
 .quote-section {
     padding: 80px 0 0;
-    background: #FBFBFD;
+    background: #f7f7f9;
     text-align: center;
 }
 
@@ -2249,28 +2298,55 @@ body.site-subpage .case-tag::before {
     display: inline-block;
     margin-top: 0;
     margin-bottom: 0;
+    padding: 26px 36px 30px;
+    max-width: min(960px, 100%);
+    box-sizing: border-box;
+}
+
+.quote-headline::before,
+.quote-headline::after {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+}
+
+.quote-headline::before {
+    top: 0;
+    left: 0;
+    border-top: 1.5px solid #d1d5f0;
+    border-left: 1.5px solid #d1d5f0;
+}
+
+.quote-headline::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 1.5px solid #d1d5f0;
+    border-right: 1.5px solid #d1d5f0;
 }
 
 .quote-title {
     font-size: 48px;
-    font-weight: 400;
-    color: #1A1A1A;
+    font-weight: 500;
+    color: #000000;
     margin: 0;
-    padding: 7px 13px;
-    font-family: 'Inter', sans-serif;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
     position: relative;
 }
 
 .quote-subtitle {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    letter-spacing: 2px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #49496D;
-    margin: 0;
-    margin-top: 4px;
-    margin-bottom: 13px;
-    line-height: 1.4;
+    color: #4a4e69;
+    margin: 12px 0 0;
+    line-height: 1.45;
+    font-weight: 400;
 }
 
 .quote-note {
@@ -2284,38 +2360,39 @@ body.site-subpage .case-tag::before {
     line-height: 1.55;
 }
 
-.quote-title::before {
-    content: '┌';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    color: #CDCDDD;
-    font-size: 32px;
-    font-weight: 300;
-    line-height: 1;
-}
-
-.quote-title::after {
-    content: '┘';
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    color: #CDCDDD;
-    font-size: 32px;
-    font-weight: 300;
-    line-height: 1;
-}
-
 @media (max-width: 768px) {
-    .quote-title {
-        font-size: 32px;
-        padding: 16px 24px;
+    .quote-headline {
+        padding: 20px 24px 24px;
     }
-    
+
+    .quote-headline::before,
+    .quote-headline::after {
+        width: 22px;
+        height: 22px;
+    }
+
+    .quote-headline::before {
+        border-width: 1px;
+    }
+
+    .quote-headline::after {
+        border-width: 1px;
+    }
+
+    .quote-title {
+        font-size: 28px;
+        padding: 0;
+    }
+
+    .quote-subtitle {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        margin-top: 10px;
+    }
+
     .quote-tagline {
         font-size: 12px;
     }
-    
 }
 
 /* Large Card Section */
