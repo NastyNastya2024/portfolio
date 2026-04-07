@@ -28,6 +28,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 '• Услуги — направления работы\n' +
                 '• Кейсы — по хештегам портфолио\n' +
                 '• Обо мне — коротко о специалисте\n' +
+                '• Стоимость — по договорённости, от сложности разработки\n' +
                 '• Оставить контакты — форма и письмо на почту (без сервера)',
             placeholder: 'Сообщение или выберите кнопку ниже…',
             send: 'Отправить',
@@ -36,11 +37,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             closeAria: 'Закрыть чат',
             error: 'Не удалось получить ответ. Проверьте API или попробуйте позже.',
             menuUnknown:
-                'Не распознала запрос. Выберите одну из кнопок ниже: мои контакты, услуги, кейсы, обо мне или заявка.',
+                'Не распознала запрос. Выберите одну из кнопок ниже: мои контакты, услуги, кейсы, обо мне, стоимость или заявка.',
             chipContacts: 'Мои контакты',
             chipServices: 'Услуги',
             chipCases: 'Кейсы',
             chipAbout: 'Обо мне',
+            chipPricing: 'Стоимость',
             chipLead: 'Оставить контакты',
             chipMenu: '← Главное меню',
             leadIntro:
@@ -79,8 +81,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 'Откройте раздел «Все кейсы» на сайте и нажмите нужный тег.',
             aboutBody:
                 'Обо мне:\n\n' +
-                'Комарова Анастасия — ИТ-специалист из Москвы. В технологиях больше 10 лет; последние 7 лет фокус на ИИ: ' +
-                'прикладные проекты, агенты, аналитика и разработка под задачи бизнеса.',
+                'Комарова Анастасия, Москва.\n\n' +
+                'В технологиях больше 10 лет; последние годы — сильный упор на ИИ, продукт и задачи бизнеса.\n\n' +
+                'По профилю и ролям:\n' +
+                '• ИТ-специалист\n' +
+                '• UI/UX-дизайнер\n' +
+                '• продуктовый, бизнес- и системный аналитик\n' +
+                '• продуктолог\n' +
+                '• разработчик (Python)\n' +
+                '• data scientist\n' +
+                '• финансист\n' +
+                '• digital-маркетолог\n\n' +
+                'Это не набор «красивых ролей из резюме» — за каждой позицией стоит реальный опыт в крупных коммерческих компаниях.',
+            pricingBody:
+                'Стоимость:\n\n' +
+                'Ориентиры обсуждаем по договорённости — они зависят от сложности разработки: объём функционала, интеграции, сроки, сопровождение.\n\n' +
+                'Фиксированного прайса «на всё» нет: после короткого описания задачи предложу формат работы и понятную вилку по бюджету. Можно написать в разделе «Оставить контакты» или в Telegram.',
             stubHint:
                 'Свободный диалог с ИИ можно будет включить: установите ASYAKOM_BOOKING_LLM.useLLM = true и реализуйте requestCompletion.'
         },
@@ -89,10 +105,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             subtitle: 'Book a call',
             introMenu:
                 'Hi! Pick a topic — I will reply right away.\n\n' +
-                '• Contacts — email & phone\n' +
+                '• My contacts — email, phone & Telegram\n' +
                 '• Services — what we do\n' +
                 '• Case studies — portfolio hashtags\n' +
                 '• About me — short bio\n' +
+                '• Pricing — by agreement, depending on development complexity\n' +
                 '• Leave your details — form → email draft (no backend)',
             placeholder: 'Type a message or use the chips below…',
             send: 'Send',
@@ -101,11 +118,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             closeAria: 'Close chat',
             error: 'Could not get a reply. Check your API or try again.',
             menuUnknown:
-                'I did not catch that. Please use one of the chips below: my contacts, services, cases, about, or lead.',
+                'I did not catch that. Please use one of the chips below: my contacts, services, cases, about, pricing, or lead.',
             chipContacts: 'My contacts',
             chipServices: 'Services',
             chipCases: 'Case studies',
             chipAbout: 'About me',
+            chipPricing: 'Pricing',
             chipLead: 'Leave your details',
             chipMenu: '← Main menu',
             leadIntro:
@@ -144,8 +162,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 'Open “All cases” and click the tag you need.',
             aboutBody:
                 'About me:\n\n' +
-                'Anastasia Komarova — IT specialist based in Moscow. 10+ years in tech, ' +
-                '7+ years focused on AI: applied projects, agents, analytics, and product-minded engineering.',
+                'Anastasia Komarova, based in Moscow.\n\n' +
+                '10+ years in tech; recent years strongly focused on AI, product delivery, and business outcomes.\n\n' +
+                'Roles and focus areas:\n' +
+                '• IT specialist\n' +
+                '• UI/UX designer\n' +
+                '• product, business & systems analyst\n' +
+                '• product strategist — discovery, metrics, roadmap\n' +
+                '• developer (Python)\n' +
+                '• data scientist\n' +
+                '• finance specialist\n' +
+                '• digital marketer\n\n' +
+                'These are not invented labels — they are backed by hands-on experience in large commercial companies.',
+            pricingBody:
+                'Pricing:\n\n' +
+                'Rates are agreed by arrangement and depend on how complex the build is: scope, integrations, timeline, and whether you need ongoing support.\n\n' +
+                'There is no single price list for everything — share a short brief and I will propose an engagement model and a clear budget range. Use «Leave your details» or Telegram.',
             stubHint:
                 'Free-form AI chat: set ASYAKOM_BOOKING_LLM.useLLM = true and implement requestCompletion.'
         }
@@ -254,6 +286,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             return 'about';
         }
         if (
+            /^6\b|^стоим|^сколько\s*стоит|^цена|^цены|^прайс|^бюджет|^оценк|^pricing|^price|^budget|^cost|^quote|^estimate|how\s*much|^\s*rate\b/i.test(
+                x
+            )
+        ) {
+            return 'pricing';
+        }
+        if (
             /^5\b|^заявк|оставить контакт|свои контакт|написать вам|свой телефон|^lead\b|leave.*details|my details|reach out/i.test(
                 x
             )
@@ -279,6 +318,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
         if (branch === 'about') {
             return s.aboutBody;
+        }
+        if (branch === 'pricing') {
+            return s.pricingBody;
         }
         if (branch === 'menu') {
             return s.introMenu;
@@ -316,6 +358,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             { branch: 'services', label: s.chipServices },
             { branch: 'cases', label: s.chipCases },
             { branch: 'about', label: s.chipAbout },
+            { branch: 'pricing', label: s.chipPricing },
             { branch: 'lead', label: s.chipLead }
         ];
     }
@@ -430,6 +473,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             services: t().chipServices,
             cases: t().chipCases,
             about: t().chipAbout,
+            pricing: t().chipPricing,
             lead: t().chipLead,
             menu: t().chipMenu
         };
