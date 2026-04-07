@@ -993,16 +993,34 @@ body.case-autoinstructor .hero .hero-subtitle {
     align-items: stretch;
 }
 
-.site-preview-section.site-preview-section--autoinstructor .autoinstructor-video-heading {
+/* Подзаголовки секций: как quote-headline — уголки, заголовок, CAPS с трекингом */
+.site-preview-section.site-preview-section--autoinstructor .autoinstructor-chunk-head.quote-headline {
+    display: block;
+    width: 100%;
+    max-width: none;
+    text-align: center;
+    margin: 0 0 20px;
+    padding: 22px 28px 26px;
+    box-sizing: border-box;
+}
+
+.site-preview-section.site-preview-section--autoinstructor .autoinstructor-chunk-head .autoinstructor-chunk-head__title {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", 'Inter', sans-serif;
-    font-size: 30px;
-    font-weight: 700;
+    font-size: clamp(24px, 3.2vw, 36px);
+    font-weight: 600;
     color: #000000;
-    margin: 0 0 18px;
-    letter-spacing: -0.01em;
+    margin: 0;
+    letter-spacing: -0.02em;
     line-height: 1.2;
-    text-align: left;
-    padding: 12px 0 0 2px;
+}
+
+.site-preview-section.site-preview-section--autoinstructor .autoinstructor-chunk-head .quote-subtitle {
+    margin-top: 12px;
+    margin-bottom: 0;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.45;
 }
 
 .autoinstructor-preview-row {
@@ -2135,9 +2153,19 @@ body.site-subpage .case-tag::before {
         gap: 16px;
     }
 
-    .site-preview-section.site-preview-section--autoinstructor .autoinstructor-video-heading {
+    .site-preview-section.site-preview-section--autoinstructor .autoinstructor-chunk-head.quote-headline {
+        padding: 18px 20px 22px;
+        margin-bottom: 14px;
+    }
+
+    .site-preview-section.site-preview-section--autoinstructor .autoinstructor-chunk-head .autoinstructor-chunk-head__title {
         font-size: 22px;
-        margin-bottom: 10px;
+    }
+
+    .site-preview-section.site-preview-section--autoinstructor .autoinstructor-chunk-head .quote-subtitle {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        margin-top: 10px;
     }
 
     .site-preview-frame.site-preview-frame--image-scroll {
