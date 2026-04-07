@@ -67,8 +67,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 '• Приложения и сайты — от лендинга до SaaS, бэкенд и админки\n' +
                 '• Голосовые боты — входящие/исходящие звонки, NPS, запись в CRM\n' +
                 '• Digital marketing — стратегия, контент, метрики в цифровых каналах\n' +
-                '• Аналитика и RnD — исследования, федеративное обучение, прикладной ML\n\n' +
-                'Если нужно что-то узкое — опишите в свободной форме после подключения LLM.',
+                '• Аналитика и RnD — исследования, федеративное обучение, прикладной ML.',
             casesBody:
                 'Кейсы на главной можно отфильтровать по тегам (хештеги в карточках совпадают с фильтрами):\n\n' +
                 '• #AI/ML — модели, эксперименты, RnD\n' +
@@ -148,8 +147,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 '• Apps & websites — landing pages to SaaS, backends, admin panels\n' +
                 '• Voice bots — inbound/outbound, NPS, CRM logging\n' +
                 '• Digital marketing — strategy, content, metrics across channels\n' +
-                '• Analytics & RnD — research, federated learning, applied ML\n\n' +
-                'Need something narrower? Describe it once LLM chat is enabled.',
+                '• Analytics & RnD — research, federated learning, applied ML.',
             casesBody:
                 'On the homepage you can filter case cards by tags:\n\n' +
                 '• #AI/ML — models, experiments, RnD\n' +
