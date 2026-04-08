@@ -1889,10 +1889,15 @@ body.case-autoinstructor .hero .hero-subtitle {
     margin-right: 2px;
 }
 
-/* Хештеги (#) только на главной в сетке кейсов; на внутренних страницах кейсов — без префикса */
+/* Хештеги (#) только на главной в сетке кейсов; на внутренних — без префикса */
 body.site-subpage .case-tag::before {
     content: none;
     margin-right: 0;
+}
+
+/* Ряд тегов под подзаголовком в шапке кейса — без «хештегов», не дублируем карточку главной */
+body.site-subpage .hero-case-tags {
+    display: none;
 }
 
 .hero-case-tags {
