@@ -583,10 +583,42 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
 }
 
+/* Низ главной: кейсы + CTA — блюры от низа блока вверх под сетку, без обрезки */
+.home-tail-glow {
+    position: relative;
+    overflow: visible;
+    isolation: isolate;
+}
+
+.home-tail-glow > .cases,
+.home-tail-glow > .bottom-cta {
+    position: relative;
+    z-index: 1;
+}
+
+.home-tail-blobs.hero-blobs {
+    bottom: 0;
+    top: auto;
+    transform: translateX(-50%);
+    height: min(56vw, 560px);
+    z-index: 0;
+}
+
 .bottom-cta {
-    padding: 32px 0 24px;
-    background: #F7F7FA;
+    position: relative;
+    overflow: visible;
+    padding: 40px 0 36px;
+    background: #f7f7fa;
     border-top: 1px solid rgba(22, 22, 29, 0.05);
+}
+
+.bottom-cta > .container {
+    position: relative;
+}
+
+.bottom-cta-content {
+    position: relative;
+    z-index: 1;
 }
 
 .bottom-cta .hero-cta {
