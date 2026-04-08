@@ -92,8 +92,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 '• финансист\n' +
                 '• digital-маркетолог\n\n' +
                 'Это не набор «красивых ролей из резюме» — за каждой позицией стоит реальный опыт в крупных коммерческих компаниях.',
-            aboutCvLinkLabel: 'Резюме (CV) — открыть',
-            aboutCvLinkAria: 'Открыть резюме на сайте или скачать PDF',
+            aboutCvLinkLabel: 'Обо мне',
+            aboutCvLinkAria: 'Открыть профиль с резюме на сайте',
             pricingBody:
                 'Стоимость:\n\n' +
                 'Ориентиры обсуждаем по договорённости — они зависят от сложности разработки: объём функционала, интеграции, сроки, сопровождение.\n\n' +
@@ -174,8 +174,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 '• finance specialist\n' +
                 '• digital marketer\n\n' +
                 'These are not invented labels — they are backed by hands-on experience in large commercial companies.',
-            aboutCvLinkLabel: 'Résumé (CV) — open',
-            aboutCvLinkAria: 'Open résumé on the site or download PDF',
+            aboutCvLinkLabel: 'About me',
+            aboutCvLinkAria: 'Open profile and résumé on the site',
             pricingBody:
                 'Pricing:\n\n' +
                 'Rates are agreed by arrangement and depend on how complex the build is: scope, integrations, timeline, and whether you need ongoing support.\n\n' +
@@ -1018,7 +1018,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Резюме (CV) — то же оформление, что у юридического попапа
+// Профиль / резюме — то же оформление, что у юридического попапа
 document.addEventListener('DOMContentLoaded', function () {
     const cvModal = document.getElementById('cv-modal');
     if (!cvModal) return;
