@@ -66,7 +66,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 '• ИИ-агенты — внедрение и настройка под процессы, CRM, инструменты\n' +
                 '• Приложения и сайты — от лендинга до SaaS, бэкенд и админки\n' +
                 '• Голосовые боты — входящие/исходящие звонки, NPS, запись в CRM\n' +
-                '• Digital marketing — стратегия, контент, метрики в цифровых каналах\n' +
+                '• AI marketing — стратегия, контент, метрики в цифровых каналах\n' +
                 '• Аналитика и RnD — исследования, федеративное обучение, прикладной ML.',
             casesBody:
                 'Кейсы на главной можно отфильтровать по тегам (хештеги в карточках совпадают с фильтрами):\n\n' +
@@ -92,6 +92,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 '• финансист\n' +
                 '• digital-маркетолог\n\n' +
                 'Это не набор «красивых ролей из резюме» — за каждой позицией стоит реальный опыт в крупных коммерческих компаниях.',
+            aboutCvLinkLabel: 'Резюме (CV) — открыть',
+            aboutCvLinkAria: 'Открыть резюме на сайте или скачать PDF',
             pricingBody:
                 'Стоимость:\n\n' +
                 'Ориентиры обсуждаем по договорённости — они зависят от сложности разработки: объём функционала, интеграции, сроки, сопровождение.\n\n' +
@@ -146,7 +148,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 '• AI agents — rollout and tuning for your workflows, CRM, tools\n' +
                 '• Apps & websites — landing pages to SaaS, backends, admin panels\n' +
                 '• Voice bots — inbound/outbound, NPS, CRM logging\n' +
-                '• Digital marketing — strategy, content, metrics across channels\n' +
+                '• AI marketing — strategy, content, metrics across channels\n' +
                 '• Analytics & RnD — research, federated learning, applied ML.',
             casesBody:
                 'On the homepage you can filter case cards by tags:\n\n' +
@@ -172,6 +174,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 '• finance specialist\n' +
                 '• digital marketer\n\n' +
                 'These are not invented labels — they are backed by hands-on experience in large commercial companies.',
+            aboutCvLinkLabel: 'Résumé (CV) — open',
+            aboutCvLinkAria: 'Open résumé on the site or download PDF',
             pricingBody:
                 'Pricing:\n\n' +
                 'Rates are agreed by arrangement and depend on how complex the build is: scope, integrations, timeline, and whether you need ongoing support.\n\n' +
@@ -440,7 +444,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 bookingRenderChips(bookingDefaultRootChips());
                 bookingSetLeadFormVisible(false);
             } else {
-                typingTextSpan.textContent = body;
+                if (branchForReply === 'about') {
+                    typingTextSpan.textContent = '';
+                    typingTextSpan.appendChild(document.createTextNode(body));
+                    typingTextSpan.appendChild(document.createElement('br'));
+                    typingTextSpan.appendChild(document.createElement('br'));
+                    var cvLink = document.createElement('a');
+                    cvLink.href = '#';
+                    cvLink.className = 'booking-messenger__bubble-link';
+                    cvLink.textContent = t().aboutCvLinkLabel;
+                    cvLink.setAttribute('aria-label', t().aboutCvLinkAria);
+                    cvLink.addEventListener('click', function (ev) {
+                        ev.preventDefault();
+                        var opener = document.querySelector('[data-open-cv-modal]');
+                        if (opener) {
+                            opener.click();
+                        } else {
+                            window.open(
+                                bookingAssetUrl('img/Komarova-Anastasia-CV.pdf'),
+                                '_blank',
+                                'noopener,noreferrer'
+                            );
+                        }
+                    });
+                    typingTextSpan.appendChild(cvLink);
+                } else {
+                    typingTextSpan.textContent = body;
+                }
                 bookingRenderChips(branchForReply === 'menu' ? bookingDefaultRootChips() : bookingBackChip());
                 bookingSetLeadFormVisible(branchForReply === 'lead');
             }
@@ -489,6 +519,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         bookingApplyComposerVisibility();
     }
 
+    function bookingAssetUrl(relPath) {
+        var sc = document.querySelector('script[src*="script"]');
+        if (!sc || !sc.src) {
+            return relPath;
+        }
+        try {
+            var u = new URL(sc.src, window.location.href);
+            u.hash = '';
+            u.search = '';
+            u.pathname = u.pathname.replace(/[^/]+$/, '');
+            return new URL(relPath, u).href;
+        } catch (e) {
+            return relPath;
+        }
+    }
+
+    /** Аватар в шапке виджета чата — тот же файл, что и на кнопке CTA: img/1.jpg */
+    function bookingChatAvatarUrl() {
+        return bookingAssetUrl('img/1.jpg');
+    }
+
     function ensureBookingModal() {
         if (bookingModalEl) {
             bookingSyncMessengerModeClass(bookingModalEl);
@@ -502,14 +553,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         root.setAttribute('role', 'dialog');
         root.setAttribute('aria-modal', 'true');
         root.setAttribute('aria-labelledby', 'booking-modal-title');
+        var avatarSrc = bookingChatAvatarUrl();
         root.innerHTML =
             '<div class="booking-modal__panel booking-messenger">' +
             '<header class="booking-messenger__header">' +
+            '<div class="booking-messenger__header-main">' +
+            '<img class="booking-messenger__avatar" id="booking-messenger-avatar" alt="" width="40" height="40" decoding="async" src="' +
+            escapeAttr(avatarSrc) +
+            '" />' +
             '<div class="booking-messenger__header-info">' +
             '<h2 class="booking-messenger__title" id="booking-modal-title">' +
             escapeHtml(str.title) +
             '</h2>' +
             '<p class="booking-messenger__subtitle" id="booking-modal-subtitle"></p>' +
+            '</div>' +
             '</div>' +
             '<button type="button" class="booking-messenger__close" data-booking-close aria-label="' +
             escapeAttr(str.closeAria) +
@@ -921,6 +978,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let lastFocus = null;
 
     function openModal() {
+        const cv = document.getElementById('cv-modal');
+        if (cv && !cv.hidden) {
+            cv.hidden = true;
+            document.body.classList.remove('cv-modal-open');
+        }
         lastFocus = document.activeElement;
         modal.hidden = false;
         document.body.classList.add('legal-modal-open');
@@ -952,6 +1014,56 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && !modal.hidden) {
             closeModal();
+        }
+    });
+});
+
+// Резюме (CV) — то же оформление, что у юридического попапа
+document.addEventListener('DOMContentLoaded', function () {
+    const cvModal = document.getElementById('cv-modal');
+    if (!cvModal) return;
+
+    const openBtns = document.querySelectorAll('[data-open-cv-modal]');
+    const closeEls = cvModal.querySelectorAll('[data-close-cv-modal]');
+    let cvLastFocus = null;
+
+    function openCvModal() {
+        const legal = document.getElementById('legal-modal');
+        if (legal && !legal.hidden) {
+            legal.hidden = true;
+            document.body.classList.remove('legal-modal-open');
+        }
+        cvLastFocus = document.activeElement;
+        cvModal.hidden = false;
+        document.body.classList.add('cv-modal-open');
+        const closeBtn = cvModal.querySelector('.legal-modal__close');
+        if (closeBtn) closeBtn.focus();
+    }
+
+    function closeCvModal() {
+        cvModal.hidden = true;
+        document.body.classList.remove('cv-modal-open');
+        if (cvLastFocus && typeof cvLastFocus.focus === 'function') {
+            cvLastFocus.focus();
+        }
+    }
+
+    openBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            openCvModal();
+        });
+    });
+
+    closeEls.forEach(function (el) {
+        el.addEventListener('click', function () {
+            closeCvModal();
+        });
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !cvModal.hidden) {
+            closeCvModal();
         }
     });
 });
