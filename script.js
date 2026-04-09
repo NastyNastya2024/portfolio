@@ -456,7 +456,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     cvLink.setAttribute('aria-label', t().aboutCvLinkAria);
                     cvLink.addEventListener('click', function (ev) {
                         ev.preventDefault();
-                        var opener = document.querySelector('[data-open-about-sheet]');
+                        var opener = document.querySelector('[data-open-cv-modal]');
                         if (opener) {
                             opener.click();
                         } else {
@@ -1064,51 +1064,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && !cvModal.hidden) {
             closeCvModal();
-        }
-    });
-});
-
-// «Обо мне» — bottom sheet внизу страницы
-document.addEventListener('DOMContentLoaded', function () {
-    const sheet = document.getElementById('about-sheet');
-    if (!sheet) return;
-
-    const openBtns = document.querySelectorAll('[data-open-about-sheet]');
-    const closeEls = sheet.querySelectorAll('[data-close-about-sheet]');
-    let lastFocus = null;
-
-    function openSheet() {
-        lastFocus = document.activeElement;
-        sheet.hidden = false;
-        document.body.classList.add('about-sheet-open');
-        const closeBtn = sheet.querySelector('.about-sheet__close');
-        if (closeBtn) closeBtn.focus();
-    }
-
-    function closeSheet() {
-        sheet.hidden = true;
-        document.body.classList.remove('about-sheet-open');
-        if (lastFocus && typeof lastFocus.focus === 'function') {
-            lastFocus.focus();
-        }
-    }
-
-    openBtns.forEach(function (btn) {
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-            openSheet();
-        });
-    });
-
-    closeEls.forEach(function (el) {
-        el.addEventListener('click', function () {
-            closeSheet();
-        });
-    });
-
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && sheet && !sheet.hidden) {
-            closeSheet();
         }
     });
 });
