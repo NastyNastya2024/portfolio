@@ -3153,6 +3153,71 @@ body.about-sheet-open {
     overflow: hidden;
 }
 
+.about-story {
+    padding: 0 0 64px;
+    background: #F7F7FA;
+}
+
+.about-story__container {
+    max-width: 980px;
+}
+
+.about-story__body {
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: left;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #2a2a3a;
+}
+
+.about-story__body p {
+    margin: 0;
+}
+
+.about-story__body p + p {
+    margin-top: 16px;
+}
+
+.about-story__body ul {
+    margin: 12px 0 0;
+    padding-left: 18px;
+    color: #49496D;
+}
+
+.about-story__body p + ul {
+    margin-top: 10px;
+}
+
+.about-story__body ul + p {
+    margin-top: 16px;
+}
+
+.about-story__body li {
+    margin: 6px 0;
+}
+
+.about-story__footer-note {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(205, 205, 221, 0.65);
+    color: #49496D;
+}
+
+.about-story__cv-link {
+    color: #49496d;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(73, 73, 109, 0.28);
+}
+
+.about-story__cv-link:hover {
+    color: #16161d;
+    text-decoration-color: rgba(73, 73, 109, 0.45);
+}
+
 .about-sheet {
     position: fixed;
     inset: 0;
