@@ -3218,6 +3218,29 @@ body.about-sheet-open {
     text-decoration-color: rgba(73, 73, 109, 0.45);
 }
 
+.about-projects {
+    margin: 12px 0 0;
+    padding-left: 18px;
+    color: #49496D;
+}
+
+.about-projects li {
+    margin: 8px 0;
+}
+
+.about-projects a {
+    color: #1a1a1a;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(22, 22, 29, 0.22);
+}
+
+.about-projects a:hover {
+    color: #16161d;
+    text-decoration-color: rgba(22, 22, 29, 0.4);
+}
+
 .about-sheet {
     position: fixed;
     inset: 0;
